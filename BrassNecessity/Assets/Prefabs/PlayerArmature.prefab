@@ -9843,7 +9843,6 @@ GameObject:
   - component: {fileID: 5327314851587527984}
   - component: {fileID: 5822589362813761262}
   - component: {fileID: 2975361221046418248}
-  - component: {fileID: 1004891701975112955}
   - component: {fileID: 4079117471922993178}
   m_Layer: 15
   m_Name: Bar
@@ -9917,19 +9916,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1004891701975112955
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995649964170813357}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4079117471922993178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10742,7 +10728,6 @@ GameObject:
   - component: {fileID: 1284542972713125125}
   - component: {fileID: 1284542972713125120}
   - component: {fileID: 1284542972713125127}
-  - component: {fileID: 1284542972713125126}
   m_Layer: 0
   m_Name: Pigtail_Backpack
   m_TagString: Untagged
@@ -10816,20 +10801,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542972713125126
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542972713125124}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43303306900260386, guid: 348ea1eda5292c4498e393eaf8d25ffc, type: 2}
 --- !u!1 &1284542972715544883
 GameObject:
   m_ObjectHideFlags: 0
@@ -10875,7 +10846,6 @@ GameObject:
   - component: {fileID: 1284542972718005260}
   - component: {fileID: 1284542972718005263}
   - component: {fileID: 1284542972718005262}
-  - component: {fileID: 1284542972718005261}
   m_Layer: 0
   m_Name: Mohawk_Left_Pouch
   m_TagString: Untagged
@@ -10948,20 +10918,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542972718005261
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542972718005251}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43135554758441684, guid: 4abb965eef12aa74a8a2d9b95697ad42, type: 2}
 --- !u!1 &1284542972724526546
 GameObject:
   m_ObjectHideFlags: 0
@@ -12067,7 +12023,6 @@ GameObject:
   - component: {fileID: 1284542973033354416}
   - component: {fileID: 1284542973033354419}
   - component: {fileID: 1284542973033354418}
-  - component: {fileID: 1284542973033354417}
   m_Layer: 0
   m_Name: Mohawk_Hair
   m_TagString: Untagged
@@ -12140,20 +12095,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542973033354417
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542973033354423}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43645411747992516, guid: 780b086baf58eb448aa96216d6945c8a, type: 2}
 --- !u!1 &1284542973037315434
 GameObject:
   m_ObjectHideFlags: 0
@@ -12279,7 +12220,6 @@ GameObject:
   - component: {fileID: 1284542973075777699}
   - component: {fileID: 1284542973075777710}
   - component: {fileID: 1284542973075777709}
-  - component: {fileID: 1284542973075777708}
   m_Layer: 0
   m_Name: Pigtails_Hair
   m_TagString: Untagged
@@ -12352,20 +12292,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542973075777708
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542973075777698}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43296798545771198, guid: 75c9a6a6053ced44ba63094732db8aa1, type: 2}
 --- !u!1 &1284542973145400955
 GameObject:
   m_ObjectHideFlags: 0
@@ -12377,7 +12303,6 @@ GameObject:
   - component: {fileID: 1284542973145400932}
   - component: {fileID: 1284542973145400935}
   - component: {fileID: 1284542973145400934}
-  - component: {fileID: 1284542973145400933}
   m_Layer: 0
   m_Name: Pigtail_Glasses
   m_TagString: Untagged
@@ -12450,20 +12375,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542973145400933
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542973145400955}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43337629923917384, guid: cd58e9b1453553d4f8f516a30950574f, type: 2}
 --- !u!1 &1284542973183015923
 GameObject:
   m_ObjectHideFlags: 0
@@ -12736,7 +12647,6 @@ GameObject:
   - component: {fileID: 1284542973344135687}
   - component: {fileID: 1284542973344135682}
   - component: {fileID: 1284542973344135681}
-  - component: {fileID: 1284542973344135680}
   m_Layer: 15
   m_Name: SM_Wep_SubMGun_01
   m_TagString: Untagged
@@ -12812,20 +12722,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542973344135680
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542973344135686}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43117563941952884, guid: cf2ad40cc47b90842999dd6dceb4844d, type: 2}
 --- !u!1 &1284542973362347617
 GameObject:
   m_ObjectHideFlags: 0
@@ -12963,7 +12859,6 @@ GameObject:
   - component: {fileID: 1284542973514691875}
   - component: {fileID: 1284542973514691886}
   - component: {fileID: 1284542973514691885}
-  - component: {fileID: 1284542973514691884}
   m_Layer: 0
   m_Name: Mohawk_Gasmask
   m_TagString: Untagged
@@ -13036,20 +12931,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542973514691884
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542973514691874}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43208855295532392, guid: 018149c816cee8e45a75cd43a977bb49, type: 2}
 --- !u!1 &1284542973527026045
 GameObject:
   m_ObjectHideFlags: 0
@@ -13179,7 +13060,6 @@ GameObject:
   - component: {fileID: 1284542973651135141}
   - component: {fileID: 1284542973651135136}
   - component: {fileID: 1284542973651135143}
-  - component: {fileID: 1284542973651135142}
   m_Layer: 0
   m_Name: Pigtail_Left_Pouch
   m_TagString: Untagged
@@ -13252,20 +13132,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542973651135142
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542973651135140}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43135554758441684, guid: 4abb965eef12aa74a8a2d9b95697ad42, type: 2}
 --- !u!1 &1284542973658635843
 GameObject:
   m_ObjectHideFlags: 0
@@ -13277,7 +13143,6 @@ GameObject:
   - component: {fileID: 1284542973658635852}
   - component: {fileID: 1284542973658635855}
   - component: {fileID: 1284542973658635854}
-  - component: {fileID: 1284542973658635853}
   m_Layer: 0
   m_Name: Mohawk_Backpack
   m_TagString: Untagged
@@ -13351,20 +13216,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542973658635853
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542973658635843}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43303306900260386, guid: 348ea1eda5292c4498e393eaf8d25ffc, type: 2}
 --- !u!1 &1284542973658974926
 GameObject:
   m_ObjectHideFlags: 0
@@ -13608,7 +13459,6 @@ GameObject:
   - component: {fileID: 1284542973885792261}
   - component: {fileID: 1284542973885792256}
   - component: {fileID: 1284542973885792263}
-  - component: {fileID: 1284542973885792262}
   m_Layer: 0
   m_Name: Pigtail_Right_Pouch
   m_TagString: Untagged
@@ -13681,20 +13531,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542973885792262
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542973885792260}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43691551551736260, guid: a1608e1a71ff35c48ad93f1b8b1aaf72, type: 2}
 --- !u!1 &1284542973917156111
 GameObject:
   m_ObjectHideFlags: 0
@@ -13833,7 +13669,6 @@ GameObject:
   - component: {fileID: 1284542973966242295}
   - component: {fileID: 1284542973966242290}
   - component: {fileID: 1284542973966242289}
-  - component: {fileID: 1284542973966242288}
   m_Layer: 0
   m_Name: Pigtail_Facemask
   m_TagString: Untagged
@@ -13906,20 +13741,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542973966242288
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542973966242294}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43330889168260096, guid: 906e0f1e56118bf4aa093326f1fc7ee2, type: 2}
 --- !u!1 &1284542973972105708
 GameObject:
   m_ObjectHideFlags: 0
@@ -14159,7 +13980,6 @@ GameObject:
   - component: {fileID: 1284542974238619325}
   - component: {fileID: 1284542974238619320}
   - component: {fileID: 1284542974238619327}
-  - component: {fileID: 1284542974238619326}
   m_Layer: 0
   m_Name: Mohawk_Right_Pouch
   m_TagString: Untagged
@@ -14232,20 +14052,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1284542974238619326
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542974238619324}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43691551551736260, guid: a1608e1a71ff35c48ad93f1b8b1aaf72, type: 2}
 --- !u!1 &1303886654012973305
 GameObject:
   m_ObjectHideFlags: 0
@@ -14257,7 +14063,6 @@ GameObject:
   - component: {fileID: 2004615651713630312}
   - component: {fileID: 2876868655547374560}
   - component: {fileID: 5910230176033658400}
-  - component: {fileID: 5039366169471396818}
   - component: {fileID: 2329336064140661299}
   m_Layer: 0
   m_Name: MiddleSphere
@@ -14331,19 +14136,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5039366169471396818
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303886654012973305}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2329336064140661299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14482,7 +14274,6 @@ GameObject:
   - component: {fileID: 1062526528112290842}
   - component: {fileID: 171610065788933077}
   - component: {fileID: 7722649369413714668}
-  - component: {fileID: 7733140401409728829}
   - component: {fileID: 3026217400352928896}
   m_Layer: 15
   m_Name: LeftSphere
@@ -14556,19 +14347,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7733140401409728829
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935729980986035853}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3026217400352928896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14650,7 +14428,7 @@ MonoBehaviour:
     GroundedRadius: 0.28
     GroundLayers:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 513
     TransformReference: {fileID: 1284542973745687367}
     ControllerReference: {fileID: 1284542972771108735}
   _animData:
@@ -14701,7 +14479,7 @@ MonoBehaviour:
     GroundedRadius: 0.28
     GroundLayers:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 513
     TransformReference: {fileID: 1284542973745687367}
     ControllerReference: {fileID: 1284542972771108735}
   soundEffects: {fileID: 0}
@@ -14756,7 +14534,7 @@ MonoBehaviour:
     GroundedRadius: 0.28
     GroundLayers:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 512
     TransformReference: {fileID: 1284542973745687367}
     ControllerReference: {fileID: 1284542972771108735}
   animationManager:
@@ -14807,7 +14585,7 @@ MonoBehaviour:
     GroundedRadius: 0.28
     GroundLayers:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 513
     TransformReference: {fileID: 1284542973745687367}
     ControllerReference: {fileID: 1284542972771108735}
   recoveryTimeoutInSeconds: 2
@@ -14823,7 +14601,6 @@ GameObject:
   - component: {fileID: 5494921594389473967}
   - component: {fileID: 8986510560562739525}
   - component: {fileID: 5166001199020665011}
-  - component: {fileID: 529917985271090534}
   - component: {fileID: 6180390361641601458}
   m_Layer: 0
   m_Name: LeftSphere
@@ -14897,19 +14674,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &529917985271090534
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2404747168499706889}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6180390361641601458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14933,7 +14697,6 @@ GameObject:
   - component: {fileID: 5608692156127561136}
   - component: {fileID: 4181337524520422017}
   - component: {fileID: 6248802065952786045}
-  - component: {fileID: 1625941529401673829}
   - component: {fileID: 4793805033106429508}
   m_Layer: 15
   m_Name: LaserSplash
@@ -15008,19 +14771,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1625941529401673829
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2655791514821328396}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4793805033106429508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15044,7 +14794,6 @@ GameObject:
   - component: {fileID: 8192295767458064471}
   - component: {fileID: 8481094845685738834}
   - component: {fileID: 4121964658297649893}
-  - component: {fileID: 6984326666948670827}
   - component: {fileID: 4766791092008181005}
   m_Layer: 0
   m_Name: BottomSphere
@@ -15118,19 +14867,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6984326666948670827
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2858400485213082372}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4766791092008181005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15227,7 +14963,6 @@ GameObject:
   - component: {fileID: 4359851676059646724}
   - component: {fileID: 5685238300606925171}
   - component: {fileID: 7910371923482344189}
-  - component: {fileID: 201331072216891440}
   - component: {fileID: 8567694515043149943}
   m_Layer: 0
   m_Name: RightSphere
@@ -15301,19 +15036,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &201331072216891440
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4377867836706169561}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8567694515043149943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15780,7 +15502,6 @@ GameObject:
   - component: {fileID: 694134259840607945}
   - component: {fileID: 9167715101535787054}
   - component: {fileID: 8378634429464694768}
-  - component: {fileID: 769252833407275315}
   - component: {fileID: 1634061204427272555}
   m_Layer: 0
   m_Name: TopSphere
@@ -15854,19 +15575,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &769252833407275315
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5950853027413321019}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1634061204427272555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16486,7 +16194,6 @@ GameObject:
   - component: {fileID: 8186660439630037745}
   - component: {fileID: 7908902484974828704}
   - component: {fileID: 4271950031823584697}
-  - component: {fileID: 7829571875377647338}
   - component: {fileID: 3774873772411979122}
   m_Layer: 15
   m_Name: RightSphere
@@ -16560,19 +16267,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7829571875377647338
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8936030089036087842}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3774873772411979122
 MonoBehaviour:
   m_ObjectHideFlags: 0

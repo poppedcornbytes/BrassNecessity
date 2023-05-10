@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealthHandler : MonoBehaviour
+public class EnemyHealthHandler : MonoBehaviour, IDestroyEventHandler
 {
     [SerializeField]
     protected float baseHealth = 80f;
     public float Health { get; protected set; }
     public bool IsDead { get; protected set; }
+
+    private event GameEvents.DestroyEvent OnDestroyEvent;
 
     protected void Awake()
     {
@@ -27,6 +29,26 @@ public class EnemyHealthHandler : MonoBehaviour
         {
             IsDead = true;
             DropItem();
+            CallDestroyEvent();
+            Destroy(gameObject);
+        }
+    }
+
+    public void AddDestroyEvent(GameEvents.DestroyEvent eventToAdd)
+    {
+        OnDestroyEvent += eventToAdd;
+    }
+
+    public void RemoveDestroyEvent(GameEvents.DestroyEvent eventToRemove)
+    {
+        OnDestroyEvent -= eventToRemove;
+    }
+
+    public void CallDestroyEvent()
+    {
+        if (OnDestroyEvent != null)
+        {
+            OnDestroyEvent();
         }
     }
 

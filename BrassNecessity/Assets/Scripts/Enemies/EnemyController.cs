@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
     {
         // NavMeshAgent
         navAgent = GetComponent<NavMeshAgent>();
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransform = FindObjectOfType<PlayerHealthHandler>(true).transform;
         playerHealthHandler = playerTransform.GetComponent<PlayerHealthHandler>();
         navAgent.isStopped = false;
 

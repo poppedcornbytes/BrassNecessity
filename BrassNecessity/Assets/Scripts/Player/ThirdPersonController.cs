@@ -51,4 +51,15 @@ public class ThirdPersonController : MonoBehaviour
             currentState.StateEnter();
         }
     }
+
+    private void OnDisable()
+    {
+        _input.move = Vector2.zero;
+        _input.jump = false;
+        _input.sprint = false;
+        _input.shoot = false;
+        _input.strafe = false;
+        _input.applyElement = false;
+        _input.pause = false;
+    }
 }

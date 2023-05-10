@@ -9,5 +9,7 @@ public enum SoundEffectKey
     LaserFiringSound,
     StrongLaserAttack,
     WeakLaserAttack,
-    ElementEquip
+    ElementEquip,
+    TeleportBegin,
+    TeleportEnd
 }
