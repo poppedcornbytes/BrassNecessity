@@ -11,5 +11,15 @@ public enum SoundEffectKey
     WeakLaserAttack,
     ElementEquip,
     TeleportBegin,
-    TeleportEnd
+    TeleportEnd,
+    PortalReveal,
+    PortalEnable,
+    PortalDisable,
+    HealthPickup,
+    DyingSound,
+    ButtonHighlight,
+    ButtonSelect,
+    SliderMove,
+    PopupMenuOpen,
+    PopupMenuClose
 }

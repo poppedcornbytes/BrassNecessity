@@ -9,6 +9,8 @@ public class PauseState : MonoBehaviour, IControllerState
     private MenuController pauseController;
     [SerializeField]
     private PauseMenuStatus menuStatus;
+    [SerializeField]
+    private SoundEffectTrackHandler soundEffectHandler;
     public IControllerState NextState {get; private set;}
 
     private void Awake()
@@ -21,6 +23,10 @@ public class PauseState : MonoBehaviour, IControllerState
         if (pauseMenu == null)
         {
             pauseMenu = menuStatus.gameObject;
+        }
+        if (soundEffectHandler == null)
+        {
+            soundEffectHandler = FindObjectOfType<SoundEffectTrackHandler>();
         }
         NextState = this;
     }
@@ -36,7 +42,7 @@ public class PauseState : MonoBehaviour, IControllerState
         NextState = this;
         pauseMenu.SetActive(true);
         pauseController.gameObject.SetActive(true);
-        Debug.Log("Switched to pause state.");
+        soundEffectHandler.PlayOnce(SoundEffectKey.PopupMenuOpen);
     }
 
     public void StateUpdate()
@@ -57,6 +63,7 @@ public class PauseState : MonoBehaviour, IControllerState
         menuStatus.CloseAll();
         pauseController.gameObject.SetActive(false);
         pauseController.MenuUI = pauseMenu.GetComponent<MenuUIBehaviour>();
-        Debug.Log("Switched to action state.");
+        soundEffectHandler.PlayOnce(SoundEffectKey.PopupMenuClose);
+        
     }
 }

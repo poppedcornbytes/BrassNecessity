@@ -5,6 +5,8 @@ using UnityEngine;
 public class SoundEffectTrackHandler : MonoBehaviour
 {
     [SerializeField]
+    private AudioSource clipSource;
+    [SerializeField]
     private SoundEffectKeyValue[] clipListing;
     private Dictionary<SoundEffectKey, SoundEffectKeyValue> listingMap;
     [SerializeField]
@@ -21,12 +23,16 @@ public class SoundEffectTrackHandler : MonoBehaviour
         {
             listingMap.Add(clipListing[i].Key, clipListing[i]);
         }
+        transform.position = playerCameraListener.transform.position;
     }
 
     public void PlayOnce(SoundEffectKey listingKey)
     {
         AudioClip clipToPlay = listingMap[listingKey].Value;
-        AudioSource.PlayClipAtPoint(clipToPlay, playerCameraListener.transform.position);
+        if (clipSource != null)
+        {
+            clipSource.PlayOneShot(clipToPlay);
+        }
     }
 
     public AudioClip GetClipForLooping(SoundEffectKey listingKey)

@@ -6,7 +6,7 @@ using Unity.Collections;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
-public class EnemySpawnManager : MonoBehaviour
+public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
 {
     public int totalLevelEnemies = 5;      // Total number of enemies in the level
     public int maxConcurrentEnemies = 3;    // Total number of enemies that should be present in the level at any time
@@ -20,6 +20,7 @@ public class EnemySpawnManager : MonoBehaviour
     int currentSpawnedEnemies;
     int currentSpawnPointNum = 0;
     int nextSpawnPrefabIndex = 0;
+    private event GameEvents.SpawnEndEvent OnSpawnEnd;
 
 
     private void Awake()
@@ -57,6 +58,10 @@ public class EnemySpawnManager : MonoBehaviour
             StartCoroutine(SpawnCountDown(spawnCheckInterval));
         }
 
+        if (AreAllMonstersEliminated())
+        {
+            CallSpawnEndEvent();
+        }
     }
 
 
@@ -137,5 +142,26 @@ public class EnemySpawnManager : MonoBehaviour
         return chosenSpawnPoint;
     }
 
+    public bool AreAllMonstersEliminated()
+    {
+        return remainingEnemiesToBeSpawned == 0 && spawnedEnemiesHolder.childCount == 0;
+    }
 
+    public void AddSpawnEndEvent(GameEvents.SpawnEndEvent eventToAdd)
+    {
+        OnSpawnEnd += eventToAdd;
+    }
+
+    public void RemoveSpawnEndEvent(GameEvents.SpawnEndEvent eventToRemove)
+    {
+        OnSpawnEnd -= eventToRemove;
+    }
+
+    public void CallSpawnEndEvent()
+    {
+        if (OnSpawnEnd != null)
+        {
+            OnSpawnEnd();
+        }
+    }
 }

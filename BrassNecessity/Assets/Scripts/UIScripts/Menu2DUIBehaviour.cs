@@ -83,6 +83,7 @@ public class Menu2DUIBehaviour : MenuUIBehaviour
         currentColumn = nextColumn;
         elementName = getCurrentElementName();
         toggleElementSelection(elementName);
+        soundEffectHandler.PlayOnce(SoundEffectKey.ButtonHighlight);
     }
 
     private void handleColumnUpdate(int nextColumn, int horizontalMovement)
@@ -110,6 +111,10 @@ public class Menu2DUIBehaviour : MenuUIBehaviour
         else if (nextValue < slider.MinValue)
         {
             nextValue = slider.MinValue;
+        }
+        else
+        {
+            soundEffectHandler.PlayOnce(SoundEffectKey.SliderMove);
         }
         slider.SetValue(nextValue);
     }
@@ -144,12 +149,14 @@ public class Menu2DUIBehaviour : MenuUIBehaviour
         return row[currentColumn].ElementName;
     }
 
-    public override void ExecuteCurrentButton()
+    protected override IEnumerator executeRoutine()
     {
         string currentElementName = getCurrentElementName();
         if (buttonMap.ContainsKey(currentElementName))
         {
+            yield return base.executeRoutine();
             buttonMap[currentElementName].Execute();
+            isExecuting = false;
         }
     }
 }
