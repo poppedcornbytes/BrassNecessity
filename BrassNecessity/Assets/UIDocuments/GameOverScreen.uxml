@@ -4,7 +4,7 @@
         <ui:VisualElement style="width: 40%; height: 15%;">
             <ui:Label text="You have fallen..." display-tooltip-when-elided="true" name="GameoverTitle" style="-unity-text-align: upper-center; font-size: 75px; -unity-font-style: bold; -unity-text-outline-width: 3px; -unity-text-outline-color: rgba(82, 255, 0, 0.66); color: rgba(55, 164, 0, 0.38);" />
         </ui:VisualElement>
-        <ui:VisualElement style="width: auto; height: auto; align-items: center; flex-direction: row;">
+        <ui:VisualElement style="width: auto; height: 250px; align-items: center; flex-direction: row;">
             <ui:Button text="Try again!" display-tooltip-when-elided="true" name="ContinueButton" class="menuButton" />
             <ui:Button text="Quit" display-tooltip-when-elided="true" name="QuitButton" class="menuButton" />
         </ui:VisualElement>

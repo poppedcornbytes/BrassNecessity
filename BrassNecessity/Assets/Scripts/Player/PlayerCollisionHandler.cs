@@ -7,7 +7,14 @@ public class PlayerCollisionHandler : MonoBehaviour
     private CharacterController controller;
     private ElementApplyState applyState;
     private PlayerHealthHandler healthHandler;
-
+    [SerializeField]
+    private MusicTrackHandler musicTracks;
+    [SerializeField]
+    private LayerMask enemeyMask;
+    [SerializeField]
+    private float enemyWarningRadius = 20f;
+    private bool enemyWarningOn = false;
+    
     [SerializeField]
     private SoundEffectTrackHandler soundEffects;
     private void Awake()
@@ -18,6 +25,10 @@ public class PlayerCollisionHandler : MonoBehaviour
         if (soundEffects == null)
         {
             soundEffects = FindObjectOfType<SoundEffectTrackHandler>();
+        }
+        if (musicTracks == null)
+        {
+            musicTracks = FindObjectOfType<MusicTrackHandler>();
         }
     }
     // Start is called before the first frame update
@@ -30,6 +41,7 @@ public class PlayerCollisionHandler : MonoBehaviour
     void Update()
     {
         detectPickupCollision();
+        detectEnemyNearbyCollision();
     }
 
     private void detectPickupCollision()
@@ -60,5 +72,39 @@ public class PlayerCollisionHandler : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void detectEnemyNearbyCollision()
+    {
+        Collider[] hitObjects = Physics.OverlapSphere(transform.position, enemyWarningRadius, enemeyMask);
+        if (hitObjects.Length > 0)
+        {
+            if (!enemyWarningOn)
+            {
+                enemyWarningOn = true;
+                StartCoroutine(switchMusicRoutine(MusicKey.Adventure));
+            }
+        }
+        else
+        {
+            if (enemyWarningOn)
+            {
+
+                enemyWarningOn = false;
+                StartCoroutine(switchMusicRoutine(MusicKey.Peaceful));
+            }
+        }
+    }
+
+    private IEnumerator switchMusicRoutine(MusicKey keyToPlay)
+    {
+        yield return musicTracks.StopTrack();
+        musicTracks.PlayTrack(keyToPlay);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, enemyWarningRadius);
     }
 }

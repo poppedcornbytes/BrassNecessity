@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class SceneNavigator : MonoBehaviour
 {
@@ -26,6 +28,22 @@ public class SceneNavigator : MonoBehaviour
 
     static public void OpenScene(SceneKey key)
     {
-        sceneAccessKeys[key].LoadScene();
+        singleton.StartCoroutine(openSceneRoutine(key));
+    }
+
+    private static IEnumerator openSceneRoutine(SceneKey keyToOpen)
+    {
+        SceneTransition transitionEffect = singleton.GetComponent<SceneTransition>();
+        yield return transitionEffect.EndSceneTransitionRoutine();
+        MusicTrackHandler trackHandler = FindObjectOfType<MusicTrackHandler>();
+        yield return trackHandler.StopTrack();
+        sceneAccessKeys[keyToOpen].LoadScene();
+        SceneManager.sceneLoaded += singleton.OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        SceneTransition transitionEffect = singleton.GetComponent<SceneTransition>();
+        transitionEffect.StartSceneTransition();
     }
 }

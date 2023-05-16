@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIDocuments/styles.uss?fileID=7433441132597879392&amp;guid=c30f6580d0acd8e429a717e8d1833395&amp;type=3#styles" />
+    <ui:VisualElement name="CreditElement" style="width: 100%; height: 100%; background-color: rgb(0, 0, 0); align-items: center; justify-content: flex-start;">
+        <ui:Label text="GameTitleCredit" display-tooltip-when-elided="true" name="SampleGameTitle" class="credit-title" />
+        <ui:Label text="CreditHeader" display-tooltip-when-elided="true" name="SampleCreditHeader" class="credit-header" />
+        <ui:Label text="CreditSubheader" display-tooltip-when-elided="true" name="SampleCreditSubheader" class="credit-subheader" />
+        <ui:Label text="CreditNameAndRole" display-tooltip-when-elided="true" name="SampleCreditNameAndRole" class="credit-name-and-role" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2713530595460513521}
   - component: {fileID: 2713530595460513520}
+  - component: {fileID: 3669128043078521834}
+  - component: {fileID: 1634396954697172141}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -59,3 +61,32 @@ MonoBehaviour:
     value: GameOverScreen
   - key: 6
     value: EndCredits
+--- !u!114 &3669128043078521834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2713530595460513523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 7e5ffb99517df44469d40119b794ed68, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: f2fc9c9c0bbd7a64481def48762adaa2,
+    type: 3}
+  m_SortingOrder: 1000
+--- !u!114 &1634396954697172141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2713530595460513523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9864e977c23aa0642a58ee3b1f2fa793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

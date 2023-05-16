@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIDocuments/styles.uss?fileID=7433441132597879392&amp;guid=c30f6580d0acd8e429a717e8d1833395&amp;type=3#styles" />
+    <ui:VisualElement name="ThankYouElement" class="transparent-element" style="top: 25%; position: absolute; left: 25%; right: 25%; bottom: 25%; justify-content: center;">
+        <ui:Label text="Thanks for playing!" display-tooltip-when-elided="true" name="ThankYouLabel" class="thank-you-title" />
+        <ui:Label text="Press J to continue." display-tooltip-when-elided="true" name="ContinueLabel" class="continue-title" />
+    </ui:VisualElement>
+</ui:UXML>

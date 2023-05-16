@@ -1,0 +1,80 @@
+.transparent-cover {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.default-cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 255);
+}
+
+.swipe-up-transition {
+    transition-duration: 0.5s, 0s, 0s;
+    transition-property: top, display, visibility;
+    top: -100%;
+    display: none;
+    visibility: hidden;
+    transition-delay: 0s, 0.5s, 0.5s;
+}
+
+.swipe-down-transition {
+    top: 100%;
+    transition-duration: 0.5s, 0s, 0s;
+    transition-property: top, display, visibility;
+    transition-delay: 0s, 0.5s, 0.5s;
+    display: none;
+    visibility: hidden;
+}
+
+.swipe-left-transition {
+    transition-duration: 0.5s, 0s, 0s;
+    left: -100%;
+    display: none;
+    visibility: hidden;
+    transition-property: left, display, visibility;
+    transition-delay: 0s, 0.5s, 0.5s;
+}
+
+.swipe-right-transition {
+    left: 100%;
+    transition-duration: 0.5s, 0s, 0s;
+    display: none;
+    visibility: hidden;
+    transition-property: left, display, visibility;
+    transition-delay: 0s, 0.5s, 0.5s;
+}
+
+.fade-in-transition {
+    opacity: 1;
+    transition-property: background-color, opacity;
+    transition-duration: 0s, 0.5s;
+    transition-delay: 0s, 0s;
+    background-color: rgba(0, 0, 0, 255);
+}
+
+.fade-out-transition {
+    opacity: 0;
+    transition-duration: 0.5s, 0s, 0s;
+    display: none;
+    visibility: hidden;
+    transition-property: opacity, display, visibility;
+    transition-delay: 0s, 0.5s, 0.5s;
+}

@@ -61,7 +61,12 @@ public class PortalBehaviour : MonoBehaviour, IPortal, IExitEventHandler
     {
         Debug.Log("Player Entered");
         GameObject teleportingObject = other.gameObject;
-        if (other.gameObject.layer != LayerMask.NameToLayer("Ground"))
+        bool canTryTeleporting = other.gameObject.layer != LayerMask.NameToLayer("Ground");
+        if (canTryTeleporting)
+        {
+            canTryTeleporting = !isHidden && !isDisabled;
+        }
+        if (canTryTeleporting)
         {
             if (!teleportMap.ContainsKey(teleportingObject))
             {
@@ -149,6 +154,8 @@ public class PortalBehaviour : MonoBehaviour, IPortal, IExitEventHandler
 
     protected IEnumerator revealRoutine()
     {
+        soundEffects.PlayOnce(SoundEffectKey.PortalReveal);
+
         yield return GetComponent<PortalFader>().FadeIn();
         this.enabled = true;
     }
@@ -161,6 +168,7 @@ public class PortalBehaviour : MonoBehaviour, IPortal, IExitEventHandler
     public void Disable()
     {
         isDisabled = true;
+        soundEffects.PlayOnce(SoundEffectKey.PortalDisable);
         GetComponent<PortalFader>().FadeToGray();
         this.enabled = false;
         GetComponent<Collider>().enabled = false;
@@ -169,6 +177,7 @@ public class PortalBehaviour : MonoBehaviour, IPortal, IExitEventHandler
     public void Enable()
     {
         isDisabled = false;
+        soundEffects.PlayOnce(SoundEffectKey.PortalEnable);
         StartCoroutine(enableRoutine());
     }
 

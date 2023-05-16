@@ -58,6 +58,7 @@ public class ButtonMenuUIBehaviour : MenuUIBehaviour
         currentButton = indexToToggle;
         currentButtonName = getCurrentButtonName();
         toggleButtonSelectClass(currentButtonName);
+        soundEffectHandler.PlayOnce(SoundEffectKey.ButtonHighlight);
     }
 
     private string getCurrentButtonName()
@@ -65,9 +66,11 @@ public class ButtonMenuUIBehaviour : MenuUIBehaviour
         return allButtonData[currentButton].ElementName;
     }
 
-    public override void ExecuteCurrentButton()
+    protected override IEnumerator executeRoutine()
     {
+        yield return base.executeRoutine();
         string buttonName = allButtonData[currentButton].ElementName;
         buttonMap[buttonName].Execute();
+        isExecuting = false;
     }
 }

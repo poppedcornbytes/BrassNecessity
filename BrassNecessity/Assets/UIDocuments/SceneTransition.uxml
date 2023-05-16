@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIDocuments/sceneTransitions.uss?fileID=7433441132597879392&amp;guid=aeae417eb39480e4eb9707ae73aebf65&amp;type=3#sceneTransitions" />
+    <ui:VisualElement name="TransitionElement" />
+</ui:UXML>
