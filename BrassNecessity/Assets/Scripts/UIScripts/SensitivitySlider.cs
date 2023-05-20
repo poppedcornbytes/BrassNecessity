@@ -9,5 +9,6 @@ public class SensitivitySlider : GenericSlider
     {
         base.SetValue(newValue);
         Debug.Log("Set sensivity to " + newValue);
+        SettingsHandler.SensitivitySetting = newValue;
     }
 }

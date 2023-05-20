@@ -10,5 +10,6 @@ public class EffectsVolumeSlider : GenericSlider
     {
         base.SetValue(newValue);
         Debug.Log("Set FX volume to " + newValue);
+        SettingsHandler.EffectsVolumeSetting = newValue;
     }
 }

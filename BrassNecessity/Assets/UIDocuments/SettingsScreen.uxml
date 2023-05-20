@@ -5,10 +5,10 @@
             <ui:Label text="Settings" display-tooltip-when-elided="true" name="SettingsTitle" class="uiTitleText" />
         </ui:VisualElement>
         <ui:VisualElement style="width: 85%; height: 220px; justify-content: flex-start; align-items: center;">
-            <ui:SliderInt picking-mode="Ignore" label="Sensitivity" value="6" high-value="10" low-value="1" name="SensitivitySlider" class="settingSlider" />
-            <ui:SliderInt picking-mode="Ignore" label="Brightness" value="5" high-value="10" low-value="1" name="BrightnessSlider" class="settingSlider" />
-            <ui:SliderInt picking-mode="Ignore" label="Music Volume" value="5" high-value="10" low-value="1" name="MusicVolumeSlider" class="settingSlider" />
-            <ui:SliderInt picking-mode="Ignore" label="Effects Volume" value="6" high-value="10" low-value="1" name="SoundFxVolumeSlider" class="settingSlider" />
+            <ui:SliderInt picking-mode="Ignore" label="Sensitivity" value="6" high-value="10" low-value="0" name="SensitivitySlider" class="settingSlider" />
+            <ui:SliderInt picking-mode="Ignore" label="Brightness" value="5" high-value="10" low-value="0" name="BrightnessSlider" class="settingSlider" />
+            <ui:SliderInt picking-mode="Ignore" label="Music Volume" value="5" high-value="10" low-value="0" name="MusicVolumeSlider" class="settingSlider" />
+            <ui:SliderInt picking-mode="Ignore" label="Effects Volume" value="6" high-value="10" low-value="0" name="SoundFxVolumeSlider" class="settingSlider" />
         </ui:VisualElement>
         <ui:VisualElement style="width: auto; height: 120px; align-items: center; flex-direction: row;">
             <ui:Button text="Save" display-tooltip-when-elided="true" name="SaveButton" class="menuButton" />

@@ -142,7 +142,7 @@ SliderInt.settingSliderSelected {
 }
 
 .credit-title {
-    -unity-text-align: upper-center;
+    -unity-text-align: middle-center;
     font-size: 75px;
     -unity-font-style: bold;
     -unity-text-outline-width: 3px;
@@ -150,19 +150,19 @@ SliderInt.settingSliderSelected {
     color: rgb(39, 115, 0);
     height: 75px;
     justify-content: flex-start;
-    translate: 0 1000px;
+    translate: 0 1500px;
     position: absolute;
 }
 
 .credit-header {
-    -unity-text-align: upper-center;
+    -unity-text-align: middle-center;
     -unity-text-outline-color: rgb(255, 255, 255);
     color: rgb(255, 255, 255);
     font-size: 25px;
     -unity-font-style: bold;
     height: 35px;
     justify-content: flex-start;
-    translate: 0 1000px;
+    translate: 0 1500px;
     position: absolute;
 }
 
@@ -170,16 +170,16 @@ SliderInt.settingSliderSelected {
     font-size: 18px;
     color: rgb(255, 255, 255);
     -unity-font-style: bold;
-    -unity-text-align: upper-center;
+    -unity-text-align: middle-center;
     -unity-text-outline-color: rgb(255, 255, 255);
     height: 30px;
     justify-content: flex-start;
-    translate: 0 1000px;
+    translate: 0 1500px;
     position: absolute;
 }
 
 .credit-name-and-role {
-    -unity-text-align: upper-center;
+    -unity-text-align: middle-center;
     color: rgb(255, 255, 255);
     -unity-text-outline-color: rgb(255, 255, 255);
     font-size: 14px;
@@ -187,7 +187,7 @@ SliderInt.settingSliderSelected {
     height: 25px;
     justify-content: flex-start;
     position: absolute;
-    translate: 0 1000px;
+    translate: 0 1500px;
 }
 
 .scroll-up-animation {
