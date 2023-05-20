@@ -112,11 +112,12 @@ public class Menu2DUIBehaviour : MenuUIBehaviour
         {
             nextValue = slider.MinValue;
         }
-        else
+        if (currentValue != nextValue)
         {
+            slider.SetValue(nextValue);
             soundEffectHandler.PlayOnce(SoundEffectKey.SliderMove);
+
         }
-        slider.SetValue(nextValue);
     }
 
     private bool isCurrentElementSlider()
