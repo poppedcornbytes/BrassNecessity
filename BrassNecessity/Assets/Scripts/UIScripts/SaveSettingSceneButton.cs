@@ -9,8 +9,7 @@ public class SaveSettingSceneButton : SceneButton
 
     public override void Execute()
     {
-        SettingsHandler handler = new SettingsHandler();
-        handler.SaveSettings();
+        SettingsHandler.SaveSettings();
         base.Execute();
     }
 }

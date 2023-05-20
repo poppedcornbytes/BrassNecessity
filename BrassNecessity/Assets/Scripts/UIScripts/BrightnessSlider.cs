@@ -10,5 +10,6 @@ public class BrightnessSlider : GenericSlider
     {
         base.SetValue(newValue);
         Debug.Log("Set brightness to " + newValue);
+        SettingsHandler.BrightnessSetting = newValue;
     }
 }

@@ -31,7 +31,8 @@ public class SoundEffectTrackHandler : MonoBehaviour
         AudioClip clipToPlay = listingMap[listingKey].Value;
         if (clipSource != null)
         {
-            clipSource.PlayOneShot(clipToPlay);
+            float volume = SettingsHandler.GetEffectVolumeFraction();
+            clipSource.PlayOneShot(clipToPlay, volume);
         }
     }
 

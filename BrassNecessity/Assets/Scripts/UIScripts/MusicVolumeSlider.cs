@@ -10,5 +10,6 @@ public class MusicVolumeSlider : GenericSlider
     {
         base.SetValue(newValue);
         Debug.Log("Updated music volume to " + newValue);
+        SettingsHandler.MusicVolumeSetting = newValue;
     }
 }
