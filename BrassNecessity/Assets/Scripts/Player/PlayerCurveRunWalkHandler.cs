@@ -67,7 +67,7 @@ public class PlayerCurveRunWalkHandler : PlayerRunWalkHandler
         {
             _targetRotation = transform.eulerAngles.y + (controllerMoveData.RotationSpeed * moveDirection.x);
             float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
-                controllerMoveData.RotationSmoothTime);
+                controllerMoveData.GetRotationSmoothTime());
 
             // rotate to face input direction relative to camera position
             transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
