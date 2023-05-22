@@ -64,6 +64,6 @@ public class PauseState : MonoBehaviour, IControllerState
         pauseController.gameObject.SetActive(false);
         pauseController.MenuUI = pauseMenu.GetComponent<MenuUIBehaviour>();
         soundEffectHandler.PlayOnce(SoundEffectKey.PopupMenuClose);
-        
+        SettingsHandler.LoadSettings();
     }
 }

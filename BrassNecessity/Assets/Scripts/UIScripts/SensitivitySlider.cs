@@ -3,7 +3,10 @@ using UnityEngine.UIElements;
 
 public class SensitivitySlider : GenericSlider
 {
-    public SensitivitySlider(SliderData sliderData, SliderInt sliderElement) : base(sliderData, sliderElement) { }
+    public SensitivitySlider(SliderData sliderData, SliderInt sliderElement) : base(sliderData, sliderElement) 
+    {
+        SetValue(SettingsHandler.SensitivitySetting);
+    }
 
     public override void SetValue(int newValue)
     {
