@@ -90,12 +90,12 @@ public class LaserSoundBehaviour : MonoBehaviour
         if (ElementMultiplierGrid.IsWeakMultiplier(attackMultiplier))
         {
             firingSource.pitch = normalPitchMultiplier * weakElementPitchMultiplier;
-            firingSource.volume = weakElementVolume;
+            firingSource.volume = weakElementVolume * SettingsHandler.GetEffectVolumeFraction();
         }
         else if (ElementMultiplierGrid.IsStrongMultiplier(attackMultiplier))
         {
             firingSource.pitch = normalPitchMultiplier * strongElementPitchMultiplier;
-            firingSource.volume = strongElementVolume;
+            firingSource.volume = strongElementVolume * SettingsHandler.GetEffectVolumeFraction();
         }
         else
         {
@@ -106,7 +106,7 @@ public class LaserSoundBehaviour : MonoBehaviour
     public void NormaliseLaserFiringSoundPitch()
     {
         firingSource.pitch = normalPitchMultiplier;
-        firingSource.volume = normalVolume;
+        firingSource.volume = normalVolume * SettingsHandler.GetEffectVolumeFraction();
     }
 
 }

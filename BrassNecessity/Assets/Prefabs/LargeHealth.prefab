@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1194293814380318456}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HealthIcon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1194293814415940325}
   - component: {fileID: 8212600682092958495}
   - component: {fileID: 3688086914724098040}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: LargeHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194293814415940253}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 1194293814446546720}
   - component: {fileID: 1194293814446546726}
   - component: {fileID: 1194293814446546721}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 1194293814513939216}
   - component: {fileID: 1194293814513939222}
   - component: {fileID: 1194293814513939217}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Band
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 1194293814705007507}
   - component: {fileID: 1194293814705007505}
   - component: {fileID: 1194293814705007504}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Side1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 1194293814823339109}
   - component: {fileID: 1194293814823339115}
   - component: {fileID: 1194293814823339114}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Corner4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1194293814928837155}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 1194293815000997044}
   - component: {fileID: 1194293815000997050}
   - component: {fileID: 1194293815000997045}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Corner1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1194293815239639495}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: MeshParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1194293815309960454}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CaseOutside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 1194293815483305845}
   - component: {fileID: 1194293815483305851}
   - component: {fileID: 1194293815483305850}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Side2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 1194293815589880324}
   - component: {fileID: 1194293815589880330}
   - component: {fileID: 1194293815589880325}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: MainShell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,7 +828,7 @@ GameObject:
   - component: {fileID: 1194293815689277264}
   - component: {fileID: 1194293815689277270}
   - component: {fileID: 1194293815689277265}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HorizontalBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,7 +911,7 @@ GameObject:
   - component: {fileID: 1194293815774942056}
   - component: {fileID: 1194293815774942062}
   - component: {fileID: 1194293815774942057}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: VerticalBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +994,7 @@ GameObject:
   - component: {fileID: 1194293815779350643}
   - component: {fileID: 1194293815779350641}
   - component: {fileID: 1194293815779350640}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Corner2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1077,7 +1077,7 @@ GameObject:
   - component: {fileID: 1194293816117510366}
   - component: {fileID: 1194293816117510364}
   - component: {fileID: 1194293816117510367}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Corner3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

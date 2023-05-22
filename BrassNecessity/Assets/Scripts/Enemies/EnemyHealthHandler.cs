@@ -10,11 +10,17 @@ public class EnemyHealthHandler : MonoBehaviour, IDestroyEventHandler
     public bool IsDead { get; protected set; }
 
     private event GameEvents.DestroyEvent OnDestroyEvent;
+    [SerializeField]
+    protected SoundEffectTrackHandler soundEffects;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         IsDead = false;
         Health = baseHealth;
+        if (soundEffects == null)
+        {
+            soundEffects = FindObjectOfType<SoundEffectTrackHandler>();
+        }
     }
 
     public float GetBaseHealth()
@@ -24,13 +30,22 @@ public class EnemyHealthHandler : MonoBehaviour, IDestroyEventHandler
 
     public virtual void DamageEnemy(float damageAmount)
     {
+        takeDamage(damageAmount);
+        if (IsDead)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    protected void takeDamage(float damageAmount)
+    {
         Health -= damageAmount;
         if (Health < 0)
         {
             IsDead = true;
+            soundEffects.PlayOnce(SoundEffectKey.EnemyDyingSound);
             DropItem();
             CallDestroyEvent();
-            Destroy(gameObject);
         }
     }
 
@@ -68,7 +83,14 @@ public class EnemyHealthHandler : MonoBehaviour, IDestroyEventHandler
         {
             Collider dropItemBounds = dropItem.GetComponent<Collider>();
             float heightAdjustment = dropItemBounds.bounds.extents.y;
-            dropItem.transform.position = new Vector3(transform.position.x, transform.position.y + heightAdjustment, transform.position.z);
+            float distanceFromGround = 0f;
+            int layerMask = LayerMask.GetMask("Ground");
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, Mathf.Infinity, layerMask))
+            {
+                distanceFromGround = hit.distance;
+            }
+            float dropItemHeight = transform.position.y - distanceFromGround + heightAdjustment;
+            dropItem.transform.position = new Vector3(transform.position.x, dropItemHeight, transform.position.z);
         }
     }
 

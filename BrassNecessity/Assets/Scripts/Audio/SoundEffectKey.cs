@@ -16,10 +16,12 @@ public enum SoundEffectKey
     PortalEnable,
     PortalDisable,
     HealthPickup,
-    DyingSound,
+    EnemyDyingSound,
     ButtonHighlight,
     ButtonSelect,
     SliderMove,
     PopupMenuOpen,
-    PopupMenuClose
+    PopupMenuClose,
+    PlayerInjuredSound,
+    PlayerDyingSound
 }

@@ -73,6 +73,7 @@ public class PortalBehaviour : MonoBehaviour, IPortal, IExitEventHandler
                 teleportMap.Add(teleportingObject, new FrameTimeoutHandler(preTeleportTimeout));
                 AudioClip clipToPlay = soundEffects.GetClipForLooping(SoundEffectKey.TeleportBegin);
                 effectSource.clip = clipToPlay;
+                effectSource.volume = SettingsHandler.GetEffectVolumeFraction();
                 effectSource.Play();
             }
         }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6179215570949862666}
   - component: {fileID: 6879332252891857739}
   - component: {fileID: 5922718038470871464}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: OneWayPortal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

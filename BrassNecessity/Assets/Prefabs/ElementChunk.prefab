@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437953055635661}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RockBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1588437953299497197}
   - component: {fileID: 1588437953299497195}
   - component: {fileID: 1588437953299497194}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 1588437953302831854}
   - component: {fileID: 1588437953302831857}
   - component: {fileID: 1588437953302831856}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 1588437953317795899}
   - component: {fileID: 1588437953317795898}
   - component: {fileID: 1588437953317795901}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 1588437953327001112}
   - component: {fileID: 1588437953327001115}
   - component: {fileID: 1588437953327001113}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437953350994551}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 1588437953365255645}
   - component: {fileID: 5656016510984809908}
   - component: {fileID: -2049405244101847069}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ElementChunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 1588437953368869215}
   - component: {fileID: 1588437953368869214}
   - component: {fileID: 1588437953368869025}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,7 +687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437953439798492}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 1588437953449864954}
   - component: {fileID: 1588437953449864952}
   - component: {fileID: 1588437953449864955}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -803,7 +803,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437953496554793}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 1588437953525063581}
   - component: {fileID: 1588437953525063579}
   - component: {fileID: 1588437953525063578}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +921,7 @@ GameObject:
   - component: {fileID: 1588437953643615005}
   - component: {fileID: 1588437953643615003}
   - component: {fileID: 1588437953643615002}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,7 +1004,7 @@ GameObject:
   - component: {fileID: 1588437953702572301}
   - component: {fileID: 1588437953702572299}
   - component: {fileID: 1588437953702572298}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1087,7 +1087,7 @@ GameObject:
   - component: {fileID: 1588437953715223918}
   - component: {fileID: 1588437953715223916}
   - component: {fileID: 1588437953715223919}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1168,7 +1168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437953723616826}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1203,7 +1203,7 @@ GameObject:
   - component: {fileID: 1588437953744859244}
   - component: {fileID: 1588437953744859242}
   - component: {fileID: 1588437953744859245}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 1588437953827213168}
   - component: {fileID: 1588437953827213166}
   - component: {fileID: 1588437953827213169}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,7 +1369,7 @@ GameObject:
   - component: {fileID: 1588437953829627549}
   - component: {fileID: 1588437953829627547}
   - component: {fileID: 1588437953829627546}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1450,7 +1450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437953865801259}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1486,7 +1486,7 @@ GameObject:
   - component: {fileID: 1588437953879826134}
   - component: {fileID: 1588437953879826137}
   - component: {fileID: 1588437953879826136}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1581,7 +1581,7 @@ GameObject:
   - component: {fileID: 1588437953884877561}
   - component: {fileID: 1588437953884877559}
   - component: {fileID: 1588437953884877558}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CrystalFoundation3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1662,7 +1662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437953890494855}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1697,7 +1697,7 @@ GameObject:
   - component: {fileID: 1588437953906192190}
   - component: {fileID: 1588437953906192188}
   - component: {fileID: 1588437953906192191}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CrystalFoundation2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1780,7 +1780,7 @@ GameObject:
   - component: {fileID: 1588437953928230022}
   - component: {fileID: 1588437953928230020}
   - component: {fileID: 1588437953928230023}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1861,7 +1861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437953956981962}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1894,7 +1894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437953996723744}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1927,7 +1927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437954011052930}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1962,7 +1962,7 @@ GameObject:
   - component: {fileID: 1588437954024798346}
   - component: {fileID: 1588437954024798344}
   - component: {fileID: 1588437954024798347}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2043,7 +2043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437954116542356}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2078,7 +2078,7 @@ GameObject:
   - component: {fileID: 1588437954143856807}
   - component: {fileID: 1588437954143856805}
   - component: {fileID: 1588437954143856804}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2161,7 +2161,7 @@ GameObject:
   - component: {fileID: 1588437954195351216}
   - component: {fileID: 1588437954195351214}
   - component: {fileID: 1588437954195351217}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2244,7 +2244,7 @@ GameObject:
   - component: {fileID: 1588437954214374016}
   - component: {fileID: 1588437954214374078}
   - component: {fileID: 1588437954214374017}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2327,7 +2327,7 @@ GameObject:
   - component: {fileID: 1588437954234550573}
   - component: {fileID: 1588437954234550571}
   - component: {fileID: 1588437954234550570}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2410,7 +2410,7 @@ GameObject:
   - component: {fileID: 1588437954262112906}
   - component: {fileID: 1588437954262112904}
   - component: {fileID: 1588437954262112907}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2493,7 +2493,7 @@ GameObject:
   - component: {fileID: 1588437954274113111}
   - component: {fileID: 1588437954274113109}
   - component: {fileID: 1588437954274113108}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2576,7 +2576,7 @@ GameObject:
   - component: {fileID: 1588437954303350480}
   - component: {fileID: 1588437954303350478}
   - component: {fileID: 1588437954303350481}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2657,7 +2657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437954349103104}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2692,7 +2692,7 @@ GameObject:
   - component: {fileID: 1588437954374476446}
   - component: {fileID: 1588437954374476444}
   - component: {fileID: 1588437954374476447}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2776,7 +2776,7 @@ GameObject:
   - component: {fileID: 1588437954382894047}
   - component: {fileID: 1588437954382894046}
   - component: {fileID: 1588437954382893857}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2869,7 +2869,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437954412246866}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: BaseRockDecoration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2914,7 +2914,7 @@ GameObject:
   - component: {fileID: 1588437954440668844}
   - component: {fileID: 1588437954440668842}
   - component: {fileID: 1588437954440668845}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2998,7 +2998,7 @@ GameObject:
   - component: {fileID: 1588437954487718034}
   - component: {fileID: 1588437954487718037}
   - component: {fileID: 1588437954487718036}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3094,7 +3094,7 @@ GameObject:
   - component: {fileID: 1588437954500527049}
   - component: {fileID: 1588437954500527048}
   - component: {fileID: 1588437954500527051}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3189,7 +3189,7 @@ GameObject:
   - component: {fileID: 1588437954507600164}
   - component: {fileID: 1588437954507600162}
   - component: {fileID: 1588437954507600165}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3272,7 +3272,7 @@ GameObject:
   - component: {fileID: 1588437954543776984}
   - component: {fileID: 1588437954543776982}
   - component: {fileID: 1588437954543776985}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3356,7 +3356,7 @@ GameObject:
   - component: {fileID: 1588437954553343635}
   - component: {fileID: 1588437954553343634}
   - component: {fileID: 1588437954553343637}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3452,7 +3452,7 @@ GameObject:
   - component: {fileID: 1588437954656642139}
   - component: {fileID: 1588437954656642138}
   - component: {fileID: 1588437954656642141}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3548,7 +3548,7 @@ GameObject:
   - component: {fileID: 1588437954667875815}
   - component: {fileID: 1588437954667875814}
   - component: {fileID: 1588437954667875817}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3641,7 +3641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437954742032666}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3686,7 +3686,7 @@ GameObject:
   - component: {fileID: 1588437954767813370}
   - component: {fileID: 1588437954767813368}
   - component: {fileID: 1588437954767813371}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rock9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3769,7 +3769,7 @@ GameObject:
   - component: {fileID: 1588437954834308582}
   - component: {fileID: 1588437954834308580}
   - component: {fileID: 1588437954834308583}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3850,7 +3850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437954911775732}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: MeshParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3884,7 +3884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588437954918313172}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Crystal9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3919,7 +3919,7 @@ GameObject:
   - component: {fileID: 1588437955026942929}
   - component: {fileID: 1588437955026942927}
   - component: {fileID: 1588437955026942926}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OuterCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4003,7 +4003,7 @@ GameObject:
   - component: {fileID: 1588437955037120855}
   - component: {fileID: 1588437955037120854}
   - component: {fileID: 1588437955037120857}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: InnerCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4098,7 +4098,7 @@ GameObject:
   - component: {fileID: 1588437955041953724}
   - component: {fileID: 1588437955041953722}
   - component: {fileID: 1588437955041953725}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CrystalFoundation1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

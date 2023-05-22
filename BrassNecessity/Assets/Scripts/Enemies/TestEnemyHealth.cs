@@ -8,11 +8,9 @@ public class TestEnemyHealth : EnemyHealthHandler
     private float respawnTimeInSeconds = 3f;
     public override void DamageEnemy(float damageAmount)
     {
-        base.DamageEnemy(damageAmount);
-        if (Health < 0f)
+        takeDamage(damageAmount);
+        if (IsDead)
         {
-            Health = 0f;
-            IsDead = true;
             StartCoroutine(hideEnemy());
         }
     }

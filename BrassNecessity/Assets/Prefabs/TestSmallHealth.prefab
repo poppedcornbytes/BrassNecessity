@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4223991106620832639}
   - component: {fileID: 4223991106620832633}
   - component: {fileID: 4223991106620832638}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4223991106716063261}
   - component: {fileID: 4223991106716063263}
   - component: {fileID: 4223991106716063260}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4223991106879725209}
   - component: {fileID: 4223991106879725211}
   - component: {fileID: 4223991106879725208}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 4223991106916336870}
   - component: {fileID: 4223991106916336864}
   - component: {fileID: 4223991106916336865}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: VerticalBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4223991107121142088}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HealthIcon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4223991107613215801}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: MeshParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4223991107699368329}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Plaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 4223991107874026023}
   - component: {fileID: 4223991107874026020}
   - component: {fileID: 4223991107874026021}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Pad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 4223991107942427744}
   - component: {fileID: 4223991107942427746}
   - component: {fileID: 4223991107942427747}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HorizontalBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 4223991108000648892}
   - component: {fileID: 4223991108000648895}
   - component: {fileID: 4028986570739653797}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: TestSmallHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -40,8 +40,18 @@ public class PlayerCollisionHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        setPickupLayerMask();
         detectPickupCollision();
         detectEnemyNearbyCollision();
+    }
+
+    private void setPickupLayerMask()
+    {
+        int characterMask = LayerMask.NameToLayer("Character");
+        int elementMask = LayerMask.NameToLayer("ElementPickup");
+        int healthMask = LayerMask.NameToLayer("HealthPickup");
+        Physics.IgnoreLayerCollision(characterMask, elementMask, applyState.AtMaximumElements());
+        Physics.IgnoreLayerCollision(characterMask, healthMask, healthHandler.AtMaxHealth());
     }
 
     private void detectPickupCollision()
@@ -67,6 +77,7 @@ public class PlayerCollisionHandler : MonoBehaviour
             {
                 if (!healthHandler.AtMaxHealth())
                 {
+                    soundEffects.PlayOnce(SoundEffectKey.HealthPickup);
                     healthHandler.HealPlayer(healthItem.HealthValue);
                     healthItem.PickupItem();
                 }
