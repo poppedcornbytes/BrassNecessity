@@ -34,4 +34,29 @@ public class ControllerMoveData
 
     [Tooltip("The character controller of the game object this class is linked to.")]
     public CharacterController ControllerReference;
+
+    [SerializeField]
+    [Tooltip("A range used to adjust the sensitivity of certain properties in the move controller." +
+        "When set to 2, the existing value results in centring the default value to be the middle of the Sensitivity setting.")]
+    private float maximumSensitivityFactor = 2f;
+    [SerializeField]
+    private float minimumRotationSmoothTime = 0.025f;
+    [SerializeField]
+    private float maximumRotationSmoothTime = 0.3f;
+    [SerializeField]
+    private float minimumSpeedChangeRate = 5f;
+    [SerializeField]
+    private float maximumSpeedChangeRate = 50f;
+    public float GetSpeedChangeRate()
+    {
+        float speedChangeRange = maximumSpeedChangeRate - minimumRotationSmoothTime;
+        return (SettingsHandler.GetSensitivityFraction() * speedChangeRange) + minimumSpeedChangeRate;
+    }
+
+    public float GetRotationSmoothTime()
+    {
+        float inverseSensitivity = 1 - SettingsHandler.GetSensitivityFraction();
+        float rotationSmoothRange = maximumRotationSmoothTime - minimumRotationSmoothTime;
+        return (inverseSensitivity * rotationSmoothRange) + minimumRotationSmoothTime;
+    }
 }

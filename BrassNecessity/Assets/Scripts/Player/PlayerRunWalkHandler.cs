@@ -86,7 +86,7 @@ public class PlayerRunWalkHandler : ICartesianMoveHandler
             // creates curved result rather than a linear one giving a more organic speed change
             // note T in Lerp is clamped, so we don't need to clamp our speed
             speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude,
-                Time.deltaTime * controllerMoveData.SpeedChangeRate);
+                Time.deltaTime * controllerMoveData.GetSpeedChangeRate());
 
             // round speed to 3 decimal places
             speed = Mathf.Round(speed * 1000f) / 1000f;
@@ -109,7 +109,7 @@ public class PlayerRunWalkHandler : ICartesianMoveHandler
         {
             _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg;
             float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
-                controllerMoveData.RotationSmoothTime);
+                controllerMoveData.GetRotationSmoothTime());
 
             // rotate to face input direction relative to camera position
             transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
@@ -130,7 +130,7 @@ public class PlayerRunWalkHandler : ICartesianMoveHandler
 
     protected virtual float recalculateAnimationBlend(float targetSpeed)
     {
-        _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * controllerMoveData.SpeedChangeRate);
+        _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * controllerMoveData.GetSpeedChangeRate());
         if (_animationBlend < 0.01f)
         {
             _animationBlend = 0f;
