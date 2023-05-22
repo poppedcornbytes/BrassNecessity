@@ -19,7 +19,8 @@ public class MenuController : MonoBehaviour
     private FrameTimeoutHandler inputTimeoutHandler;
     private FrameTimeoutHandler startupTimeoutHandler;
     private IMenuNavigator buttonNavigator;
-
+    [SerializeField]
+    private float maximumSensitivityFactor = 2f;
     [SerializeField]
     private MenuUIBehaviour menuUI;
     public MenuUIBehaviour MenuUI
@@ -34,8 +35,9 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         buttonNavigator = GetComponent<IMenuNavigator>();
-        keyboardTimeoutHandler = new FrameTimeoutHandler(keyboardInputTimeoutInSeconds);
-        gamepadTimeoutHandler = new FrameTimeoutHandler(gamepadInputTimeoutInSeconds);
+        float sensitivityMultiplier = getSensitivityMultiplier();
+        keyboardTimeoutHandler = new FrameTimeoutHandler(keyboardInputTimeoutInSeconds * sensitivityMultiplier);
+        gamepadTimeoutHandler = new FrameTimeoutHandler(gamepadInputTimeoutInSeconds * sensitivityMultiplier);
         determineTimeout();
         startupTimeoutHandler = new FrameTimeoutHandler(menuStartupDelayInSeconds);
         if (menuUI == null)
@@ -72,7 +74,7 @@ public class MenuController : MonoBehaviour
         Vector2 navigationValue = buttonNavigator.GetMenuMovement();
         if (navigationValue != Vector2.zero){
             menuUI.NavigateToNextElement(navigationValue);
-            inputTimeoutHandler.ResetTimeout();
+            resetInputTimeouts();
         }
     }
 
@@ -94,5 +96,18 @@ public class MenuController : MonoBehaviour
         {
             inputTimeoutHandler = gamepadTimeoutHandler;
         }
+    }
+
+    private void resetInputTimeouts()
+    {
+        float sensitivityMultiplier = getSensitivityMultiplier();
+        keyboardTimeoutHandler.ResetTimeout(keyboardInputTimeoutInSeconds * sensitivityMultiplier);
+        gamepadTimeoutHandler.ResetTimeout(gamepadInputTimeoutInSeconds * sensitivityMultiplier);
+    }
+
+    private float getSensitivityMultiplier()
+    {
+        float inverseSensitivity = maximumSensitivityFactor * SettingsHandler.GetSensitivityFraction();
+        return maximumSensitivityFactor - inverseSensitivity;
     }
 }

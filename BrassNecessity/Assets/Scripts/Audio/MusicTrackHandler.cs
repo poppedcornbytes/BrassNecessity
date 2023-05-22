@@ -7,9 +7,11 @@ public class MusicTrackHandler : MonoBehaviour
     [SerializeField]
     private MusicKeyValue[] trackListing;
     private Dictionary<MusicKey, MusicKeyValue> trackMap;
+    private MusicKey currentTrack;
     [SerializeField]
     private float trackFadeTimeInSeconds = 0.5f;
     private int fadeSteps = 10;
+    private int lastVolumeSetting;
 
     private void Awake()
     {
@@ -19,11 +21,36 @@ public class MusicTrackHandler : MonoBehaviour
             trackMap.Add(trackListing[i].Key, trackListing[i]);
         }
         DefaultTrack defaultTrack = GetComponent<DefaultTrack>();
-        PlayTrack(defaultTrack.Track);
+        lastVolumeSetting = SettingsHandler.MusicVolumeSetting;
+        currentTrack = defaultTrack.Track;
+        PlayTrack(currentTrack);
+    }
+
+    private void Update()
+    {
+        if (lastVolumeSetting != SettingsHandler.MusicVolumeSetting)
+        {
+            UpdateVolume();
+            lastVolumeSetting = SettingsHandler.MusicVolumeSetting;
+        }
+    }
+
+    public void UpdateVolume()
+    {
+        MusicTrackData[] currentTracks = trackMap[currentTrack].Value;
+        for (int i = 0; i < currentTracks.Length; i++)
+        {
+            AudioSource playingSource = currentTracks[i].Source;
+            if (playingSource != null)
+            {
+                playingSource.volume = SettingsHandler.GetMusicVolumeFraction() * currentTracks[i].Volume;
+            }
+        }
     }
 
     public void PlayTrack(MusicKey key)
     {
+        currentTrack = key;
         MusicTrackData[] clipsToPlay = trackMap[key].Value;
         for (int i = 0; i < clipsToPlay.Length; i++)
         {
@@ -40,8 +67,10 @@ public class MusicTrackHandler : MonoBehaviour
         newSource.playOnAwake = true;
         newSource.loop = true;
         newSource.Play();
-        float fadeWaitTime = trackFadeTimeInSeconds / fadeSteps;
-        float volumeStepIncrease = trackData.Volume / fadeSteps;
+        trackData.Source = newSource;
+        float targetVolume = trackData.Volume * SettingsHandler.GetMusicVolumeFraction();
+        float fadeWaitTime = targetVolume / fadeSteps;
+        float volumeStepIncrease = targetVolume / fadeSteps;
         for (int i = 0; i < fadeSteps; i++)
         {
             newSource.volume += volumeStepIncrease;
@@ -51,12 +80,13 @@ public class MusicTrackHandler : MonoBehaviour
 
     public IEnumerator StopTrack()
     {
-        int fadeSteps = 10;
-        float fadeWaitTime = trackFadeTimeInSeconds / fadeSteps;
         AudioSource[] sources = GetComponents<AudioSource>();
         for (int i = 0; i < sources.Length; i++)
         {
-            StartCoroutine(fadeOutAudioSource(sources[i]));
+            if (sources[i] != null)
+            {
+                StartCoroutine(fadeOutAudioSource(sources[i]));
+            }
         }
         yield return new WaitForSeconds(trackFadeTimeInSeconds);
     }
