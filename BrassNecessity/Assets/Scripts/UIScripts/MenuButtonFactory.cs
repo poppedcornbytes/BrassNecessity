@@ -27,6 +27,9 @@ public class MenuButtonFactory
             case MenuButtonType.SaveSettingsClose:
                 buttonToCreate = new SaveSettingsCloseButton(buttonData, button);
                 break;
+            case MenuButtonType.CloseRevertMenu:
+                buttonToCreate = new CloseRevertMenuButton(buttonData, button);
+                break;
             default:
                 throw new System.ArgumentException("Button type " + type.ToString() + " not supported.");
         }

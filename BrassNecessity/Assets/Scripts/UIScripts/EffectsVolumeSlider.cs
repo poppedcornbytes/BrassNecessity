@@ -5,7 +5,10 @@ using UnityEngine.UIElements;
 
 public class EffectsVolumeSlider : GenericSlider
 {
-    public EffectsVolumeSlider(SliderData sliderData, SliderInt sliderElement) : base(sliderData, sliderElement) { }
+    public EffectsVolumeSlider(SliderData sliderData, SliderInt sliderElement) : base(sliderData, sliderElement) 
+    {
+        SetValue(SettingsHandler.EffectsVolumeSetting);
+    }
     public override void SetValue(int newValue)
     {
         base.SetValue(newValue);

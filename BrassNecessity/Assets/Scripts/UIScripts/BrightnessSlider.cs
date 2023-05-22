@@ -5,7 +5,10 @@ using UnityEngine.UIElements;
 
 public class BrightnessSlider : GenericSlider
 {
-    public BrightnessSlider(SliderData sliderData, SliderInt sliderElement) : base(sliderData, sliderElement) { } 
+    public BrightnessSlider(SliderData sliderData, SliderInt sliderElement) : base(sliderData, sliderElement) 
+    {
+        SetValue(SettingsHandler.BrightnessSetting);
+    } 
     public override void SetValue(int newValue)
     {
         base.SetValue(newValue);

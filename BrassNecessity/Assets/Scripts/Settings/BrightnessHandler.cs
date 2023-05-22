@@ -32,6 +32,7 @@ public class BrightnessHandler : MonoBehaviour
     {
         if (settingChanged())
         {
+            lastSettingValue = SettingsHandler.BrightnessSetting;
             postExposureProfile.postExposure.value = convertSettingToRange();
         }
     }

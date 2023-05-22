@@ -9,5 +9,6 @@ public enum MenuButtonType
     CloseMenu,
     QuitGame,
     SaveSettingsScene,
-    SaveSettingsClose
+    SaveSettingsClose,
+    CloseRevertMenu
 }
