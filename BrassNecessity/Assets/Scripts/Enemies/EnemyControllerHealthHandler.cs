@@ -7,7 +7,7 @@ public class EnemyControllerHealthHandler : EnemyHealthHandler
     EnemyController enemyController;
 
 
-    private new void Awake()
+    protected override void Awake()
     {
         base.Awake();
         enemyController = GetComponent<EnemyController>();
@@ -33,6 +33,7 @@ public class EnemyControllerHealthHandler : EnemyHealthHandler
         {
             Health = 0;
             IsDead = true;
+            soundEffects.PlayOnce(SoundEffectKey.EnemyDyingSound);
             DropItem();
             enemyController.EnemyHasDied();
         }

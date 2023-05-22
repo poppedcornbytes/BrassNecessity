@@ -97,8 +97,11 @@ public class MusicTrackHandler : MonoBehaviour
         float fadeWaitTime = trackFadeTimeInSeconds / fadeSteps;
         for (int i = 0; i < fadeSteps; i++)
         {
-            sourceToFade.volume -= stepVolumeChange;
-            yield return new WaitForSeconds(fadeWaitTime);
+            if (sourceToFade != null)
+            {
+                sourceToFade.volume -= stepVolumeChange;
+                yield return new WaitForSeconds(fadeWaitTime);
+            }
         }
         Destroy(sourceToFade);
     }

@@ -24,6 +24,7 @@ public class SceneNavigator : MonoBehaviour
         {
             GameObject.Destroy(this);
         }
+        SettingsHandler.LoadSettings();
     }
 
     static public void OpenScene(SceneKey key)
