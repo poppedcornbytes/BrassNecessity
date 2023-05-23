@@ -7,11 +7,11 @@ public class ElementComponent : MonoBehaviour
 {
     public ElementPair ElementInfo { get; private set; }
     [SerializeField]
-    private Element.Type primaryType;
+    protected Element.Type primaryType;
     [SerializeField]
     private Element.Type secondaryType;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         if (!Application.IsPlaying(gameObject))
         {

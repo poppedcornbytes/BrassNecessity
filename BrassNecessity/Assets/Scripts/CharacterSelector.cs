@@ -5,30 +5,23 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class CharacterSelector : MonoBehaviour
 {
-    [SerializeField]
-    [Range(0, 1)]
-    private int characterId = 0;
-    private int lastCharacterId = 0;
 
     [SerializeField]
     private SkinSelector skinSelector;
     private void Awake()
     {
+        int characterId = SettingsHandler.SelectedCharacterId;
+        if (skinSelector == null)
+        {
+            skinSelector = FindObjectOfType<SkinSelector>();
+        }
         skinSelector = GetComponent<SkinSelector>();
         skinSelector.SelectSkin(characterId);
     }
 
-    // Update is called once per frame
-    void Update()
+    public CharacterSkin GetCurrentCharacter()
     {
-        if (skinSelector == null)
-        {
-            skinSelector = GetComponent<SkinSelector>();
-        }
-        if (lastCharacterId != characterId)
-        {
-            skinSelector.SelectSkin(characterId);
-            lastCharacterId = characterId;
-        }
+        int characterId = SettingsHandler.SelectedCharacterId;
+        return skinSelector.GetSkin(characterId);
     }
 }
