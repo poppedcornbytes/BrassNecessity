@@ -7,10 +7,16 @@ using System;
 public class CharacterSkin
 {
     [SerializeField]
+    private string name;
+
+    [SerializeField]
     private GameObject mesh;
 
     [SerializeField]
     private GameObject[] accessories;
+
+    [SerializeField]
+    private Element.Type defaultType;
 
     public void ActivateSkin()
     {
@@ -30,5 +36,10 @@ public class CharacterSkin
         {
             accessories[i].SetActive(isActive);
         }
+    }
+
+    public Element.Type GetDefaultType()
+    {
+        return defaultType;
     }
 }

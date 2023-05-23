@@ -6,7 +6,7 @@ using System.Linq;
 
 public class ButtonMenuUIBehaviour : MenuUIBehaviour
 {
-    private int currentButton = 0;
+    protected int currentButton = 0;
     
     void OnEnable()
     {
@@ -72,5 +72,5 @@ public class ButtonMenuUIBehaviour : MenuUIBehaviour
         string buttonName = allButtonData[currentButton].ElementName;
         buttonMap[buttonName].Execute();
         isExecuting = false;
-    }
+    } 
 }

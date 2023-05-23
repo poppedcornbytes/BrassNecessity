@@ -317,6 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 718141375}
   - component: {fileID: 718141374}
+  - component: {fileID: 718141376}
   - component: {fileID: 718141373}
   m_Layer: 5
   m_Name: SelectMenu
@@ -332,7 +333,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718141372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bf70b9c0a493784293fdb1be786a320, type: 3}
   m_Name: 
@@ -385,6 +386,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &718141376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718141372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2700214a48d4844ba78389d2338971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allButtonData:
+  - elementName: Hero0Button
+    type: 0
+    sceneDestination: 4
+    activatedMenu: {fileID: 0}
+    hidMenu: {fileID: 0}
+    deactivatedMenu: {fileID: 0}
+    unhidMenu: {fileID: 0}
+  - elementName: Hero1Button
+    type: 0
+    sceneDestination: 4
+    activatedMenu: {fileID: 0}
+    hidMenu: {fileID: 0}
+    deactivatedMenu: {fileID: 0}
+    unhidMenu: {fileID: 0}
+  soundEffectHandler: {fileID: 775847571}
 --- !u!1001 &775847570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -576,7 +605,8 @@ MonoBehaviour:
   keyboardInputTimeoutInSeconds: 0.15
   gamepadInputTimeoutInSeconds: 0.25
   menuStartupDelayInSeconds: 0.5
-  menuUI: {fileID: 718141373}
+  maximumSensitivityFactor: 2
+  menuUI: {fileID: 718141376}
 --- !u!114 &957603577
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,6 +18,9 @@ public class ElementApplyState : MonoBehaviour, IControllerState
     private ControllerAnimationManager animationManager;
     [SerializeField]
     private int maximumElements = 10;
+    [SerializeField]
+    private CharacterSelector characterSelector;
+    private CharacterSkin characterInfo;
 
     private ElementComponent laserElement;
     private PlayerControllerInputs input;
@@ -41,6 +44,7 @@ public class ElementApplyState : MonoBehaviour, IControllerState
         input = GetComponentInParent<PlayerControllerInputs>();
         mover = new InputAgnosticMover(moveData, jumpData);
         mover.AddAnimationManager(animationManager);
+        characterInfo = characterSelector.GetCurrentCharacter();
     }
 
     public IControllerState NextState { get; set; }
@@ -62,7 +66,7 @@ public class ElementApplyState : MonoBehaviour, IControllerState
         else if (shouldUpdateWhenNoElements())
         {
             soundEffects.PlayOnce(SoundEffectKey.ElementEquip);
-            laserElement.SwitchType(Element.Type.None);
+            laserElement.SwitchType(characterInfo.GetDefaultType());
         }
         weaponBehaviour.ResetElement();
         NextState = this;
@@ -100,7 +104,7 @@ public class ElementApplyState : MonoBehaviour, IControllerState
 
     private bool shouldUpdateWhenNoElements()
     {
-        return laserElement.ElementInfo.Primary != Element.Type.None || weaponBehaviour.IsElementBroken;
+        return laserElement.ElementInfo.Primary != characterInfo.GetDefaultType() || weaponBehaviour.IsElementBroken;
     }
 
     public Queue<ElementComponent> GetElementsCopy()

@@ -31,4 +31,9 @@ public class SkinSelector : MonoBehaviour
             }
         }
     }
+
+    public CharacterSkin GetSkin(int index)
+    {
+        return skins[index];
+    }
 }

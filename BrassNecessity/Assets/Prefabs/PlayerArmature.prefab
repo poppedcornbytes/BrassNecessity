@@ -10133,8 +10133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1284542972368637840}
   - component: {fileID: 1284542972368637841}
-  - component: {fileID: 1929875350567918577}
   - component: {fileID: 1633739402821775920}
+  - component: {fileID: 8416264617037053479}
   m_Layer: 15
   m_Name: WeaponParent
   m_TagString: Untagged
@@ -10174,20 +10174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48948dfe9d76b07488dacd46a7955fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1929875350567918577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284542972368637847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1026f627270fe3847aee2d6268b7f35c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  primaryType: 0
-  secondaryType: 0
 --- !u!114 &1633739402821775920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10204,8 +10190,23 @@ MonoBehaviour:
   elementDurabiilityInSeconds: 5
   elementRechargeInSeconds: 1
   nonShootingCooldownFactor: 0.5
-  elementComponent: {fileID: 1929875350567918577}
+  elementComponent: {fileID: 8416264617037053479}
   elementBreakEffect: {fileID: 4585319490699721728}
+--- !u!114 &8416264617037053479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284542972368637847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22c16f744b2dd548b652ddfa542f8e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryType: 4
+  secondaryType: 0
+  characterSelector: {fileID: 6366320667428021991}
 --- !u!1 &1284542972395492363
 GameObject:
   m_ObjectHideFlags: 0
@@ -11526,6 +11527,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa973ca2b1d489e4fb174e5ec8d2514f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicTracks: {fileID: 0}
+  enemeyMask:
+    serializedVersion: 2
+    m_Bits: 0
+  enemyWarningRadius: 20
   soundEffects: {fileID: 0}
 --- !u!114 &6927468107037060106
 MonoBehaviour:
@@ -11540,6 +11546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 250
+  soundEffects: {fileID: 0}
 --- !u!1 &1284542972818562678
 GameObject:
   m_ObjectHideFlags: 0
@@ -12521,7 +12528,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skins:
-  - mesh: {fileID: 1284542972724526546}
+  - name: Norma
+    mesh: {fileID: 1284542972724526546}
     accessories:
     - {fileID: 1284542973145400955}
     - {fileID: 1284542973966242294}
@@ -12529,13 +12537,16 @@ MonoBehaviour:
     - {fileID: 1284542973885792260}
     - {fileID: 1284542973651135140}
     - {fileID: 1284542973075777698}
-  - mesh: {fileID: 1284542972395492363}
+    defaultType: 0
+  - name: Ulysses
+    mesh: {fileID: 1284542972395492363}
     accessories:
     - {fileID: 1284542973658635843}
     - {fileID: 1284542973033354423}
     - {fileID: 1284542973514691874}
     - {fileID: 1284542972718005251}
     - {fileID: 1284542974238619324}
+    defaultType: 4
 --- !u!114 &6366320667428021991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12548,7 +12559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1777e8119b8f74d99e8e4bffd69c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterId: 0
   skinSelector: {fileID: 1284542973263565699}
 --- !u!1 &1284542973287874708
 GameObject:
@@ -14418,6 +14428,11 @@ MonoBehaviour:
     SpeedChangeRate: 10
     TransformReference: {fileID: 1284542973745687367}
     ControllerReference: {fileID: 1284542972771108735}
+    maximumSensitivityFactor: 1.5
+    minimumRotationSmoothTime: 0.025
+    maximumRotationSmoothTime: 0.3
+    minimumSpeedChangeRate: 5
+    maximumSpeedChangeRate: 50
   _jumpData:
     JumpHeight: 1.2
     Gravity: -15
@@ -14469,6 +14484,11 @@ MonoBehaviour:
     SpeedChangeRate: 10
     TransformReference: {fileID: 1284542973745687367}
     ControllerReference: {fileID: 1284542972771108735}
+    maximumSensitivityFactor: 2
+    minimumRotationSmoothTime: 0.025
+    maximumRotationSmoothTime: 0.3
+    minimumSpeedChangeRate: 5
+    maximumSpeedChangeRate: 50
   jumpFallData:
     JumpHeight: 1.2
     Gravity: -15
@@ -14498,6 +14518,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   pauseController: {fileID: 8795210440699850410}
   menuStatus: {fileID: 0}
+  soundEffectHandler: {fileID: 0}
 --- !u!114 &7306625316006146723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14524,6 +14545,11 @@ MonoBehaviour:
     SpeedChangeRate: 10
     TransformReference: {fileID: 1284542973745687367}
     ControllerReference: {fileID: 1284542972771108735}
+    maximumSensitivityFactor: 2
+    minimumRotationSmoothTime: 0.025
+    maximumRotationSmoothTime: 0.3
+    minimumSpeedChangeRate: 5
+    maximumSpeedChangeRate: 50
   jumpData:
     JumpHeight: 1.2
     Gravity: -15
@@ -14544,6 +14570,7 @@ MonoBehaviour:
     FreeFallAnimationId: FreeFall
     MotionSpeedAnimationId: MotionSpeed
   maximumElements: 10
+  characterSelector: {fileID: 6366320667428021991}
   soundEffects: {fileID: 0}
 --- !u!114 &7946103091856784224
 MonoBehaviour:
@@ -14569,6 +14596,11 @@ MonoBehaviour:
     SpeedChangeRate: 10
     TransformReference: {fileID: 1284542973745687367}
     ControllerReference: {fileID: 1284542972771108735}
+    maximumSensitivityFactor: 2
+    minimumRotationSmoothTime: 0.025
+    maximumRotationSmoothTime: 0.3
+    minimumSpeedChangeRate: 5
+    maximumSpeedChangeRate: 50
   animData:
     SpeedAnimationId: Speed
     GroundAnimationId: Grounded
@@ -14889,7 +14921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1860676003138984718}
   - component: {fileID: 3196526151755586450}
-  - component: {fileID: 1035864696912869969}
+  - component: {fileID: 728888504465556015}
   m_Layer: 0
   m_Name: Battery
   m_TagString: Untagged
@@ -14929,7 +14961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750b59299c54d354490cafc77e2fd747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elementInfo: {fileID: 1929875350567918577}
+  elementInfo: {fileID: 8416264617037053479}
   data: {fileID: 0}
   batteryTanks:
   - {fileID: 1634061204427272555}
@@ -14938,7 +14970,7 @@ MonoBehaviour:
   batteryLights:
   - {fileID: 1841247238257814896}
   - {fileID: 5973117861471286234}
---- !u!114 &1035864696912869969
+--- !u!114 &728888504465556015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14947,11 +14979,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4316918194642157910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1026f627270fe3847aee2d6268b7f35c, type: 3}
+  m_Script: {fileID: 11500000, guid: f22c16f744b2dd548b652ddfa542f8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryType: 0
+  primaryType: 4
   secondaryType: 0
+  characterSelector: {fileID: 6366320667428021991}
 --- !u!1 &4377867836706169561
 GameObject:
   m_ObjectHideFlags: 0
@@ -15289,7 +15322,7 @@ GameObject:
   - component: {fileID: 6247546299489468248}
   - component: {fileID: 4768331873296957704}
   - component: {fileID: 2380083290337073056}
-  - component: {fileID: 6453319552546567667}
+  - component: {fileID: 921411561787577083}
   m_Layer: 15
   m_Name: Battery
   m_TagString: Untagged
@@ -15333,7 +15366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750b59299c54d354490cafc77e2fd747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elementInfo: {fileID: 1929875350567918577}
+  elementInfo: {fileID: 8416264617037053479}
   data: {fileID: 0}
   batteryTanks:
   - {fileID: 3774873772411979122}
@@ -15357,12 +15390,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10df2b247d3d0444816300a2cf82835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elementComponent: {fileID: 1929875350567918577}
+  elementComponent: {fileID: 8416264617037053479}
   data: {fileID: 0}
   laser: {fileID: 5709255912631209609}
   laserSplash: {fileID: 2655791514821328396}
   laserBaseEffect: {fileID: 705171333}
---- !u!114 &6453319552546567667
+--- !u!114 &921411561787577083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15371,11 +15404,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5743481563081479507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1026f627270fe3847aee2d6268b7f35c, type: 3}
+  m_Script: {fileID: 11500000, guid: f22c16f744b2dd548b652ddfa542f8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryType: 0
+  primaryType: 4
   secondaryType: 0
+  characterSelector: {fileID: 6366320667428021991}
 --- !u!1 &5934920227157570369
 GameObject:
   m_ObjectHideFlags: 0
@@ -15597,7 +15631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 985679835629359815}
   - component: {fileID: 3062146372022372203}
-  - component: {fileID: 505947533586711828}
+  - component: {fileID: 1097615815780657146}
   m_Layer: 0
   m_Name: Battery
   m_TagString: Untagged
@@ -15635,14 +15669,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750b59299c54d354490cafc77e2fd747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elementInfo: {fileID: 1929875350567918577}
+  elementInfo: {fileID: 8416264617037053479}
   data: {fileID: 0}
   batteryTanks:
   - {fileID: 6180390361641601458}
   - {fileID: 8567694515043149943}
   batteryLights:
   - {fileID: 7569883011475483982}
---- !u!114 &505947533586711828
+--- !u!114 &1097615815780657146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15651,11 +15685,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6979257134355004558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1026f627270fe3847aee2d6268b7f35c, type: 3}
+  m_Script: {fileID: 11500000, guid: f22c16f744b2dd548b652ddfa542f8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryType: 0
+  primaryType: 4
   secondaryType: 0
+  characterSelector: {fileID: 6366320667428021991}
 --- !u!1 &7447493750349856868
 GameObject:
   m_ObjectHideFlags: 0
@@ -15804,6 +15839,7 @@ MonoBehaviour:
   keyboardInputTimeoutInSeconds: 0.15
   gamepadInputTimeoutInSeconds: 0.4
   menuStartupDelayInSeconds: 0.5
+  maximumSensitivityFactor: 2
   menuUI: {fileID: 0}
 --- !u!1 &7678560713514411845
 GameObject:
@@ -16716,7 +16752,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32768
   baseDamagePerSecond: 15
-  weaponElement: {fileID: 1929875350567918577}
+  weaponElement: {fileID: 8416264617037053479}
   impactEffect: {fileID: 705171333}
   soundEffects: {fileID: 8960072394885046871}
 --- !u!114 &8960072394885046871
