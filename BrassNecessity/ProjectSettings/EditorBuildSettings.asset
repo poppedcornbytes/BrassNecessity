@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterSelectScreen.unity
     guid: ebccc3e0277c4074f9b4eb9a93a392b6
   - enabled: 1
+    path: Assets/Scenes/ControlExplanation.unity
+    guid: ab91e141fa4f93a408dca4c9a1c75a10
+  - enabled: 1
     path: Assets/Scenes/DungeonArena_v1 (Zack sandbox).unity
     guid: b7770d49029ef4d4f9b5e32cb9775c88
   - enabled: 1

@@ -725,7 +725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a674b110a27624bbbd51a56115207b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creditsFilepath: Assets/Credits.txt
+  creditsFileAsset: {fileID: 4900000, guid: 60de93b5dce05bb469fd733e16403b87, type: 3}
+  creditsFilepath: Assets/Resources/Credits.txt
   continueMessage: {fileID: 904441363}
 --- !u!1001 &1167573002
 PrefabInstance:

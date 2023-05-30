@@ -7,6 +7,8 @@ using UnityEngine.UIElements;
 public class CreditsGenerator : MonoBehaviour
 {
     [SerializeField]
+    private TextAsset creditsFileAsset;
+    [SerializeField]
     private string creditsFilepath;
     [SerializeField]
     private GameObject continueMessage;
@@ -19,20 +21,19 @@ public class CreditsGenerator : MonoBehaviour
         VisualElement rootVisualElement = GetComponent<UIDocument>().rootVisualElement;
         creditsElement = rootVisualElement.Q<VisualElement>("CreditElement");
         creditsElement.Clear();
-        creditsFile = new StreamReader(creditsFilepath);
         StartCoroutine(creditsCrawlRoutine());
     }
 
     private IEnumerator creditsCrawlRoutine()
     {
-        while (!creditsFile.EndOfStream)
+        string[] creditText = creditsFileAsset.text.Split('\n');
+        for (int i = 0; i < creditText.Length; i++)
         {
-            string creditInfo = creditsFile.ReadLine();
+            string creditInfo = creditText[i];
             CreditLine lineToCrawl = new CreditLine(creditInfo, creditsElement);
             StartCoroutine(creditLineDestroy(lineToCrawl));
             yield return new WaitForSeconds(0.2f);
         }
-        creditsFile.Close();
     }
 
     private IEnumerator creditLineDestroy(CreditLine lineToDestroy)

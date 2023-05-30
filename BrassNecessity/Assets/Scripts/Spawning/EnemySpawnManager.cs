@@ -1,9 +1,4 @@
-using Palmmedia.ReportGenerator.Core.Parser.Analysis;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using Unity.Collections;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
@@ -40,6 +35,14 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
 
     }
 
+    private void Update()
+    {
+        if (AllAreMonstersEliminated())
+        {
+            CallSpawnEndEvent();
+        }
+    }
+
 
     private void SpawnCheck()
     {
@@ -56,11 +59,6 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
         if (remainingEnemiesToBeSpawned > 0)
         {
             StartCoroutine(SpawnCountDown(spawnCheckInterval));
-        }
-
-        if (AreAllMonstersEliminated())
-        {
-            CallSpawnEndEvent();
         }
     }
 
@@ -106,10 +104,7 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
     private Element.Type ChooseElement()
     {
         // *** CODE NEEDS UPDATING TO RANDOMISE OR LOOP ***
-        int randomElementNum = Random.Range(1, 4);
-        //Debug.Log("Random element number = " +  randomElementNum);
-
-        return (Element.Type) randomElementNum;    // Casts the integer as the Element.Type enum value
+        return Element.GenerateRandomType();
         //return Element.Type.Nuclear;
     }
 
@@ -142,7 +137,7 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
         return chosenSpawnPoint;
     }
 
-    public bool AreAllMonstersEliminated()
+    public bool AllAreMonstersEliminated()
     {
         return remainingEnemiesToBeSpawned == 0 && spawnedEnemiesHolder.childCount == 0;
     }

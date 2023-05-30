@@ -88,9 +88,9 @@ MonoBehaviour:
       pitch: 0.8
   - key: 4
     value:
-    - clip: {fileID: 8300000, guid: bc6a3a5b3f37dc04280bb2fa61736e68, type: 3}
+    - clip: {fileID: 8300000, guid: 0abd1b46f559d534b9ecf345dc1b3e94, type: 3}
       Source: {fileID: 0}
-      volume: 0.1
+      volume: 0.2
       pitch: 1
     - clip: {fileID: 8300000, guid: 01131df438370f74b95777b03c5b0dde, type: 3}
       Source: {fileID: 0}
@@ -223,19 +223,19 @@ MonoBehaviour:
   - key: 5
     value: {fileID: 8300000, guid: 0873d061506a685499b94e4a0c24c1ec, type: 3}
   - key: 6
-    value: {fileID: 8300000, guid: 0873d061506a685499b94e4a0c24c1ec, type: 3}
+    value: {fileID: 8300000, guid: 79f040421f6f0fa4c91b0d62f10a87d5, type: 3}
   - key: 7
     value: {fileID: 8300000, guid: 0873d061506a685499b94e4a0c24c1ec, type: 3}
   - key: 8
-    value: {fileID: 8300000, guid: 0873d061506a685499b94e4a0c24c1ec, type: 3}
+    value: {fileID: 8300000, guid: d352c28956d5a3a4f9788431cddc57b9, type: 3}
   - key: 9
-    value: {fileID: 8300000, guid: 0873d061506a685499b94e4a0c24c1ec, type: 3}
+    value: {fileID: 8300000, guid: ea7da15a6f36ace41a8a3d69711f5341, type: 3}
   - key: 10
-    value: {fileID: 8300000, guid: 0873d061506a685499b94e4a0c24c1ec, type: 3}
+    value: {fileID: 8300000, guid: 08add64404d036e4490cda07c38e2a06, type: 3}
   - key: 11
-    value: {fileID: 8300000, guid: 0873d061506a685499b94e4a0c24c1ec, type: 3}
+    value: {fileID: 8300000, guid: 652208d9f54f42a4784169204be31549, type: 3}
   - key: 12
-    value: {fileID: 8300000, guid: 0873d061506a685499b94e4a0c24c1ec, type: 3}
+    value: {fileID: 8300000, guid: 96aee06c13287384b8492c0874a7fbe9, type: 3}
   - key: 13
     value: {fileID: 8300000, guid: 608e0c5f8d9f60d4a8b1b4c671069a0a, type: 3}
   - key: 14
@@ -246,6 +246,14 @@ MonoBehaviour:
     value: {fileID: 8300000, guid: 27a27eb1bb7f6984384903ed5f67ac65, type: 3}
   - key: 17
     value: {fileID: 8300000, guid: a7124be7819e3b9479532a601301b18e, type: 3}
+  - key: 18
+    value: {fileID: 8300000, guid: c074856109a32844a856d8266a177aa1, type: 3}
+  - key: 19
+    value: {fileID: 8300000, guid: f9355028ee38a564f9da9a444ce063df, type: 3}
+  - key: 20
+    value: {fileID: 8300000, guid: 4bf962ad76811a74a85ee71e7042ae35, type: 3}
+  - key: 21
+    value: {fileID: 8300000, guid: 0d403f5a1d87b54419c5f53d08a16307, type: 3}
   playerCameraListener: {fileID: 0}
 --- !u!82 &1590070985722693953
 AudioSource:

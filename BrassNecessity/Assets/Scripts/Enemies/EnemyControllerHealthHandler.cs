@@ -36,6 +36,7 @@ public class EnemyControllerHealthHandler : EnemyHealthHandler
             soundEffects.PlayOnce(SoundEffectKey.EnemyDyingSound);
             DropItem();
             enemyController.EnemyHasDied();
+            CallDestroyEvent();
         }
     }
 

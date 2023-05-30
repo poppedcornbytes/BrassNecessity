@@ -1,0 +1,63 @@
+# Brass Necessity 
+
+## Leads
+
+Zack Turman
+Tim Phillips
+
+## Assets
+
+### 3D Modeling
+Low Poly Alien World
+Lowpoly Dungeon Assets
+Mini Legion Grunt PBR HP Polyart
+Mini Legion Golem PBR HP Polyart
+Mobile (Not in current use)
+Polygon Battle Royale
+Synty Polygon Dungeon
+
+### Animation
+Kevin Iglesias Animations
+
+### Visual Effects
+Volumetric Lines
+JMO Assets
+
+### Audio
+Casual Game Sounds
+Free horror ambience 2
+Free Pack
+Horror Starter Pack
+RPG Game Music
+Sc-Fi Music
+Sound Bits_Free SFX_2020
+
+## Unity Technologies - Unity Engine
+
+### 3D Characters and Animation
+Cinemachine
+Timeline
+Animation Rigging (By default)
+FBX Exporter (By default)
+
+### Engineering
+Input System
+JetBrains Rider Editor (Not in current use)
+Visual Studio Code Editor (Not in current use)
+Visual Studio Editor
+Code Coverage (By default)
+Editor Coroutines (By default)
+Profile Analyzer (By default)
+Test Framework (Not in current use)
+
+### Others
+TextMeshPro
+Unity UI
+Universal RP
+Version Control (Not in current use)
+Visual Scripting (Not in current use)
+Burst (Not in current use) (By default)
+Core RP Library (By default)
+Mathematics (By default)
+Shader Graph (By default)
+

@@ -23,5 +23,7 @@ public enum SoundEffectKey
     PopupMenuOpen,
     PopupMenuClose,
     PlayerInjuredSound,
-    PlayerDyingSound
+    PlayerDyingSound,
+    LevelChange,
+    OpeningCredits
 }

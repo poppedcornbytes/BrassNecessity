@@ -15,4 +15,12 @@ public class PortalComponents : MonoBehaviour
     public SpriteRenderer OuterPortal;
     public SpriteRenderer PortalMarks;
     public Animator SpriteAnimator;
+
+    private void Awake()
+    {
+        if (PortalThemes == null)
+        {
+            PortalThemes = FindObjectOfType<PortalThemes>();
+        }
+    }
 }
