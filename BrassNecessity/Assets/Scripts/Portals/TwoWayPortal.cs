@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwoWayPortal : PortalBehaviour
+public class TwoWayPortal : PortalBehaviour, IArrivalEventHandler
 {
     [SerializeField]
     private TwoWayPortal siblingPortal;
     private HashSet<GameObject> arrivedObjects;
+    private GameEvents.ArrivalEvent OnArrivalEvent;
 
     protected override void Awake()
     {
@@ -47,6 +48,25 @@ public class TwoWayPortal : PortalBehaviour
         if (!arrivedObjects.Contains(arrivingObject))
         {
             arrivedObjects.Add(arrivingObject);
+            CallArrivalEvent();
+        }
+    }
+
+    public void AddArrivalEvent(GameEvents.ArrivalEvent eventToAdd)
+    {
+        OnArrivalEvent += eventToAdd;
+    }
+
+    public void RemoveArrivalEvent(GameEvents.ArrivalEvent eventToRemove)
+    {
+        OnArrivalEvent -= eventToRemove;
+    }
+
+    public void CallArrivalEvent()
+    {
+        if (OnArrivalEvent != null)
+        {
+            OnArrivalEvent();
         }
     }
 }

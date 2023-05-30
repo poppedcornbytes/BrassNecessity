@@ -56,11 +56,13 @@ MonoBehaviour:
   - key: 3
     value: SettingsScreen
   - key: 4
-    value: DungeonArena_v1 (Tim sandbox)
+    value: Demo
   - key: 5
     value: GameOverScreen
   - key: 6
     value: EndCredits
+  - key: 7
+    value: ControlExplanation
 --- !u!114 &3669128043078521834
 MonoBehaviour:
   m_ObjectHideFlags: 0
