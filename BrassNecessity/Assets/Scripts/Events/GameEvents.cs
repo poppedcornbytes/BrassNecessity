@@ -8,4 +8,5 @@ public class GameEvents : MonoBehaviour
     public delegate void ExitEvent();
     public delegate void EnterEvent();
     public delegate void SpawnEndEvent();
+    public delegate void ArrivalEvent();
 }

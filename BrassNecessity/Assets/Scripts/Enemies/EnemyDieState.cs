@@ -36,7 +36,7 @@ public class EnemyDieState : EnemyBaseState
         // Remove the dead body
         //Object.Destroy(context.gameObject);
         context.gameObject.SetActive(false);
-        
+        Object.Destroy(context.gameObject);
     }
 
 

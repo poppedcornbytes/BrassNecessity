@@ -2,63 +2,59 @@
 
 
 ## Leads
-
-Tim Phillips
 Zack Turman
+Tim Phillips
 
 ## Assets
-
 ### 3D Modeling
-Low Poly Alien World
-Lowpoly Dungeon Assets
-Mini Legion Grunt PBR HP Polyart
-Mini Legion Golem PBR HP Polyart
-Mobile (Not in current use)
-Polygon Battle Royale
-Synty Polygon Dungeon
-
+Lowpoly Dungeon Assets by Synty Studios
+Polygon Battle Royale by Synty Studios
 ### Animation
-Kevin Iglesias Animations
-
+Character Animations by Kevin Iglesias Animations
 ### Visual Effects
-Volumetric Lines
-JMO Assets
-
-### Audio
-Casual Game Sounds
-Free horror ambience 2
-Free Pack
-Horror Starter Pack
-RPG Game Music
-Sc-Fi Music
-Sound Bits_Free SFX_2020
+Volumetric Lines by Johannes Unterguggenberger
+Cartoon FX Remaster Free by Jean Moreno
+### Music
+Exploring Space 3 by Andrew Isaias
+With love (37) by Vertex Studio
+Dark_SciFi_Drone_Mixed_017 by SoundBits
+StreetLove by Rizwan Ashraf
+With love (16) by Vertex Studio
+AbstractAmbiences_04-Layer_03_Stuttering-Screeches by SoundBits
+With love (36) by Vertex Studio
+sp-horrormane by N91music
+Electricity by Devtrap
+### SoundEffects
+Antiques_Adding-Machine-Lever_A_05 by SoundBits
+Metal impact 5_Quiet by Olivier Girardot
+DM-CGS-30 by Dustyroom
+DM-CGS-13 by Dustyroom
+BSL-Levers_Sliders_139 by SoundBits
+Just_Transitions_Creepy-031 by SoundBits
+UI_Buildcomplete_Mono_01 by Sound Works 12
+UI_Buildcommence_Mono_01 by Sound Works 12
+UI_Buildfail_Mono_01 by Sound Works 12
+UI_NotificationPower_Mono_01 by Sound Works 12
+UI_SelectResource_Mono_01 by Sound Works 12
+UI_Buttonhover_Mono_01 by Sound Works 12
+UI_Buttongeneral_Mono_02 by Sound Works 12
+UI_MenuResearchItemClick_Mono_01 by Sound Works 12
+UI_Alertgeneral_Mono_01 by Sound Works 12
+UI_CreateRoute_Mono_02 by Sound Works 12
+UI_Select_Mono_02 by Sound Works 12
+UI_Clean_Stereo_01 by Sound Works 12
+UI_PlaceObjectGround_Mono_01 by Sound Works 12
+Just_Transitions_Transitions_18 by SoundBits
 
 ## Unity Technologies - Unity Engine
-
 ### 3D Characters and Animation
 Cinemachine
 Timeline
-Animation Rigging (By default)
-FBX Exporter (By default)
-
 ### Engineering
 Input System
-JetBrains Rider Editor (Not in current use)
-Visual Studio Code Editor (Not in current use)
-Visual Studio Editor
-Code Coverage (By default)
-Editor Coroutines (By default)
-Profile Analyzer (By default)
-Test Framework (Not in current use)
-
 ### Others
 TextMeshPro
 Unity UI
 Universal RP
-Version Control (Not in current use)
-Visual Scripting (Not in current use)
-Burst (Not in current use) (By default)
-Core RP Library (By default)
-Mathematics (By default)
-Shader Graph (By default)
+
 

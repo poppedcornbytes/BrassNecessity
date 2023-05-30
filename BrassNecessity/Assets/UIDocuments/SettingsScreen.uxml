@@ -15,7 +15,7 @@
             <ui:Button text="Exit" display-tooltip-when-elided="true" name="ExitButton" class="menuButton" />
         </ui:VisualElement>
         <ui:VisualElement>
-            <ui:Label text="Press L to select." display-tooltip-when-elided="true" name="InstructionLabel" style="color: rgb(255, 255, 255); font-size: 18px;" />
+            <ui:Label text="Press J to select." display-tooltip-when-elided="true" name="InstructionLabel" style="color: rgb(255, 255, 255); font-size: 18px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

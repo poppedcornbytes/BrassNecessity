@@ -17,6 +17,7 @@ public static class SettingsHandler
     private static readonly string BRIGHTNESS_KEY = "Brightness";
     private static readonly string MUSIC_VOLUME_KEY = "MusicVolume";
     private static readonly string EFFECTS_VOLUME_KEY = "EffectsVolume";
+    private static readonly string HAS_READ_CONTROLS_KEY = "HasReadControls";
 
     public static void SaveSettings()
     {
@@ -53,6 +54,30 @@ public static class SettingsHandler
             settingValue = DEFAULT_VALUE;
         }
         return settingValue;
+    }
+
+    public static bool GetHasReadControls()
+    {
+        bool hasRead = false;
+        if (PlayerPrefs.HasKey(HAS_READ_CONTROLS_KEY))
+        {
+            int readValue = PlayerPrefs.GetInt(HAS_READ_CONTROLS_KEY);
+            if (readValue == 1)
+            {
+                hasRead = true;
+            }
+        }
+        return hasRead;
+    }
+
+    public static void SetHasReadControls(bool hasRead)
+    {
+        int value = 0;
+        if (hasRead)
+        {
+            value = 1;
+        }
+        PlayerPrefs.SetInt(HAS_READ_CONTROLS_KEY, value);
     }
 
     public static void SetSelectCharacterId(int characterId)
