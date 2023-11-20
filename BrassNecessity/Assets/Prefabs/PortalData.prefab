@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8856713462094597291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8856713462094597289}
+  - component: {fileID: 8856713462094597288}
+  m_Layer: 0
+  m_Name: PortalData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8856713462094597289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856713462094597291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.01406, y: -21.814754, z: 36.881004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8856713462094597288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856713462094597291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a424c66484865e4b88277283e18b9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorSchemes:
+  - primaryColor: {r: 0.58431375, g: 0, b: 1, a: 1}
+    secondaryColor: {r: 0.94509804, g: 0.11764706, b: 1, a: 1}
+    accentColor: {r: 0, g: 1, b: 0.98039216, a: 1}
+  - primaryColor: {r: 0.032271646, g: 0.26415092, b: 0.008721969, a: 1}
+    secondaryColor: {r: 0.16420433, g: 0.8490566, b: 0.29188278, a: 1}
+    accentColor: {r: 0.5617253, g: 0.735849, b: 0.03818085, a: 1}
+  - primaryColor: {r: 0, g: 0, b: 0, a: 1}
+    secondaryColor: {r: 0.3283503, g: 0.30860624, b: 0.6886792, a: 1}
+    accentColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
+  - primaryColor: {r: 0.21444464, g: 0.40816268, b: 0.5754717, a: 1}
+    secondaryColor: {r: 0.09985758, g: 0.12659627, b: 0.41509432, a: 1}
+    accentColor: {r: 0.14048593, g: 0.7264151, b: 0.60673046, a: 1}
+  - primaryColor: {r: 0.7735849, g: 0.47628564, b: 0, a: 1}
+    secondaryColor: {r: 0.8301887, g: 0.8272353, b: 0.30153078, a: 1}
+    accentColor: {r: 1, g: 0.18396229, b: 0.18396229, a: 1}
+  - primaryColor: {r: 0.5283019, g: 0, b: 0.03198829, a: 1}
+    secondaryColor: {r: 0.8584906, g: 0.08503916, b: 0.23009007, a: 1}
+    accentColor: {r: 0.6285762, g: 0.29067284, b: 0.8679245, a: 1}
+  - primaryColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
+    secondaryColor: {r: 0.44313726, g: 0.44313726, b: 0.44313726, a: 1}
+    accentColor: {r: 0.5754717, g: 0.5727572, b: 0.5727572, a: 1}
+  - primaryColor: {r: 0.8830738, g: 0.8867924, b: 0.12967247, a: 1}
+    secondaryColor: {r: 1, g: 0.8639269, b: 0.28773582, a: 1}
+    accentColor: {r: 1, g: 0.8123387, b: 0.6839622, a: 1}
+  disabledScheme:
+    primaryColor: {r: 0.25490198, g: 0.25490198, b: 0.25490198, a: 1}
+    secondaryColor: {r: 0.44313726, g: 0.44313726, b: 0.44313726, a: 1}
+    accentColor: {r: 0.5764706, g: 0.57254905, b: 0.57254905, a: 1}

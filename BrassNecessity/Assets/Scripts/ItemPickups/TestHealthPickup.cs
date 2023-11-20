@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestHealthPickup : HealthPickup, IDestroyEventHandler
+public class TestHealthPickup : HealthPickup
 {
     [SerializeField]
     private float respawnDelayInSeconds = 3f;
@@ -11,7 +11,6 @@ public class TestHealthPickup : HealthPickup, IDestroyEventHandler
     private GameObject[] itemsToHide = new GameObject[0];
 
     private TestItemPickup testPickup;
-    private GameEvents.DestroyEvent OnDestroyEvent;
 
     protected override void Awake()
     {
@@ -23,24 +22,6 @@ public class TestHealthPickup : HealthPickup, IDestroyEventHandler
     {
         CallDestroyEvent();
         testPickup.PickupItem(respawnDelayInSeconds);
-    }
-
-    public void AddDestroyEvent(GameEvents.DestroyEvent eventToAdd)
-    {
-        OnDestroyEvent += eventToAdd;
-    }
-
-    public void RemoveDestroyEvent(GameEvents.DestroyEvent eventToRemove)
-    {
-        OnDestroyEvent -= eventToRemove;
-    }
-
-    public void CallDestroyEvent()
-    {
-        if (OnDestroyEvent != null)
-        {
-            OnDestroyEvent();
-        }
     }
 }
   

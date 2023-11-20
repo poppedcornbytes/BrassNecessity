@@ -6,34 +6,34 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/OpeningCinematic.unity
+    path: Assets/Scenes/Menus/OpeningCinematic.unity
     guid: 7e0052e8903f85247ac5f6a444ebcb23
   - enabled: 1
-    path: Assets/Scenes/StartScreen.unity
+    path: Assets/Scenes/Menus/StartScreen.unity
     guid: 5bf60b62bcd688343ba6ec84963d1191
   - enabled: 1
-    path: Assets/Scenes/SettingsScreen.unity
+    path: Assets/Scenes/Menus/SettingsScreen.unity
     guid: 37cf46a83c1427b4084c144d86f7fa23
   - enabled: 1
-    path: Assets/Scenes/CharacterSelectScreen.unity
+    path: Assets/Scenes/Menus/CharacterSelectScreen.unity
     guid: ebccc3e0277c4074f9b4eb9a93a392b6
   - enabled: 1
-    path: Assets/Scenes/ControlExplanation.unity
+    path: Assets/Scenes/Menus/ControlExplanation.unity
     guid: ab91e141fa4f93a408dca4c9a1c75a10
   - enabled: 1
-    path: Assets/Scenes/DungeonArena_v1 (Zack sandbox).unity
+    path: Assets/Scenes/Old/DungeonArena_v1 (Zack sandbox).unity
     guid: b7770d49029ef4d4f9b5e32cb9775c88
   - enabled: 1
-    path: Assets/Scenes/DungeonArena_v1 (Tim sandbox).unity
+    path: Assets/Scenes/Old/DungeonArena_v1 (Tim sandbox).unity
     guid: 4cc5ce1b09c19ac489bdd1280873d59e
   - enabled: 1
     path: Assets/Scenes/MainGame.unity
     guid: 1aab00fde8c5016438487f1c136985aa
   - enabled: 1
-    path: Assets/Scenes/GameOverScreen.unity
+    path: Assets/Scenes/Menus/GameOverScreen.unity
     guid: a7416c602c9fdb048aef7480dffb553b
   - enabled: 1
-    path: Assets/Scenes/EndCredits.unity
+    path: Assets/Scenes/Menus/EndCredits.unity
     guid: 15ac868647b902442ab85de08e182972
   - enabled: 1
     path: Assets/Scenes/Demo.unity
