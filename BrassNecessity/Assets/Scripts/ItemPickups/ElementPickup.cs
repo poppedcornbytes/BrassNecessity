@@ -15,6 +15,8 @@ public class ElementPickup : ItemPickup
 
     [SerializeField]
     private float disappearTimeoutInSeconds = 10f;
+    [SerializeField]
+    private bool canDespawn = true;
     private FrameTimeoutHandler disappearTimeoutHandler;
 
     protected virtual void Awake()
@@ -28,6 +30,14 @@ public class ElementPickup : ItemPickup
 
     protected virtual void Update()
     {
+        if (canDespawn)
+        {
+            updateDespawn();
+        }
+    }
+
+    private void updateDespawn()
+    {
         disappearTimeoutHandler.UpdateTimePassed(Time.deltaTime);
         if (disappearTimeoutHandler.HasTimeoutEnded())
         {
@@ -37,6 +47,7 @@ public class ElementPickup : ItemPickup
 
     public override void PickupItem()
     {
+        CallDestroyEvent();
         base.PickupItem();
     }
 }
