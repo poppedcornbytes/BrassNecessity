@@ -35,7 +35,6 @@ public static class SettingsHandler
 
     public static void LoadSettings()
     {
-        Debug.Log("Loading settings");
         SensitivitySetting = loadSettingFromPrefs(SENSITIVITY_KEY);
         BrightnessSetting = loadSettingFromPrefs(BRIGHTNESS_KEY);
         MusicVolumeSetting = loadSettingFromPrefs(MUSIC_VOLUME_KEY);
