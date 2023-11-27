@@ -5,7 +5,7 @@ using System;
 
 public class ElementPair
 {
-    [SerializeReference]
+    [SerializeField]
     private Element.Type _primary;
     public Element.Type Primary 
     { 
@@ -13,7 +13,7 @@ public class ElementPair
         private set => _primary = value; 
     }
 
-    [SerializeReference]
+    [SerializeField]
     private Element.Type _secondary;
     public Element.Type Secondary 
     { 
@@ -45,6 +45,10 @@ public class ElementPair
         if (Secondary != Element.Type.None)
         {
             finalMultiplier *= ElementMultiplierGrid.GetAttackMultiplier(Secondary, defendingType.Secondary);
+        }
+        else if (defendingType.Secondary != Element.Type.None)
+        {
+            finalMultiplier *= ElementMultiplierGrid.GetAttackMultiplier(Primary, defendingType.Secondary);
         }
         return finalMultiplier;
     }

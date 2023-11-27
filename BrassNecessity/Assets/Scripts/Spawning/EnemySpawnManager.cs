@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(BaseElementStrategy))]
 public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
 {
     public int totalLevelEnemies = 5;      // Total number of enemies in the level
@@ -9,7 +10,8 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
     public GameObject[] spawnPoints;       // Each game object marks the location of a spawnPoint
     public GameObject[] enemyPrefabs;      // *** Will need updating later to enable multiple enemy prefabs ***
     public Transform spawnedEnemiesHolder;    // Each spawned enemy will be made a child of this gameobject, to keep them neatly grouped in the scene hierarchy
-
+    [SerializeField]
+    private BaseElementStrategy elementStrategy;
 
     int remainingEnemiesToBeSpawned;
     int currentSpawnedEnemies;
@@ -101,11 +103,9 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
     }
 
 
-    private Element.Type ChooseElement()
+    private ElementPair ChooseElement()
     {
-        // *** CODE NEEDS UPDATING TO RANDOMISE OR LOOP ***
-        return Element.GenerateRandomType();
-        //return Element.Type.Nuclear;
+        return elementStrategy.DetermineEnemyElement();
     }
 
 
