@@ -53,9 +53,9 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    public void SetElement(Element.Type newElement)
+    public void SetElement(ElementPair newElement)
     {
-        elementComponent.SwitchType(newElement);
+        elementComponent.SwitchType(newElement.Primary, newElement.Secondary);
         // PLUS: add in code to update the colour of the crystal shards on the enemy
     }
 
