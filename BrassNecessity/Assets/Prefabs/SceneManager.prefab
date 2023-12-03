@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2713530595460513520}
   - component: {fileID: 3669128043078521834}
   - component: {fileID: 1634396954697172141}
+  - component: {fileID: 1738454400162747325}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -56,13 +57,14 @@ MonoBehaviour:
   - key: 3
     value: SettingsScreen
   - key: 4
-    value: Demo
+    value: Level0A
   - key: 5
     value: GameOverScreen
   - key: 6
     value: EndCredits
   - key: 7
     value: ControlExplanation
+  allLevels: {fileID: 1738454400162747325}
 --- !u!114 &3669128043078521834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,3 +94,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9864e977c23aa0642a58ee3b1f2fa793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1738454400162747325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2713530595460513523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df22a3e3c87c51449350349529fc7ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameLevels:
+  - key: 0
+    codename: The Journey Begins
+    sceneName: Level0A
+  - key: 1
+    codename: Gaining the Advantage
+    sceneName: Level0B
+  currentLevel: 0

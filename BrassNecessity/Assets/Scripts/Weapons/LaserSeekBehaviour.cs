@@ -78,7 +78,7 @@ public class LaserSeekBehaviour : MonoBehaviour
     {
         ElementPair enemyElement = target.collider.GetComponent<ElementComponent>().ElementInfo;
         ElementPair laserElement = weaponElement.ElementInfo;
-        float multiplier = laserElement.GetAttackingMultiplier(enemyElement);// ElementMultiplierGrid.GetAttackMultiplier(laserElement.Primary, enemyElement.Primary);
+        float multiplier = laserElement.GetAttackingMultiplier(enemyElement);
         impactEffect.SetImpactEffects(multiplier);
         soundEffects.ChangeLaserFiringSoundWithMultiplier(multiplier);
         float damage = baseDamagePerSecond * multiplier * Time.deltaTime;

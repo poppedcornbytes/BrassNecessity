@@ -10,6 +10,8 @@ public class SceneNavigator : MonoBehaviour
     private List<SceneKeyValue> sceneKeyNames;
     static private Dictionary<SceneKey, SceneKeyValue> sceneAccessKeys;
     private static SceneNavigator singleton;
+    [SerializeField]
+    private LevelListing allLevels;
 
     private void Awake()
     {
@@ -29,16 +31,40 @@ public class SceneNavigator : MonoBehaviour
 
     static public void OpenScene(SceneKey key)
     {
-        singleton.StartCoroutine(openSceneRoutine(key));
+        string sceneName;
+        if (key == SceneKey.GameLevel)
+        {
+            sceneName = getLevelName();
+        }
+        else
+        {
+            sceneName = sceneAccessKeys[key].Value;
+        }
+        singleton.StartCoroutine(openSceneRoutine(sceneName));
     }
 
-    private static IEnumerator openSceneRoutine(SceneKey keyToOpen)
+    private static string getLevelName()
+    {
+        LevelData nextLevel = singleton.allLevels.SetNextLevel();
+        string nextLevelName;
+        if (nextLevel != null)
+        {
+            nextLevelName = nextLevel.SceneName;
+        }
+        else
+        {
+            nextLevelName = sceneAccessKeys[SceneKey.EndCredits].Value;
+        }
+        return nextLevelName;
+    }
+
+    private static IEnumerator openSceneRoutine(string sceneName)
     {
         SceneTransition transitionEffect = singleton.GetComponent<SceneTransition>();
         yield return transitionEffect.EndSceneTransitionRoutine();
         MusicTrackHandler trackHandler = FindObjectOfType<MusicTrackHandler>();
         yield return trackHandler?.StopTrack();
-        sceneAccessKeys[keyToOpen].LoadScene();
+        SceneManager.LoadScene(sceneName);
         SceneManager.sceneLoaded += singleton.OnSceneLoaded;
     }
 
