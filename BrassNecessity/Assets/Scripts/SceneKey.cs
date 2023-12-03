@@ -12,5 +12,6 @@ public enum SceneKey
     GameOver,
     EndCredits,
     ControlOverview,
+    GameLevel,
     None
 }

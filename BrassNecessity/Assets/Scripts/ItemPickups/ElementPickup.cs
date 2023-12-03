@@ -17,6 +17,11 @@ public class ElementPickup : ItemPickup
     private float disappearTimeoutInSeconds = 10f;
     [SerializeField]
     private bool canDespawn = true;
+    public bool CanDespawn
+    {
+        get => canDespawn;
+        set => canDespawn = value;
+    }
     private FrameTimeoutHandler disappearTimeoutHandler;
 
     protected virtual void Awake()
