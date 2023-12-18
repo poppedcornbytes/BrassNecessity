@@ -81,4 +81,9 @@ public class PlayerHealthHandler : MonoBehaviour
     {
         return Mathf.Approximately(Health, baseHealth);
     }
+
+    public float GetHealthPercentage()
+    {
+        return Health / baseHealth;
+    }
 }
