@@ -8,7 +8,7 @@ public static class Element
 {
     public enum Type
     {
-        None,
+        Normal,
         Carbon,
         Electric,
         Gravity,

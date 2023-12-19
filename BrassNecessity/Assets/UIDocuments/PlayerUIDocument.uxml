@@ -6,29 +6,37 @@
                 <ui:Label text="Health: " display-tooltip-when-elided="true" name="HealthTitle" class="healthText" />
                 <ui:VisualElement name="HealthBar" style="width: 500px; height: 50px; justify-content: center;">
                     <ui:VisualElement name="FillContainer" style="width: 100%; height: 100%; position: absolute; overflow: hidden;">
-                        <ui:VisualElement name="FillBar" style="position: absolute; width: 500px; height: 50px; background-color: rgb(16, 255, 1); border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); border-top-left-radius: 16px; border-bottom-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; align-items: flex-start;" />
+                        <ui:VisualElement name="FillBar" style="position: absolute; width: 500px; height: 50px; background-color: rgb(0, 195, 14); border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); border-top-left-radius: 16px; border-bottom-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; align-items: flex-start;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="Container" style="position: absolute; width: 500px; height: 50px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 5px; border-top-left-radius: 16px; border-bottom-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px;" />
+                    <ui:VisualElement name="Container" style="position: absolute; width: 500px; height: 50px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 5px; border-top-left-radius: 16px; border-bottom-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; top: 0; left: 1px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement style="align-items: flex-end;">
-            <ui:VisualElement style="width: 220px; height: 600px; justify-content: flex-end; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">
-                <ui:VisualElement name="ElementQueue" style="align-items: flex-end; flex-direction: column-reverse;">
-                    <ui:VisualElement name="QueuedElement" class="elementImage" />
-                    <ui:VisualElement name="QueuedElement" class="elementImage" />
-                    <ui:VisualElement name="QueuedElement" class="elementImage" />
-                    <ui:VisualElement name="QueuedElement" class="elementImage" />
-                    <ui:VisualElement name="QueuedElement" class="elementImage" />
-                    <ui:VisualElement name="QueuedElement" class="elementImage" />
-                    <ui:VisualElement name="QueuedElement" class="elementImage" />
-                    <ui:VisualElement name="QueuedElement" class="elementImage" />
-                    <ui:VisualElement name="QueuedElement" class="elementImage" />
-                    <ui:VisualElement name="QueuedElement" class="elementImage" />
-                </ui:VisualElement>
-                <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: space-between;">
-                    <ui:Label text="Current: " display-tooltip-when-elided="true" name="CurrentElementLabel" style="-unity-text-align: middle-left; font-size: 36px; color: rgb(255, 255, 255); -unity-text-outline-width: 1px; -unity-text-outline-color: rgba(0, 0, 0, 0.79); -unity-font-style: bold;" />
-                    <ui:VisualElement name="CurrentElement" class="elementImage" />
+        <ui:VisualElement style="align-items: flex-start;">
+            <ui:VisualElement name="ElementAmmoParent" style="width: auto; height: 750px; justify-content: flex-start; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; align-items: flex-start; flex-direction: row;">
+                <ui:VisualElement style="align-items: center;">
+                    <ui:Label text="Gems" display-tooltip-when-elided="true" name="GemsTitle" class="hud-title" />
+                    <ui:VisualElement style="flex-direction: row;">
+                        <ui:VisualElement name="CurrentElement" class="elementImage" style="width: 75px; height: 75px;" />
+                        <ui:VisualElement name="ElementInfoTag" style="align-items: center; flex-direction: column; position: absolute; left: 100px; top: 0; justify-content: space-around;">
+                            <ui:Label text="&lt;element&gt;" display-tooltip-when-elided="true" name="CurrentElementLabel" class="hud-title" style="font-size: 30px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                            <ui:Label text="&lt;status&gt;" display-tooltip-when-elided="true" name="StatusLabel" class="hud-title" style="font-size: 30px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="AmmoQueue" style="align-items: center; width: auto; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; flex-direction: row; justify-content: flex-start;">
+                        <ui:VisualElement name="ElementQueue" style="align-items: center; flex-direction: column; height: 500px; width: 60px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 5px; border-top-left-radius: 16px; border-bottom-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; padding-top: 5px; padding-bottom: 5px; background-color: rgb(103, 104, 104);">
+                            <ui:VisualElement name="QueuedElement" class="elementImage" />
+                            <ui:VisualElement name="QueuedElement" class="elementImage" />
+                            <ui:VisualElement name="QueuedElement" class="elementImage" />
+                            <ui:VisualElement name="QueuedElement" class="elementImage" />
+                            <ui:VisualElement name="QueuedElement" class="elementImage" style="position: absolute;" />
+                            <ui:VisualElement name="QueuedElement" class="elementImage" />
+                            <ui:VisualElement name="QueuedElement" class="elementImage" />
+                            <ui:VisualElement name="QueuedElement" class="elementImage" />
+                            <ui:VisualElement name="QueuedElement" class="elementImage" />
+                            <ui:VisualElement name="QueuedElement" class="elementImage" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
