@@ -24,13 +24,13 @@ public class ElementPair
     public ElementPair()
     {
         Primary = Element.GenerateRandomType();
-        Secondary = Element.Type.None;
+        Secondary = Element.Type.Normal;
     }
 
     public ElementPair(Element.Type primary)
     {
         Primary = primary;
-        Secondary = Element.Type.None;
+        Secondary = Element.Type.Normal;
     }
 
     public ElementPair(Element.Type primary, Element.Type secondary)
@@ -42,11 +42,11 @@ public class ElementPair
     public float GetAttackingMultiplier(ElementPair defendingType)
     {
         float finalMultiplier = ElementMultiplierGrid.GetAttackMultiplier(Primary, defendingType.Primary);
-        if (Secondary != Element.Type.None)
+        if (Secondary != Element.Type.Normal)
         {
             finalMultiplier *= ElementMultiplierGrid.GetAttackMultiplier(Secondary, defendingType.Secondary);
         }
-        else if (defendingType.Secondary != Element.Type.None)
+        else if (defendingType.Secondary != Element.Type.Normal)
         {
             finalMultiplier *= ElementMultiplierGrid.GetAttackMultiplier(Primary, defendingType.Secondary);
         }

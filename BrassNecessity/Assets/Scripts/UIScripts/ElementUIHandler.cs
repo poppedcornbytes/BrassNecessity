@@ -22,11 +22,21 @@ public class ElementUIHandler : MonoBehaviour
     private VisualElement rootVisualElement;
     private VisualElement elementQueueElement;
     private VisualElement currentElement;
+    private Label currentElementLabel;
+    private Label elementStatusLabel;
     private ElementData dataReference;
+    private string elementQueueId = "ElementQueue";
+    private string currentElementId = "CurrentElement";
+    private string elementImageClass = "elementImage";
+    private string currentElementLabelId = "CurrentElementLabel";
+    private string statusLabelId = "StatusLabel";
+    private string statusActiveText = "ACTIVE";
+    private string statusOverloadText = "OVERLOADED";
+    private string elementBrokenText = "BROKEN";
     private void OnEnable()
     {
         rootVisualElement = GetComponent<UIDocument>().rootVisualElement;
-        elementQueueElement = rootVisualElement.Q<VisualElement>("ElementQueue");
+        elementQueueElement = rootVisualElement.Q<VisualElement>(elementQueueId);
         dataReference = FindObjectOfType<ElementData>();
         if (playerElementSource == null)
         {
@@ -44,8 +54,9 @@ public class ElementUIHandler : MonoBehaviour
         {
             brokenElementState = FindObjectOfType<ElementBrokenState>();
         }
-        currentElement = rootVisualElement.Q<VisualElement>("CurrentElement");
-
+        currentElement = rootVisualElement.Q<VisualElement>(currentElementId);
+        currentElementLabel = rootVisualElement.Q<Label>(currentElementLabelId);
+        elementStatusLabel = rootVisualElement.Q<Label>(statusLabelId);
         if (playerLaserElement.ElementInfo != null)
         {
             setCurrentElement();
@@ -76,19 +87,22 @@ public class ElementUIHandler : MonoBehaviour
         {
             ElementComponent component = elementsToApply.Dequeue();
             VisualElement newQueuedElement = new VisualElement();
-            newQueuedElement.ToggleInClassList("elementImage");
-            newQueuedElement.style.backgroundColor = dataReference.GetLight(component.ElementInfo);
+            newQueuedElement.ToggleInClassList(elementImageClass);
+            newQueuedElement.style.unityBackgroundImageTintColor = dataReference.GetLight(component.ElementInfo);
             elementQueueElement.Add(newQueuedElement);
         }
     }
 
     private void setCurrentElement()
     {
+        currentElementLabel.text = playerLaserElement.ElementInfo.Primary.ToString();
         float overloadPercent = playerWeapon.ElementPercentRemaining();
-        if (Mathf.Approximately(overloadPercent, 0f))
+        if (isGainingOverload(overloadPercent))
         {
             float recoveryPercent = brokenElementState.RecoveryPercentRemaining();
-            if (recoveryPercent < 0.5f)
+            currentElementLabel.text = elementBrokenText;
+            elementStatusLabel.text = statusOverloadText;
+            if (isRecoveryHalfwayOver(recoveryPercent))
             {
                 overlayElementColor(recoveryPercent, brokenElementColor, Color.clear);
             }
@@ -100,7 +114,18 @@ public class ElementUIHandler : MonoBehaviour
         else
         {
             overlayElementColor(overloadPercent, elementOverloadColor);
+            elementStatusLabel.text = statusActiveText;
         }
+    }
+
+    private bool isGainingOverload(float overloadPercentage)
+    {
+        return Mathf.Approximately(overloadPercentage, 0f);
+    }
+
+    private bool isRecoveryHalfwayOver(float recoveryPercentage)
+    {
+        return recoveryPercentage < 0.5f;
     }
 
     private void overlayElementColor(float percentLerp, Color colorToOverlay)
@@ -109,20 +134,27 @@ public class ElementUIHandler : MonoBehaviour
         Color backgroundColor = Color.Lerp(colorToOverlay, baseColor, percentLerp);
         Color baseBorderColor = Color.white;
         Color borderColor = Color.Lerp(colorToOverlay, baseBorderColor, percentLerp);
-        currentElement.style.backgroundColor = backgroundColor;
-        currentElement.style.borderTopColor = borderColor;
-        currentElement.style.borderLeftColor = borderColor;
-        currentElement.style.borderRightColor = borderColor;
-        currentElement.style.borderBottomColor = borderColor;
+        setElementColor(backgroundColor);
+        setBorderColor(borderColor);
     }
 
     private void overlayElementColor(float percentLerp, Color overrideBaseColor, Color colorToOverlay)
     {
         Color overlayColor = Color.Lerp(colorToOverlay, overrideBaseColor, percentLerp);
-        currentElement.style.backgroundColor = overlayColor;
-        currentElement.style.borderTopColor = overlayColor;
-        currentElement.style.borderLeftColor = overlayColor;
-        currentElement.style.borderRightColor = overlayColor;
-        currentElement.style.borderBottomColor = overlayColor;
+        setElementColor(overlayColor);
+        setBorderColor(overlayColor);
+    }
+
+    private void setElementColor(Color colorToSet)
+    {
+        currentElement.style.unityBackgroundImageTintColor = colorToSet;
+    }
+
+    private void setBorderColor(Color colorToSet)
+    {
+        currentElement.style.borderTopColor = colorToSet;
+        currentElement.style.borderLeftColor = colorToSet;
+        currentElement.style.borderRightColor = colorToSet;
+        currentElement.style.borderBottomColor = colorToSet;
     }
 }
