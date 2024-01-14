@@ -5,18 +5,21 @@ using UnityEngine;
 public class ElementData : MonoBehaviour
 {
     [SerializeField]
-    private Color[] batteryLightColor;
+    private Color[] elementLightColour;
 
     [SerializeField]
-    private Material[] batteryColor;
+    private Material[] elementColour;
+
+    [SerializeField]
+    private Sprite[] elementIcons;
 
     public Color GetLight(ElementPair info)
     {
         int typeId = Element.TypeToInt(info.Primary);
         Color elementColor = Color.white;
-        if (typeId < batteryLightColor.Length)
+        if (typeId < elementLightColour.Length)
         {
-            elementColor = batteryLightColor[typeId];
+            elementColor = elementLightColour[typeId];
         }
         return elementColor;
     }
@@ -25,11 +28,22 @@ public class ElementData : MonoBehaviour
     {
         int typeId = Element.TypeToInt(info.Primary);
         Material elementMaterial = null;
-        if (typeId < batteryColor.Length)
+        if (typeId < elementColour.Length)
         {
-            elementMaterial = batteryColor[typeId];
+            elementMaterial = elementColour[typeId];
         }
         return elementMaterial;
+    }
+
+    public Sprite GetIcon(ElementPair info)
+    {
+        int typeId = Element.TypeToInt(info.Primary);
+        Sprite elementIcon = null;
+        if (typeId < elementIcons.Length)
+        {
+            elementIcon = elementIcons[typeId];
+        }
+        return elementIcon;
     }
 
     public ElementComponent TryGetElementPair()

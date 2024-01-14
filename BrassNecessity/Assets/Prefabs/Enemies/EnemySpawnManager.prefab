@@ -103,6 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8088775766801299448}
   - component: {fileID: 8088775766801299449}
+  - component: {fileID: 88260722706286468}
   m_Layer: 0
   m_Name: EnemySpawnManager
   m_TagString: Untagged
@@ -139,16 +140,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ef063025688a14694fbe8748d5d88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalLevelEnemies: 6
+  totalLevelEnemies: 4
   maxConcurrentEnemies: 2
   spawnCheckInterval: 4
   spawnPoints:
   - {fileID: 8088775766394851780}
   - {fileID: 8088775766592566014}
   - {fileID: 8088775768160215458}
-  enemyPrefab: {fileID: 6676435523691258754, guid: f53b4a19247a6924a9a9efe04f0bf5a9,
-    type: 3}
+  enemyPrefabs:
+  - {fileID: 5777432463612613998, guid: f2d9963425210074985d27575dfb66d5, type: 3}
   spawnedEnemiesHolder: {fileID: 8088775766338813241}
+  elementStrategy: {fileID: 88260722706286468}
+--- !u!114 &88260722706286468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088775766801299454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3077b09f11795d24d8e138a77ab48811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8088775767658087224
 GameObject:
   m_ObjectHideFlags: 0

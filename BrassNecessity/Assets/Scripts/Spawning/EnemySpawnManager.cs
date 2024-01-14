@@ -17,6 +17,7 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
     int currentSpawnedEnemies;
     int currentSpawnPointNum = 0;
     int nextSpawnPrefabIndex = 0;
+    bool spawnComplete = false;
     private event GameEvents.SpawnEndEvent OnSpawnEnd;
 
 
@@ -154,9 +155,10 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
 
     public void CallSpawnEndEvent()
     {
-        if (OnSpawnEnd != null)
+        if (OnSpawnEnd != null && !spawnComplete)
         {
             OnSpawnEnd();
+            spawnComplete = true;
         }
     }
 }
