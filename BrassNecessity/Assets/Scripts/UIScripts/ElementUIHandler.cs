@@ -88,6 +88,7 @@ public class ElementUIHandler : MonoBehaviour
             ElementComponent component = elementsToApply.Dequeue();
             VisualElement newQueuedElement = new VisualElement();
             newQueuedElement.ToggleInClassList(elementImageClass);
+            newQueuedElement.style.backgroundImage = new StyleBackground(dataReference.GetIcon(component.ElementInfo));
             newQueuedElement.style.unityBackgroundImageTintColor = dataReference.GetLight(component.ElementInfo);
             elementQueueElement.Add(newQueuedElement);
         }
@@ -95,14 +96,16 @@ public class ElementUIHandler : MonoBehaviour
 
     private void setCurrentElement()
     {
-        currentElementLabel.text = playerLaserElement.ElementInfo.Primary.ToString();
+        ElementPair playerElement = playerLaserElement.ElementInfo;
+        currentElementLabel.text = playerElement.Primary.ToString();
+        currentElement.style.backgroundImage = new StyleBackground(dataReference.GetIcon(playerElement));
         float overloadPercent = playerWeapon.ElementPercentRemaining();
         if (isGainingOverload(overloadPercent))
         {
             float recoveryPercent = brokenElementState.RecoveryPercentRemaining();
             currentElementLabel.text = elementBrokenText;
             elementStatusLabel.text = statusOverloadText;
-            if (isRecoveryHalfwayOver(recoveryPercent))
+             if (isRecoveryHalfwayOver(recoveryPercent))
             {
                 overlayElementColor(recoveryPercent, brokenElementColor, Color.clear);
             }

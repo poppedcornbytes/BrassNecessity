@@ -44,15 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec9f21256b5cff4d998f152cd7c8ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  batteryLightColor:
+  elementLightColour:
   - {r: 0.06272143, g: 1, b: 0.06132078, a: 1}
   - {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
   - {r: 0, g: 0.72156864, b: 1, a: 1}
   - {r: 1, g: 0.68181825, b: 0, a: 1}
   - {r: 1, g: 0, b: 0.019788265, a: 1}
-  batteryColor:
+  elementColour:
   - {fileID: 2100000, guid: 954ba177a67525a4f8fcd71de272e82f, type: 2}
   - {fileID: 2100000, guid: 78aadf39f2fd7b240a8b7c3715c789ff, type: 2}
   - {fileID: 2100000, guid: 237b6623c70d28443805a18e7738706f, type: 2}
   - {fileID: 2100000, guid: 77faf1812211f07468a3a0879b7b68f6, type: 2}
   - {fileID: 2100000, guid: 4ddc6b2ac11c7e34ba59672700e0eadd, type: 2}
+  elementIcons:
+  - {fileID: 21300000, guid: f4d61a81500b31649adabf34c71b2804, type: 3}
+  - {fileID: 21300000, guid: 87f3613480b0da64cb6303323560cbe5, type: 3}
+  - {fileID: 21300000, guid: 07116694cae528047a2e72aa25ea374e, type: 3}
+  - {fileID: 21300000, guid: de3fe73e48e73ff42be954a31f87b284, type: 3}
+  - {fileID: 21300000, guid: 82ad48ee1e0a8064c9a8214a7eab1ce7, type: 3}
