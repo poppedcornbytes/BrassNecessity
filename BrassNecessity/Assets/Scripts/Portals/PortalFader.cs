@@ -60,10 +60,10 @@ public class PortalFader : MonoBehaviour
 
     public void QuickFadeOut()
     {
-        components.PortalSpecks.Stop();
-        components.PortalRays.Stop();
-        components.PortalRunes.Stop();
-        components.PortalRipples.Stop();
+        components.PortalSpecks.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        components.PortalRays.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        components.PortalRunes.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        components.PortalRipples.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         components.SpriteAnimator.enabled = false;
         components.InnerPortal.color = getTransparentColor(components.InnerPortal.color);
         components.OuterPortal.color = getTransparentColor(components.OuterPortal.color);

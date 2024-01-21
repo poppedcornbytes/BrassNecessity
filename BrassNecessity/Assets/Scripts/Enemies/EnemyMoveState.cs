@@ -27,7 +27,6 @@ public class EnemyMoveState : EnemyBaseState
 
         if (context.navAgent.remainingDistance < 0.01f) returnToIdle = true;
         if (context.navAgent.pathStatus == NavMeshPathStatus.PathInvalid) returnToIdle = true;
-        if (context.navAgent.pathStatus == NavMeshPathStatus.PathPartial) returnToIdle = true;
 
         if (returnToIdle)
         {

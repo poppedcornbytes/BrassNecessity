@@ -113,4 +113,7 @@ MonoBehaviour:
   - key: 1
     codename: Gaining the Advantage
     sceneName: Level0B
+  - key: 2
+    codename: Going Nuclear
+    sceneName: Level1
   currentLevel: 0

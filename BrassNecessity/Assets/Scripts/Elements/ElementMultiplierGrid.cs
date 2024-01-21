@@ -30,11 +30,11 @@ public static class ElementMultiplierGrid
 
     public static bool IsStrongMultiplier(float value)
     {
-        return Mathf.Approximately(value, STRONG_MULTIPLIER);
+        return Mathf.Approximately(value, STRONG_MULTIPLIER) || Mathf.Approximately(value, STRONG_MULTIPLIER * STRONG_MULTIPLIER);
     }
 
     public static bool IsWeakMultiplier(float value)
     {
-        return Mathf.Approximately(value, WEAK_MULTIPLIER);
+        return Mathf.Approximately(value, WEAK_MULTIPLIER) || Mathf.Approximately(value, WEAK_MULTIPLIER * WEAK_MULTIPLIER);
     }
 }

@@ -25,5 +25,6 @@ public enum SoundEffectKey
     PlayerInjuredSound,
     PlayerDyingSound,
     LevelChange,
-    OpeningCredits
+    OpeningCredits,
+    ObstacleFence
 }
