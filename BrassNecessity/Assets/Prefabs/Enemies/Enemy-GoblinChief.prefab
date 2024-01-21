@@ -13551,6 +13551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 40
+  soundEffects: {fileID: 0}
 --- !u!114 &8876260216095072482
 MonoBehaviour:
   m_ObjectHideFlags: 0

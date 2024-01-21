@@ -9,7 +9,7 @@ public class LevelListing : MonoBehaviour
 
     private void Awake()
     {
-        currentLevel = 0;
+        //currentLevel = 0;
     }
 
     public LevelData SetNextLevel()
