@@ -5,6 +5,9 @@
 Zack Turman
 Tim Phillips
 
+## Team Members
+Lewis Collins - 3D Artist
+
 ## Assets
 ### 3D Modeling
 Lowpoly Dungeon Assets by Synty Studios
@@ -44,6 +47,7 @@ UI_CreateRoute_Mono_02 by Sound Works 12
 UI_Select_Mono_02 by Sound Works 12
 UI_Clean_Stereo_01 by Sound Works 12
 UI_PlaceObjectGround_Mono_01 by Sound Works 12
+UI_PlaceBuildingGround_Mono_01 by Sound Works 12
 Just_Transitions_Transitions_18 by SoundBits
 
 ## Unity Technologies - Unity Engine

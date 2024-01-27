@@ -116,4 +116,7 @@ MonoBehaviour:
   - key: 2
     codename: Going Nuclear
     sceneName: Level1
+  - key: 3
+    codename: Rise to the Challenge
+    sceneName: Level2
   currentLevel: 0

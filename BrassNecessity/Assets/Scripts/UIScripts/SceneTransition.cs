@@ -7,6 +7,8 @@ public class SceneTransition : MonoBehaviour
 {
     [SerializeField]
     private VisualElement sceneTransitioner;
+    [SerializeField]
+    private float secondsToDisplayLevelInfo = 5f;
 
     private const string DEFAULT_COVER_STYLE = "default-cover";
     private const string TRANSPARENT_COVER_STYLE = "transparent-cover";
@@ -16,6 +18,8 @@ public class SceneTransition : MonoBehaviour
     private const string SWIPE_RIGHT_TRANSITION = "swipe-right-transition";
     private const string FADE_IN_TRANSITION = "fade-in-transition";
     private const string FADE_OUT_TRANSITION = "fade-out-transition";
+    private const string LEVEL_NAME_ELEMENT = "level-name-field";
+    private const string LEVEL_NUMBER_ELEMENT = "level-number-field";
 
     private void OnEnable()
     {
@@ -46,7 +50,7 @@ public class SceneTransition : MonoBehaviour
     {
         string transitionAnimation = getRandomSwipeAnimation();
         sceneTransitioner.ToggleInClassList(transitionAnimation);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(secondsToDisplayLevelInfo);
         sceneTransitioner.ClearClassList();
     }
 
