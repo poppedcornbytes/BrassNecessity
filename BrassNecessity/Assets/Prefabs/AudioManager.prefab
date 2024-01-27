@@ -254,6 +254,8 @@ MonoBehaviour:
     value: {fileID: 8300000, guid: 4bf962ad76811a74a85ee71e7042ae35, type: 3}
   - key: 21
     value: {fileID: 8300000, guid: 0d403f5a1d87b54419c5f53d08a16307, type: 3}
+  - key: 22
+    value: {fileID: 8300000, guid: 92b98103fec227d48a6e1aad0268933b, type: 3}
   playerCameraListener: {fileID: 0}
 --- !u!82 &1590070985722693953
 AudioSource:

@@ -5,21 +5,27 @@ using UnityEngine;
 public class OnPortalsCompleteRevelear : PortalRevealer
 {
     [SerializeField]
-    private TwoWayPortal[] portalsToCheck;
+    private TwoWayPortal[] twoWayPortalsToCheck;
+    [SerializeField]
+    private OneWayPortal[] oneWayPortalsToCheck;
     private int completeCount = 0;
     [SerializeField]
     private float revealDelayInSeconds = 2.5f;
 
     private void Awake()
     {
-        for (int i = 0; i < portalsToCheck.Length; i++)
+        for (int i = 0; i < twoWayPortalsToCheck.Length; i++)
         {
-            subscribeToCompleteEvent(portalsToCheck[i]);
+            subscribeToCompleteEvent(twoWayPortalsToCheck[i]);
+        }
+        for (int i = 0; i < oneWayPortalsToCheck.Length; i++)
+        {
+            subscribeToCompleteEvent(oneWayPortalsToCheck[i]);
         }
         gameObject.SetActive(false);
     }
 
-    private void subscribeToCompleteEvent(TwoWayPortal portalToComplete)
+    private void subscribeToCompleteEvent(IArrivalEventHandler portalToComplete)
     {
         IArrivalEventHandler arrivalEvent = portalToComplete;
         arrivalEvent?.AddArrivalEvent(MarkComplete);
@@ -29,11 +35,16 @@ public class OnPortalsCompleteRevelear : PortalRevealer
     public void MarkComplete()
     {
         completeCount++;
-        if (completeCount == portalsToCheck.Length)
+        if (completeCount == totalPortalCount())
         {
             gameObject.SetActive(true);
             StartCoroutine(revealRoutine()); 
         }
+    }
+
+    private int totalPortalCount()
+    {
+        return twoWayPortalsToCheck.Length + oneWayPortalsToCheck.Length;
     }
 
     private IEnumerator revealRoutine()

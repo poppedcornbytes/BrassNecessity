@@ -23,9 +23,9 @@ public class EnemyHealthHandler : MonoBehaviour, IDestroyEventHandler
         }
     }
 
-    public float GetBaseHealth()
+    public float GetRemainingHealthPercentage()
     {
-        return baseHealth;
+        return Health / baseHealth;
     }
 
     public virtual void DamageEnemy(float damageAmount)

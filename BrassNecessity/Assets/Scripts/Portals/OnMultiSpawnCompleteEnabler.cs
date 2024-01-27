@@ -5,25 +5,20 @@ using UnityEngine;
 public class OnMultiSpawnCompleteEnabler : PortalEnabler
 {
     [SerializeField]
-    private EnemySpawnManager[] enemySpawners;
-    private int completedSpawns = 0;
+    private MultiSpawnCompletedEvent spawnEventTracker;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < enemySpawners.Length; i++)
-        {
-            ISpawnEndEventHandler spawnEndEvent = enemySpawners[i];
-            spawnEndEvent.AddSpawnEndEvent(TrackCompletion);
-        }
+        spawnEventTracker.AddEventToSpawners(TrackCompletion);
     }
 
     public void TrackCompletion()
     {
-        completedSpawns++;
-        if (completedSpawns == enemySpawners.Length)
+        spawnEventTracker.TrackCompletedSpawner();
+        if (spawnEventTracker.AllSpawnersComplete())
         {
-            portalToEnable.Enable(); 
+            portalToEnable.Enable();
         }
     }
 }
