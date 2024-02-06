@@ -232,15 +232,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1634396954697172141, guid: c6769a8f11bfde64abc43b057f04adae,
+        type: 3}
+      propertyPath: secondsToDisplayLevelInfo
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2713530595460513520, guid: c6769a8f11bfde64abc43b057f04adae,
         type: 3}
       propertyPath: sceneKeyNames.Array.size
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713530595460513520, guid: c6769a8f11bfde64abc43b057f04adae,
-        type: 3}
-      propertyPath: sceneKeyNames.Array.data[4].value
-      value: Demo
       objectReference: {fileID: 0}
     - target: {fileID: 2713530595460513521, guid: c6769a8f11bfde64abc43b057f04adae,
         type: 3}

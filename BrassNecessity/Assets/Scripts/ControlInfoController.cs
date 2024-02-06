@@ -9,6 +9,8 @@ public class ControlInfoController : MonoBehaviour
     [SerializeField]
     private SoundEffectTrackHandler soundEffects;
     private bool overviewExited = false;
+    [SerializeField]
+    private SceneKey sceneToOpen = SceneKey.GameLevel;
 
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class ControlInfoController : MonoBehaviour
             {
                 overviewExited = true;
                 soundEffects.PlayOnce(SoundEffectKey.ButtonSelect);
-                SceneNavigator.OpenScene(SceneKey.MainGame);
+                SceneNavigator.OpenScene(sceneToOpen);
             }
         }
     }
