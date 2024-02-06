@@ -1,4 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UIDocuments/sceneTransitions.uss?fileID=7433441132597879392&amp;guid=aeae417eb39480e4eb9707ae73aebf65&amp;type=3#sceneTransitions" />
-    <ui:VisualElement name="TransitionElement" />
+    <Style src="project://database/Assets/UIDocuments/styles.uss?fileID=7433441132597879392&amp;guid=c30f6580d0acd8e429a717e8d1833395&amp;type=3#styles" />
+    <ui:VisualElement name="TransitionElement" style="align-items: center; justify-content: center; flex-direction: column; width: 100%; height: 100%;">
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="LevelNumberTitle" class="uiTitleText" style="font-size: 175px; color: rgba(56, 173, 0, 255);" />
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="LevelNameTitle" class="controls-text" style="font-size: 80px;" />
+    </ui:VisualElement>
 </ui:UXML>

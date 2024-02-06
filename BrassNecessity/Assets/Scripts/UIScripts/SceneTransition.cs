@@ -5,10 +5,13 @@ using UnityEngine.UIElements;
 
 public class SceneTransition : MonoBehaviour
 {
-    [SerializeField]
     private VisualElement sceneTransitioner;
+    private Label levelNumberLabel;
+    private Label levelNameLabel;
     [SerializeField]
     private float secondsToDisplayLevelInfo = 5f;
+    [SerializeField]
+    private LevelListing levelListing;
 
     private const string DEFAULT_COVER_STYLE = "default-cover";
     private const string TRANSPARENT_COVER_STYLE = "transparent-cover";
@@ -25,8 +28,25 @@ public class SceneTransition : MonoBehaviour
     {
         VisualElement visualElement = GetComponent<UIDocument>().rootVisualElement;
         sceneTransitioner = visualElement.Q<VisualElement>("TransitionElement");
+        levelNumberLabel = sceneTransitioner.Q<Label>("LevelNumberTitle");
+        levelNameLabel = sceneTransitioner.Q<Label>("LevelNameTitle");
+        setupTitles();
         sceneTransitioner.ClearClassList();
         StartInitialOpenSceneTransition();
+    }
+
+    private void setupTitles()
+    {
+        if (levelListing.CurrentSceneIsLevel())
+        {
+            levelNumberLabel.text = string.Format("Level {0}", levelListing.GetLevelNumber());
+            levelNameLabel.text = levelListing.GetLevelName();
+        }
+        else
+        {
+            levelNumberLabel.text = string.Empty;
+            levelNameLabel.text = string.Empty;
+        }
     }
 
     public void StartInitialOpenSceneTransition()
@@ -49,8 +69,11 @@ public class SceneTransition : MonoBehaviour
     private IEnumerator openSceneTransitionRoutine()
     {
         string transitionAnimation = getRandomSwipeAnimation();
-        sceneTransitioner.ToggleInClassList(transitionAnimation);
         yield return new WaitForSeconds(secondsToDisplayLevelInfo);
+        sceneTransitioner.ToggleInClassList(transitionAnimation);
+        yield return new WaitForSeconds(0.5f);
+        levelNumberLabel.text = string.Empty;
+        levelNameLabel.text = string.Empty;
         sceneTransitioner.ClearClassList();
     }
 

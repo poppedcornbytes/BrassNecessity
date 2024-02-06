@@ -94,6 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9864e977c23aa0642a58ee3b1f2fa793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsToDisplayLevelInfo: 2
+  levelListing: {fileID: 1738454400162747325}
 --- !u!114 &1738454400162747325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,4 +121,7 @@ MonoBehaviour:
   - key: 3
     codename: Rise to the Challenge
     sceneName: Level2
-  currentLevel: 0
+  - key: 4
+    codename: Piece by Piece
+    sceneName: Level3
+  currentLevel: -1
