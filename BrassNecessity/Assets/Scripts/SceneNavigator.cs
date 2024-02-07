@@ -32,6 +32,7 @@ public class SceneNavigator : MonoBehaviour
     static public void OpenScene(SceneKey key)
     {
         string sceneName;
+
         if (key == SceneKey.GameLevel)
         {
             sceneName = getLevelName();
@@ -39,6 +40,11 @@ public class SceneNavigator : MonoBehaviour
         else
         {
             sceneName = sceneAccessKeys[key].Value;
+        }
+
+        if (key == SceneKey.StartMenu)
+        {
+            singleton.allLevels.ResetLevelCounter();
         }
         singleton.StartCoroutine(openSceneRoutine(sceneName));
     }

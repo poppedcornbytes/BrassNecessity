@@ -411,6 +411,28 @@
                 },
                 {
                     "name": "",
+                    "id": "ba8b4c1b-0243-49c9-8dc3-1aea308d14cc",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "693b045a-66b6-4f8b-a1fb-b969914e6936",
+                    "path": "<Keyboard>/numpad0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c4e7486d-2912-41c4-a74d-3c07fef8a3cb",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
