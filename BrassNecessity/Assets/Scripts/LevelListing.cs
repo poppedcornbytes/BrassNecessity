@@ -7,11 +7,6 @@ public class LevelListing : MonoBehaviour
     [SerializeReference]
     private int currentLevel = -1;
 
-    private void Awake()
-    {
-        //currentLevel = 0;
-    }
-
     public bool CurrentSceneIsLevel()
     {
         return currentLevel >= 0;
@@ -36,5 +31,10 @@ public class LevelListing : MonoBehaviour
             nextLevel = gameLevels[currentLevel];
         }
         return nextLevel;
+    }
+
+    public void ResetLevelCounter()
+    {
+        currentLevel = -1;
     }
 }
