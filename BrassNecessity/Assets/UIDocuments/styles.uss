@@ -126,7 +126,7 @@ SliderInt.settingSliderSelected {
     margin-right: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    background-image: url('project://database/Assets/AssetPacks/UXWing/crystalicon.png?fileID=2800000&guid=f4d61a81500b31649adabf34c71b2804&type=3#crystalicon');
+    background-image: url('project://database/Assets/Materials/ElementIcons/crystalicon.png?fileID=2800000&guid=f4d61a81500b31649adabf34c71b2804&type=3#crystalicon');
     -unity-background-image-tint-color: rgb(0, 195, 14);
 }
 
@@ -258,7 +258,7 @@ SliderInt.settingSliderSelected {
 }
 
 .hud-title {
-    -unity-text-align: middle-left;
+    -unity-text-align: middle-center;
     font-size: 36px;
     color: rgb(255, 255, 255);
     -unity-text-outline-width: 1px;

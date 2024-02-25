@@ -39,7 +39,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (levelListing.CurrentSceneIsLevel())
         {
-            levelNumberLabel.text = string.Format("Level {0}", levelListing.GetLevelNumber());
+            levelNumberLabel.text = string.Format("Level {0}", levelListing.GetLevelId());
             levelNameLabel.text = levelListing.GetLevelName();
         }
         else
