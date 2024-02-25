@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f1eea73735cad43bfceac3b8060b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortOrder: 200
+  sortOrder: 1000
 --- !u!1 &8944336655422409498
 GameObject:
   m_ObjectHideFlags: 0

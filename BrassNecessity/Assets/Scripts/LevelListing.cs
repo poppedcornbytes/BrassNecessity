@@ -6,15 +6,28 @@ public class LevelListing : MonoBehaviour
     private LevelData[] gameLevels;
     [SerializeReference]
     private int currentLevel = -1;
+    [SerializeField]
+    private int lastTutorialLevel = 1;
 
     public bool CurrentSceneIsLevel()
     {
         return currentLevel >= 0;
     }
 
-    public int GetLevelNumber()
+    public string GetLevelId()
     {
-        return currentLevel + 1;
+        int rawLevelNumber = currentLevel + 1;
+        string levelId = rawLevelNumber.ToString();
+        if (rawLevelNumber <= lastTutorialLevel)
+        {
+            levelId = convertTutorialIdToLetter(rawLevelNumber);
+        }
+        return levelId;
+    }
+
+    private string convertTutorialIdToLetter(int rawLevelNumber)
+    {
+        return ((char)('A' + rawLevelNumber - 1)).ToString();
     }
 
     public string GetLevelName()
@@ -25,7 +38,15 @@ public class LevelListing : MonoBehaviour
     public LevelData SetNextLevel()
     {
         LevelData nextLevel = null;
+        if (currentLevel < 0 && SettingsHandler.GetHasReadControls())
+        {
+            currentLevel = lastTutorialLevel;
+        }
         currentLevel++;
+        if (currentLevel > lastTutorialLevel)
+        {
+            SettingsHandler.SetHasReadControls(true);
+        }
         if (currentLevel < gameLevels.Length)
         {
             nextLevel = gameLevels[currentLevel];

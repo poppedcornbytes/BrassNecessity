@@ -19,7 +19,6 @@ public class ControlsDisplay : MonoBehaviour
     {
         yield return new WaitForSeconds(inputDelayInSeconds);
         playerInput.SetActive(true);
-        SettingsHandler.SetHasReadControls(true);
     }
     
 }
