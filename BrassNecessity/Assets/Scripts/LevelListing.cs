@@ -16,18 +16,23 @@ public class LevelListing : MonoBehaviour
 
     public string GetLevelId()
     {
-        int rawLevelNumber = currentLevel + 1;
-        string levelId = rawLevelNumber.ToString();
+        int rawLevelNumber = currentLevel;
+        string levelId;
         if (rawLevelNumber <= lastTutorialLevel)
         {
             levelId = convertTutorialIdToLetter(rawLevelNumber);
+        }
+        else
+        {
+            levelId = (rawLevelNumber - lastTutorialLevel).ToString();
+
         }
         return levelId;
     }
 
     private string convertTutorialIdToLetter(int rawLevelNumber)
     {
-        return ((char)('A' + rawLevelNumber - 1)).ToString();
+        return ((char)('A' + rawLevelNumber)).ToString();
     }
 
     public string GetLevelName()

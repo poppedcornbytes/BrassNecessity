@@ -6,7 +6,7 @@ public class SkinSelector : MonoBehaviour
 {
     [SerializeField]
     private CharacterSkin[] skins;
-    private int lastCharacterId = 0;
+    private int lastCharacterId = -1;
 
     public void SelectSkin(int characterId)
     {
