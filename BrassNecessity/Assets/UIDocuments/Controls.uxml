@@ -8,8 +8,8 @@
             <ui:Label text="WASD [Arrow Keys]&#10;Left Shift [H]&#10;J&#10;K&#10;P [Esc]" display-tooltip-when-elided="true" class="controls-text" style="margin-right: 75px;" />
             <ui:Label text="- Move&#10;- Sprint&#10;- Shoot laser and select&#10;- Load crystal&#10;- Pause" display-tooltip-when-elided="true" class="controls-text" />
         </ui:VisualElement>
-        <ui:VisualElement style="width: 25%; height: auto; align-items: center; flex-direction: column; justify-content: center;">
-            <ui:Label text="Alternate controls for moving with arrow keys in brackets, [ ]." display-tooltip-when-elided="true" name="GameTitle" class="controls-text" style="white-space: normal;" />
+        <ui:VisualElement style="width: 40%; height: auto; align-items: center; flex-direction: column; justify-content: center;">
+            <ui:Label text="You can move with your left or right hand. We recommend moving with your left hand using the WASD keys. To move using your right hand, see the controls in [brackets]." display-tooltip-when-elided="true" name="GameTitle" class="controls-text" style="white-space: normal;" />
         </ui:VisualElement>
         <ui:VisualElement>
             <ui:Label text="Press K to continue." display-tooltip-when-elided="true" name="InstructionLabel" style="color: rgb(255, 255, 255); font-size: 18px;" />

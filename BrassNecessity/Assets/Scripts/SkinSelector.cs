@@ -6,6 +6,10 @@ public class SkinSelector : MonoBehaviour
 {
     [SerializeField]
     private CharacterSkin[] skins;
+    [SerializeField]
+    private ElementComponent playerElementData;
+    [SerializeField]
+    private Animator playerAnimator;
     private int lastCharacterId = -1;
 
     public void SelectSkin(int characterId)
@@ -24,6 +28,8 @@ public class SkinSelector : MonoBehaviour
             if (i == characterId)
             {
                 skins[i].ActivateSkin();
+                playerElementData?.SwitchType(skins[i].GetDefaultType());
+                playerAnimator?.SetTrigger(skins[i].GetSelectionAnimation());
             }
             else
             {
