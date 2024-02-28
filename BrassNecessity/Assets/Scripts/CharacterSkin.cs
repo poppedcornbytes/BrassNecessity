@@ -16,6 +16,9 @@ public class CharacterSkin
     private GameObject[] accessories;
 
     [SerializeField]
+    private string selectionAnimationTrigger;
+
+    [SerializeField]
     private Element.Type defaultType;
 
     public void ActivateSkin()
@@ -41,5 +44,10 @@ public class CharacterSkin
     public Element.Type GetDefaultType()
     {
         return defaultType;
+    }
+
+    public string GetSelectionAnimation()
+    {
+        return selectionAnimationTrigger;
     }
 }
