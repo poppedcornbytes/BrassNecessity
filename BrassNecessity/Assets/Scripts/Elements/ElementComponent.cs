@@ -5,7 +5,22 @@ using UnityEngine;
 [ExecuteAlways]
 public class ElementComponent : MonoBehaviour
 {
-    public ElementPair ElementInfo { get; private set; }
+    private ElementPair _elementInfo;
+    public ElementPair ElementInfo 
+    { 
+        get
+        {
+            if (_elementInfo == null)
+            {
+                _elementInfo = new ElementPair(primaryType);
+            }
+            return _elementInfo;
+        } 
+        private set
+        {
+            _elementInfo = value;
+        }
+    }
     [SerializeField]
     protected Element.Type primaryType;
     [SerializeField]
