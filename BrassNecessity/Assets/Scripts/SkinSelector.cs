@@ -28,8 +28,8 @@ public class SkinSelector : MonoBehaviour
             if (i == characterId)
             {
                 skins[i].ActivateSkin();
-                playerElementData?.SwitchType(skins[i].GetDefaultType());
-                playerAnimator?.SetTrigger(skins[i].GetSelectionAnimation());
+                if (playerElementData != null) playerElementData.SwitchType(skins[i].GetDefaultType());
+                if (playerAnimator != null) playerAnimator.SetTrigger(skins[i].GetSelectionAnimation());
             }
             else
             {

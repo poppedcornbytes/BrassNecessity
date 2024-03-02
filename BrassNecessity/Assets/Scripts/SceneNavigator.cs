@@ -42,7 +42,7 @@ public class SceneNavigator : MonoBehaviour
             sceneName = sceneAccessKeys[key].Value;
         }
 
-        if (key == SceneKey.StartMenu)
+        if (key == SceneKey.StartMenu || key == SceneKey.GameOver)
         {
             singleton.allLevels.ResetLevelCounter();
         }

@@ -407,7 +407,7 @@ MonoBehaviour:
   allButtonData:
   - elementName: ContinueButton
     type: 0
-    sceneDestination: 4
+    sceneDestination: 8
     activatedMenu: {fileID: 0}
     hidMenu: {fileID: 0}
     deactivatedMenu: {fileID: 0}
