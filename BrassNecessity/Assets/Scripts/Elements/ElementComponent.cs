@@ -36,6 +36,7 @@ public class ElementComponent : MonoBehaviour
         {
             ElementInfo = new ElementPair(primaryType);
         }
+        UpdateElement();
     }
 
     // Start is called before the first frame update
