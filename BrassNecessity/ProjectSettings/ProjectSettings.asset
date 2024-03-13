@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: PoppedCornBytes
-  productName: Brass Necessity
+  companyName: Popped Corn Bytes Limited
+  productName: brassnecessity
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
@@ -274,7 +274,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 4154c1b3c577f534e8c1b3aa7368b25e, type: 3}
+      m_Icon: {fileID: 2800000, guid: fd4800e49291d774ebc4723c90e2744b, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
