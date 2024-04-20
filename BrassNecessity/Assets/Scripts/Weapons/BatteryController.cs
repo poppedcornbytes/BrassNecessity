@@ -66,8 +66,8 @@ public class BatteryController : MonoBehaviour
             elementInfo = GetComponent<ElementComponent>();
         }
         ElementPair element = elementInfo.ElementInfo;
-        Color lightColor = data.GetLight(element);
-        Material batteryMaterial = data.GetBatteryMaterial(element);
+        Color lightColor = data?.GetLight(element) ?? Color.white;
+        Material batteryMaterial = data?.GetBatteryMaterial(element);
         for (int i = 0; i < batteryTanks.Length; i++)
         {
             batteryTanks[i].SetMaterial(batteryMaterial);
