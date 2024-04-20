@@ -21,19 +21,19 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/ControlExplanation.unity
     guid: ab91e141fa4f93a408dca4c9a1c75a10
   - enabled: 1
-    path: Assets/Scenes/Levels/Level0A.unity
+    path: Assets/Scenes/Levels/Level0/Level0A.unity
     guid: 7f27de5c1a4762e4793cdc1a3e45ae97
   - enabled: 1
-    path: Assets/Scenes/Levels/Level0B.unity
+    path: Assets/Scenes/Levels/Level0/Level0B.unity
     guid: e47a242126f42a847a728335542a5c4b
   - enabled: 1
-    path: Assets/Scenes/Levels/Level1.unity
+    path: Assets/Scenes/Levels/Level1/Level1A.unity
     guid: 03c52bc83941c674997b0e26fc0d2b98
   - enabled: 1
-    path: Assets/Scenes/Levels/Level2.unity
+    path: Assets/Scenes/Levels/Level1/Level1B.unity
     guid: cd3be0ce2c05fe5478e814f986a493d3
   - enabled: 1
-    path: Assets/Scenes/Levels/Level3.unity
+    path: Assets/Scenes/Levels/Level1/Level1C.unity
     guid: 8af01c7223ceb0541831c7d059ac2d79
   - enabled: 1
     path: Assets/Scenes/Menus/GameOverScreen.unity
