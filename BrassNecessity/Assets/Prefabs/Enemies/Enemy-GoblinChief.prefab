@@ -12189,6 +12189,7 @@ GameObject:
   - component: {fileID: 5777432463612613999}
   - component: {fileID: 5870688923317871424}
   - component: {fileID: 8238751308032220539}
+  - component: {fileID: 8765582580877982441}
   - component: {fileID: 1812641744891033672}
   - component: {fileID: 1812641745384876276}
   - component: {fileID: 8876260216095072482}
@@ -12273,6 +12274,32 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8765582580877982441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777432463612613998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5ca144d7ac33d409c569dfaf8528d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableStates:
+  - key: 1
+    stateId: 0
+  - key: 2
+    stateId: 1
+  - key: 3
+    stateId: 2
+  - key: 4
+    stateId: 3
+  - key: 5
+    stateId: 4
+  startingStateValue:
+    key: 0
+    stateId: 0
 --- !u!114 &1812641744891033672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12285,10 +12312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae82ed2eecda8824daf1b7c120fd8813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  navAgent: {fileID: 0}
-  playerTransform: {fileID: 0}
-  elementComponent: {fileID: 0}
   spawnManager: {fileID: 0}
   closeAttackDistance: 1.5
   farAttackDistance: 2.5
@@ -12301,6 +12324,7 @@ MonoBehaviour:
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  enemyState: {fileID: 8765582580877982441}
 --- !u!114 &1812641745384876276
 MonoBehaviour:
   m_ObjectHideFlags: 0

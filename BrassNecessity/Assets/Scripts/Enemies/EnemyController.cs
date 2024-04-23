@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using EnemyStateMachine;
 
 [SelectionBase]    // (If you click any child objects in the inspector, it will automatically select the parent object which contains this script
 [RequireComponent(typeof(Animator))]
@@ -8,33 +9,36 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     // Enemy properties (public so the state classes can access them)
-    [HideInInspector] public Animator animator;
-    [HideInInspector] public NavMeshAgent navAgent;
-    [HideInInspector] public Transform playerTransform;
-    [HideInInspector] public ElementComponent elementComponent;
+    private Animator animator;
+    private NavMeshAgent navAgent;
     [HideInInspector] public EnemySpawnManager spawnManager;
+    private ElementComponent elementComponent;
+    private Transform playerTransform;
 
-    public float closeAttackDistance = 2f;
-    public float farAttackDistance = 4f;
+    [SerializeField]
+    private float closeAttackDistance = 2f;
+    [SerializeField] 
+    private float farAttackDistance = 4f;
     [HideInInspector] public float midAttackDistance;
-    public float hitDamage = 10f;
-    public float enemyTurnSpeed = 5f;
-    public float facingPlayerDegreesMargin = 10f;   // The plus/minus margin of error (in degrees) that the enemy can be facing to the left or right of the player but still be close enough to be considered 'facing the player'
+    [SerializeField]
+    private float hitDamage = 10f;
+    [SerializeField]
+    private float enemyTurnSpeed = 5f;
+    [SerializeField] 
+    private float facingPlayerDegreesMargin = 10f;   // The plus/minus margin of error (in degrees) that the enemy can be facing to the left or right of the player but still be close enough to be considered 'facing the player'
 
-    public float hitDetectDistance = 1f;
-    public Vector3 hitDetectBoxSize = new Vector3(0.5f, 0.5f, 0.5f);
-    public LayerMask playerLayerMask;
-    PlayerHealthHandler playerHealthHandler;
+    [SerializeField]
+    private float hitDetectDistance = 1f;
+    [SerializeField]
+    private Vector3 hitDetectBoxSize = new Vector3(0.5f, 0.5f, 0.5f);
+    [SerializeField]
+    private LayerMask playerLayerMask;
+    private PlayerHealthHandler playerHealthHandler;
     Color debugColor = Color.red;
 
     // State machine properties
-    public EnemyBaseState currentState { get; private set; }
-    public EnemyIdleState IdleState = new EnemyIdleState();    // These 'potential' states need to be public so that the concrete State classes can refer to them when telling the Controller which state to switch to
-    public EnemyMoveState MoveState = new EnemyMoveState();
-    public EnemyAttackState AttackState = new EnemyAttackState();
-    public EnemyGotHitState GotHitState = new EnemyGotHitState();
-    public EnemyDieState DieState = new EnemyDieState();
-
+    [SerializeField]
+    private StateMachine enemyState;
 
     private void Awake()
     {
@@ -48,8 +52,22 @@ public class EnemyController : MonoBehaviour
         elementComponent = GetComponent<ElementComponent>();
 
         midAttackDistance = closeAttackDistance + ((farAttackDistance - closeAttackDistance) / 2);
+        setupStateMachine();
+    }
 
-        SwitchState(IdleState);
+    private void setupStateMachine()
+    {
+        EnemyContext enemyContext = new EnemyContext
+        {
+            Animator = this.animator,
+            NavAgent = this.navAgent,
+            SpawnManager = this.spawnManager,
+            FarAttackDistance = this.farAttackDistance,
+            MidAttackDistance = this.midAttackDistance,
+            EnemyObject = this.gameObject,
+            Controller = this
+        };
+        enemyState.InitialiseStateMachine(enemyContext);
     }
 
 
@@ -62,25 +80,14 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        // Triggers the UpdateState function each frame on whichever state is current
-        currentState.UpdateState(this);
+        enemyState.UpdateCurrentState();
     }
 
 
-    public void SwitchState(EnemyBaseState newState)
+    public void SwitchState(AbstractState newState)
     {
         // This is public because it will be called from whichever concrete State class is the 'currentState'.
         // currentState will pass in a reference to one of this EnemyController's other public state properties (e.g. MoveState or AttackState)
-        currentState = newState;
-        currentState.EnterState(this);
-    }
-
-
-    public void AnimationFinished(string animName)
-    {
-        // This gets called by an AnimationEvent on relevant AnimationClips (e.g. after an attack animation has completed)
-        // This should be fed to the currentState to see whether the state needs to respond to the animation finishing
-        currentState.AnimationClipFinished(this, animName);
     }
 
 
@@ -120,7 +127,6 @@ public class EnemyController : MonoBehaviour
     {
         Quaternion rotationToPlayer = Quaternion.LookRotation(FlatDirectionToPlayer());
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationToPlayer, enemyTurnSpeed * Time.deltaTime);
-        
     }
 
 
@@ -130,7 +136,6 @@ public class EnemyController : MonoBehaviour
         Vector3 targetPosition = playerTransform.position + (playerToEnemyDirection * distanceFromPlayer);
         return targetPosition;
     }
-
 
     
     public void TestIfEnemyHitPlayer()
@@ -145,14 +150,7 @@ public class EnemyController : MonoBehaviour
             {
                 // The object is in the defined space
                 playerHealthHandler.DamagePlayer(hitDamage);
-                //Debug.Log("Player hit!  Player health = " + playerHealthHandler.Health);
-            } else
-            {
-                //Debug.Log("TestIfEnemyHitPlayer() has detected something, but not the player: " + hit.collider.gameObject.name);
             }
-        } else
-        {
-            //Debug.Log("TestIfEnemyHitPlayer() has run but not detected the player.");
         }
 
         // Visualize the BoxCast in the Scene view
@@ -170,15 +168,13 @@ public class EnemyController : MonoBehaviour
 
     public void LaserContactBegins()
     {
-        animator.SetBool("WalkForwards", false);
-        navAgent.isStopped = true;
-        SwitchState(GotHitState);
+        enemyState.AttemptStateUpdate(StateType.Hit);
     }
 
 
     public void EnemyHasDied()
     {
-        SwitchState(DieState);
+        enemyState.AttemptStateUpdate(StateType.Death);
     }
 
 
@@ -186,6 +182,6 @@ public class EnemyController : MonoBehaviour
     [ContextMenu("Kill this enemy (debug)")]
     private void Debug_KillEnemy()
     {
-        SwitchState(DieState);
+        enemyState.AttemptStateUpdate(StateType.Death);
     }
 }
