@@ -26,5 +26,7 @@ public enum SoundEffectKey
     PlayerDyingSound,
     LevelChange,
     OpeningCredits,
-    ObstacleFence
+    ObstacleFence,
+    LaserGateUnlock,
+    LaserGateLockDestroy
 }
