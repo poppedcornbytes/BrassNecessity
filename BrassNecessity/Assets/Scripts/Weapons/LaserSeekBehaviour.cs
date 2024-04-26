@@ -29,6 +29,7 @@ public class LaserSeekBehaviour : MonoBehaviour
     private LaserSoundBehaviour soundEffects;
 
     private EnemyHealthHandler hitEnemy;
+    private LaserGateBehaviour hitGate;
 
     private void Start()
     {
@@ -46,25 +47,21 @@ public class LaserSeekBehaviour : MonoBehaviour
         RaycastHit target;
         Vector3 raycastStart = transform.position;
         Vector3 raycastDirection = transform.TransformDirection(Vector3.up);
-        bool shouldCheckEnemy = false;
+        bool isHittingGate = false;
         bool isHittingEnemy = false;
         if (Physics.Raycast(raycastStart, raycastDirection, out target, Mathf.Infinity, ignoreLayers))
         {
-            laserRender.enabled = true;
-            laserSplash.SetActive(true);
-            float targetDistance = target.distance / transform.lossyScale.y;
-            laserSplash.transform.localPosition = new Vector3(0, targetDistance, 0);
-            Vector3 newEndPos = new Vector3(0, targetDistance, 0);
-            laserBeam.EndPos = newEndPos;
-            shouldCheckEnemy = true;
-        }
-        if (shouldCheckEnemy)
-        {
+            displayLaser(target);
             isHittingEnemy = target.collider.TryGetComponent(out hitEnemy);
+            isHittingGate = !isHittingEnemy && target.collider.TryGetComponent(out hitGate);
         }
         if (isHittingEnemy)
         {
             handleEnemyCollision(target);
+        }
+        else if (isHittingGate)
+        {
+            handleGateCollision(target);
         }
         else
         {
@@ -72,6 +69,16 @@ public class LaserSeekBehaviour : MonoBehaviour
             impactEffect.ResetEffects();
         }
         laserBeam.UpdateLineScale();
+    }
+
+    private void displayLaser(RaycastHit target)
+    {
+        laserRender.enabled = true;
+        laserSplash.SetActive(true);
+        float targetDistance = target.distance / transform.lossyScale.y;
+        laserSplash.transform.localPosition = new Vector3(0, targetDistance, 0);
+        Vector3 newEndPos = new Vector3(0, targetDistance, 0);
+        laserBeam.EndPos = newEndPos;
     }
 
     private void handleEnemyCollision(RaycastHit target)
@@ -83,6 +90,16 @@ public class LaserSeekBehaviour : MonoBehaviour
         soundEffects.ChangeLaserFiringSoundWithMultiplier(multiplier);
         float damage = baseDamagePerSecond * multiplier * Time.deltaTime;
         hitEnemy.DamageEnemy(damage);
+    }
+
+    private void handleGateCollision(RaycastHit target)
+    {
+        ElementPair laserElement = weaponElement.ElementInfo;
+        ElementPair gateElement = target.collider.GetComponent<ElementComponent>().ElementInfo;
+        if (laserElement.Primary == gateElement.Primary)
+        {
+            hitGate.IncreaseUnlockProgress();
+        }
     }
 
     public void FinishSeeking()
@@ -97,6 +114,8 @@ public class LaserSeekBehaviour : MonoBehaviour
         impactEffect.ResetEffects();
         soundEffects.StopLoopLaserFiringEffect();
         hitEnemy = null;
+        hitGate?.StartRevertingUnlockProgress();
+        hitGate = null;
     }
 
     private void OnDrawGizmosSelected()
