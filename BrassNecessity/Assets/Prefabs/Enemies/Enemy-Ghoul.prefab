@@ -5690,7 +5690,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.26
-  m_Speed: 5
+  m_Speed: 2
   m_Acceleration: 6
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -5778,7 +5778,7 @@ MonoBehaviour:
   closeAttackDistance: 1
   farAttackDistance: 2
   midAttackDistance: 0
-  hitDamage: 8
+  hitDamage: 50
   enemyTurnSpeed: 90
   facingPlayerDegreesMargin: 5
   hitDetectDistance: 1.5
@@ -5799,7 +5799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce849628c22c0b54ea72444307d4f08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 40
+  baseHealth: 15
   soundEffects: {fileID: 0}
 --- !u!114 &1459416036565039914
 MonoBehaviour:
