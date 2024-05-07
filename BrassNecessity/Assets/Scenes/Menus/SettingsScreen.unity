@@ -1195,7 +1195,7 @@ MonoBehaviour:
     type: 3
   buttons:
   - elementName: SaveButton
-    type: 0
+    type: 4
     sceneDestination: 1
     activatedMenu: {fileID: 0}
     hidMenu: {fileID: 0}
