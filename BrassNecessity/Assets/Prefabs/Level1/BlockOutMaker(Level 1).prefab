@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6096701664024831555
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 85.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557686766492182689, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: m_Name
+      value: BlockOutMaker
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: WallPrefab
+      value: 
+      objectReference: {fileID: 4824122077080011845, guid: cde96679add58e146a43cf812e48ed7e,
+        type: 3}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: CurrentRoom
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: RoomBounds.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: RoomBounds.y
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: CustomWallWidth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: CustomFloorTileSize.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: CustomFloorTileSize.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: WallPrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: WallPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4824122077080011845, guid: cde96679add58e146a43cf812e48ed7e,
+        type: 3}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: WallPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 2716587652257071823, guid: 0cd3d728fb9e11f4888b7879e285d6cc,
+        type: 3}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: WallPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 64419527921963482, guid: 891cbaec3a01d3144a0b6ec7c3279e0c,
+        type: 3}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: WallPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1029138428013037897, guid: 73d59a007f067f14eb991a3d43476743,
+        type: 3}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: FloorTilePrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: FloorTilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 250656191406557766, guid: 420f8a0b0eda0784cb92008e45c0f261,
+        type: 3}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: FloorTilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 8341577505880936706, guid: 3af872f5664d6f54c8e65c03f6f5061a,
+        type: 3}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: FloorTilePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1110014185768589252, guid: 00f3e5a9795ec7641a8a16a56eb4b2f2,
+        type: 3}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: FloorTilePrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 2871936610707696403, guid: 43d002c15c3788f43ac7a601dd990f4c,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7edd524446e306f4b9d239d40ed7870f, type: 3}
