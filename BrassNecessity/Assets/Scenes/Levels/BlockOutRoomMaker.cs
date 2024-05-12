@@ -7,6 +7,10 @@ public class BlockOutRoomMaker : MonoBehaviour
 {
     public Vector2Int RoomBounds;
     public GameObject CurrentRoom;
+    public float CustomWallWidth;
+    public GameObject[] WallPrefabs;
+    public GameObject[] FloorTilePrefabs;
+    public Vector2 CustomFloorTileSize;
     public void CreateBasicRoom()
     {
         GameObject blockOutRoom = new GameObject("Room");
@@ -32,21 +36,17 @@ public class BlockOutRoomMaker : MonoBehaviour
         Vector3 horizontalWallScale = new Vector3(RoomBounds.x, 5f, 1f);
         Vector3 verticalWallBasePosition = new Vector3(RoomBounds.x / 2, 2.5f, 0f);
         Vector3 horizontalWallBasePosition = new Vector3(0f, 2.5f, RoomBounds.y / 2);
-        GameObject leftWall = CreateWall(wallParent, 
+        GameObject leftWall = CreatePrimitiveWall(wallParent, 
             verticalWallScale, 
             new Vector3(verticalWallBasePosition.x * -1, verticalWallBasePosition.y, verticalWallBasePosition.z));
-        GameObject rightWall = CreateWall(wallParent, verticalWallScale, verticalWallBasePosition);
+        GameObject rightWall = CreatePrimitiveWall(wallParent, verticalWallScale, verticalWallBasePosition);
         rightWall.transform.rotation *= Quaternion.Euler(0, 180f, 0);
-        GameObject backWall = CreateWall(wallParent, horizontalWallScale, horizontalWallBasePosition);
-        GameObject frontWall = new GameObject("FrontBarrier", typeof(BoxCollider));
-        frontWall.transform.parent = wallParent.transform;
-        frontWall.transform.localScale = horizontalWallScale;
-        frontWall.transform.localPosition = new Vector3(horizontalWallBasePosition.x, horizontalWallBasePosition.y, horizontalWallBasePosition.z * -1);
-        frontWall.transform.rotation *= Quaternion.Euler(0, 180f, 0);
+        GameObject backWall = CreatePrimitiveWall(wallParent, horizontalWallScale, horizontalWallBasePosition);
+        GameObject frontWall = createFrontBarrierWall(wallParent.transform);
         return wallParent;
     }
 
-    public GameObject CreateWall(GameObject parentObject, Vector3 localScale, Vector3 localPosition)
+    public GameObject CreatePrimitiveWall(GameObject parentObject, Vector3 localScale, Vector3 localPosition)
     {
         GameObject wallChild = GameObject.CreatePrimitive(PrimitiveType.Cube);
         wallChild.name = "WallChild";
@@ -54,6 +54,111 @@ public class BlockOutRoomMaker : MonoBehaviour
         wallChild.transform.localScale = localScale;
         wallChild.transform.localPosition = localPosition;
         return wallChild;
+    }
+
+    public void CreateCustomWall()
+    {
+        MeshFilter wallMesh = WallPrefabs[0].GetComponentInChildren<MeshFilter>();
+        float wallWidth = 1f;
+        if (wallMesh != null)
+        {
+            wallWidth = wallMesh.sharedMesh.bounds.size.x;
+        }
+        GameObject leftWall = instantiateCustomWalls(wallWidth);
+    }
+
+    public void CreateCustomWallWithWidthOverride()
+    {
+        GameObject leftWall = instantiateCustomWalls(CustomWallWidth);
+    }
+
+    private GameObject instantiateCustomWalls(float wallWidth)
+    {
+        float offset = 2.5f;
+        GameObject wallsParent = initialiseParentObject("Walls");
+
+        GameObject leftWallParent = new GameObject("Left Wall");
+        leftWallParent.transform.parent = wallsParent.transform;
+        leftWallParent.transform.localPosition = new Vector3(-(float)RoomBounds.x / 2, 0, ((float)RoomBounds.y / 2) - offset);
+        leftWallParent.transform.localRotation = Quaternion.Euler(new Vector3(0, 90f, 0));
+        RoomRowBuilder verticalRowBuilder = new RoomRowBuilder(RoomBounds.y, WallPrefabs);
+        verticalRowBuilder.FlagCustomObjectLength(wallWidth);
+        verticalRowBuilder.SetCustomOffset(offset);
+        verticalRowBuilder.BuildRow(leftWallParent);
+
+        GameObject rightWallParent = new GameObject("Right Wall");
+        rightWallParent.transform.parent = wallsParent.transform;
+        rightWallParent.transform.localPosition = new Vector3((float)RoomBounds.x / 2, 0, ((float)RoomBounds.y / 2) - offset);
+        rightWallParent.transform.localRotation = Quaternion.Euler(new Vector3(0, -90f, 0));
+        verticalRowBuilder.FlagCustomObjectLength(-wallWidth);
+        verticalRowBuilder.BuildRow(rightWallParent);
+
+        GameObject backWallParent = new GameObject("Back Wall");
+        backWallParent.transform.parent = wallsParent.transform;
+        backWallParent.transform.localPosition = new Vector3(((float)RoomBounds.x / 2) - offset, 0, (float)RoomBounds.y / 2);
+        backWallParent.transform.localRotation = Quaternion.Euler(new Vector3(0, 180f, 0));
+        RoomRowBuilder horizontalRowBuilder = new RoomRowBuilder(RoomBounds.x, WallPrefabs);
+        horizontalRowBuilder.FlagCustomObjectLength(wallWidth);
+        horizontalRowBuilder.SetCustomOffset(offset);
+        horizontalRowBuilder.BuildRow(backWallParent);
+
+        createFrontBarrierWall(wallsParent.transform);
+        return wallsParent;
+    }
+
+    public void CreateCustomFloor()
+    {
+        MeshFilter floorMesh = WallPrefabs[0].GetComponentInChildren<MeshFilter>();
+        Vector2 floorBounds = new Vector2(1, 1);
+        if (floorMesh != null)
+        {
+            floorBounds.x = floorMesh.sharedMesh.bounds.size.x;
+            floorBounds.y = floorMesh.sharedMesh.bounds.size.y;
+        }
+        initialiseCustomFloor(floorBounds);
+    }
+
+    public void CreateCustomFloorWithOverrideSize()
+    {
+        initialiseCustomFloor(CustomFloorTileSize);
+    }
+
+    public void initialiseCustomFloor(Vector2 tileDimensions)
+    {
+        Vector2 tileOffset = new Vector2(2.5f, -5f);
+        GameObject floorParent = initialiseParentObject("Floor");
+        int numberOfRows = (int)Mathf.Abs(Mathf.Ceil(RoomBounds.y / tileDimensions.y));
+        RoomRowBuilder floorRowBuilder = new RoomRowBuilder(RoomBounds.x, FloorTilePrefabs);
+        floorRowBuilder.FlagCustomObjectLength(tileDimensions.x);
+        floorRowBuilder.SetCustomOffset(tileOffset.x);
+        float startingY = (float)RoomBounds.y / 2 + tileOffset.y;
+        for (int i = 0; i < numberOfRows; i++)
+        {
+            GameObject floorRow = new GameObject("FloorRow");
+            floorRow.transform.parent = floorParent.transform;
+            floorRow.transform.localPosition = new Vector3(-((float)RoomBounds.x / 2 - tileOffset.x), 0, i * -tileDimensions.y + startingY);
+            floorRowBuilder.BuildRow(floorRow);
+        }
+    }
+
+    private GameObject initialiseParentObject(string parentName)
+    {
+        GameObject parentObject = new GameObject(parentName);
+        parentObject.transform.parent = this.transform;
+        parentObject.transform.localPosition = Vector3.zero;
+        return parentObject;
+    }
+
+    private GameObject createFrontBarrierWall(Transform parentObejct)
+    {
+        Vector3 horizontalWallScale = new Vector3(RoomBounds.x, 5f, 1f);
+        Vector3 horizontalWallBasePosition = new Vector3(0f, 2.5f, RoomBounds.y / 2);
+        GameObject frontWall = new GameObject("FrontBarrier", typeof(BoxCollider));
+        frontWall.transform.parent = parentObejct;
+        frontWall.transform.localScale = horizontalWallScale;
+        frontWall.transform.localPosition = new Vector3(horizontalWallBasePosition.x, horizontalWallBasePosition.y, horizontalWallBasePosition.z * -1);
+        frontWall.transform.rotation *= Quaternion.Euler(0, 180f, 0);
+        return frontWall;
     }
 
     public void ResetObject()
@@ -70,21 +175,63 @@ public class BlockOutRoomMaker : MonoBehaviour
 public class BlockOutRoomMakerEditor: Editor
 {
     private SerializedProperty roomBounds;
+    private SerializedProperty wallPrefab;
+    private SerializedProperty wallWidth;
+    private SerializedProperty floorPrefab;
+    private SerializedProperty floorDimensions;
+
     private void OnEnable()
     {
         roomBounds = serializedObject.FindProperty("RoomBounds");
+        wallPrefab = serializedObject.FindProperty("WallPrefabs");
+        wallWidth = serializedObject.FindProperty("CustomWallWidth");
+        floorPrefab = serializedObject.FindProperty("FloorTilePrefabs");
+        floorDimensions = serializedObject.FindProperty("CustomFloorTileSize");
     }
 
     public override void OnInspectorGUI()
     {
         BlockOutRoomMaker myTarget = (BlockOutRoomMaker)target;
         EditorGUILayout.PropertyField(roomBounds, new GUIContent("Room Bounds: "));
-        serializedObject.ApplyModifiedProperties();
-        if (GUILayout.Button("Build Room"))
+        if (GUILayout.Button("Build Simple Room"))
         {
             myTarget.CreateBasicRoom();
-            //code here;
         }
+
+
+        EditorGUILayout.PropertyField(wallPrefab, new GUIContent("Wall Prefabs: "));
+        EditorGUILayout.PropertyField(wallWidth, new GUIContent("Override Width: "));
+
+        if (GUILayout.Button("Build Custom Walls"))
+        {
+            if (myTarget.CustomWallWidth > 0f)
+            {
+                myTarget.CreateCustomWallWithWidthOverride();
+            }
+            else
+            {
+                myTarget.CreateCustomWall();
+            }
+        }
+
+        EditorGUILayout.PropertyField(floorPrefab, new GUIContent("Floor Prefabs: "));
+        EditorGUILayout.PropertyField(floorDimensions, new GUIContent("Override Floor Size: "));
+
+        if (GUILayout.Button("Build Custom Floor"))
+        {
+            if (myTarget.CustomFloorTileSize != Vector2.zero)
+            {
+                myTarget.CreateCustomFloorWithOverrideSize();
+            }
+            else
+            {
+                myTarget.CreateCustomFloor();
+            }
+        }
+        serializedObject.ApplyModifiedProperties();
+
+
+
         if (GUILayout.Button("Reset Room"))
         {
             myTarget.ResetObject();
