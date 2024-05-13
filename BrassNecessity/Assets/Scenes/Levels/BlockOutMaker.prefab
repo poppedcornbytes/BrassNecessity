@@ -46,3 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RoomBounds: {x: 0, y: 0}
   CurrentRoom: {fileID: 0}
+  CustomWallWidth: 0
+  WallPrefabs: []
+  FloorTilePrefabs: []
+  CustomFloorTileSize: {x: 0, y: 0}
+  CustomRowObjectPrefabs:
+  - {fileID: 2716587652257071823, guid: 0cd3d728fb9e11f4888b7879e285d6cc, type: 3}
+  - {fileID: 64419527921963482, guid: 891cbaec3a01d3144a0b6ec7c3279e0c, type: 3}
+  - {fileID: 4824122077080011845, guid: cde96679add58e146a43cf812e48ed7e, type: 3}
+  - {fileID: 1029138428013037897, guid: 73d59a007f067f14eb991a3d43476743, type: 3}
+  CustomRowObjectLength: 0

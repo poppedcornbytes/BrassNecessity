@@ -11,6 +11,9 @@ public class BlockOutRoomMaker : MonoBehaviour
     public GameObject[] WallPrefabs;
     public GameObject[] FloorTilePrefabs;
     public Vector2 CustomFloorTileSize;
+    public GameObject[] CustomRowObjectPrefabs;
+    public float CustomRowObjectLength;
+
     public void CreateBasicRoom()
     {
         GameObject blockOutRoom = new GameObject("Room");
@@ -141,6 +144,30 @@ public class BlockOutRoomMaker : MonoBehaviour
         }
     }
 
+    public void CreateCustomRowObject()
+    {
+        MeshFilter rowObjectMesh = CustomRowObjectPrefabs[0].GetComponentInChildren<MeshFilter>();
+        float rowObjectLength = 1f;
+        if (rowObjectMesh != null)
+        {
+            rowObjectLength = rowObjectMesh.sharedMesh.bounds.size.x;
+        }
+        initialiseCustomRowObject(rowObjectLength);
+    }
+
+    public void CreateCustomRowObjectWithOverride()
+    {
+        initialiseCustomRowObject(CustomRowObjectLength);
+    }
+
+    public void initialiseCustomRowObject(float objectLength)
+    {
+        GameObject rowObjectParent =initialiseParentObject("Row Object");
+        RoomRowBuilder rowBuilder = new RoomRowBuilder(RoomBounds.x, CustomRowObjectPrefabs);
+        rowBuilder.FlagCustomObjectLength(objectLength);
+        rowBuilder.BuildRow(rowObjectParent);
+    }
+
     private GameObject initialiseParentObject(string parentName)
     {
         GameObject parentObject = new GameObject(parentName);
@@ -175,18 +202,22 @@ public class BlockOutRoomMaker : MonoBehaviour
 public class BlockOutRoomMakerEditor: Editor
 {
     private SerializedProperty roomBounds;
-    private SerializedProperty wallPrefab;
+    private SerializedProperty wallPrefabs;
     private SerializedProperty wallWidth;
-    private SerializedProperty floorPrefab;
+    private SerializedProperty floorPrefabs;
     private SerializedProperty floorDimensions;
+    private SerializedProperty rowObjectPrefabs;
+    private SerializedProperty rowObjectSize;
 
     private void OnEnable()
     {
         roomBounds = serializedObject.FindProperty("RoomBounds");
-        wallPrefab = serializedObject.FindProperty("WallPrefabs");
+        wallPrefabs = serializedObject.FindProperty("WallPrefabs");
         wallWidth = serializedObject.FindProperty("CustomWallWidth");
-        floorPrefab = serializedObject.FindProperty("FloorTilePrefabs");
+        floorPrefabs = serializedObject.FindProperty("FloorTilePrefabs");
         floorDimensions = serializedObject.FindProperty("CustomFloorTileSize");
+        rowObjectPrefabs = serializedObject.FindProperty("CustomRowObjectPrefabs");
+        rowObjectSize = serializedObject.FindProperty("CustomRowObjectLength");
     }
 
     public override void OnInspectorGUI()
@@ -199,7 +230,7 @@ public class BlockOutRoomMakerEditor: Editor
         }
 
 
-        EditorGUILayout.PropertyField(wallPrefab, new GUIContent("Wall Prefabs: "));
+        EditorGUILayout.PropertyField(wallPrefabs, new GUIContent("Wall Prefabs: "));
         EditorGUILayout.PropertyField(wallWidth, new GUIContent("Override Width: "));
 
         if (GUILayout.Button("Build Custom Walls"))
@@ -214,7 +245,7 @@ public class BlockOutRoomMakerEditor: Editor
             }
         }
 
-        EditorGUILayout.PropertyField(floorPrefab, new GUIContent("Floor Prefabs: "));
+        EditorGUILayout.PropertyField(rowObjectSize, new GUIContent("Floor Prefabs: "));
         EditorGUILayout.PropertyField(floorDimensions, new GUIContent("Override Floor Size: "));
 
         if (GUILayout.Button("Build Custom Floor"))
@@ -228,13 +259,26 @@ public class BlockOutRoomMakerEditor: Editor
                 myTarget.CreateCustomFloor();
             }
         }
-        serializedObject.ApplyModifiedProperties();
 
+        EditorGUILayout.PropertyField(rowObjectPrefabs, new GUIContent("Repeating Prefabs: "));
+        EditorGUILayout.PropertyField(rowObjectSize, new GUIContent("Override Size: "));
 
+        if (GUILayout.Button("Build Repeating Item"))
+        {
+            if (myTarget.CustomRowObjectLength > 0f)
+            {
+                myTarget.CreateCustomRowObjectWithOverride();
+            }
+            else
+            {
+                myTarget.CreateCustomRowObject();
+            }
+        }
 
         if (GUILayout.Button("Reset Room"))
         {
             myTarget.ResetObject();
         }
+        serializedObject.ApplyModifiedProperties();
     }
 }

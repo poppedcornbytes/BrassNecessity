@@ -14,21 +14,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 85.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 1200408133015845055, guid: 7edd524446e306f4b9d239d40ed7870f,
-        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -65,7 +50,7 @@ PrefabInstance:
     - target: {fileID: 1557686766492182689, guid: 7edd524446e306f4b9d239d40ed7870f,
         type: 3}
       propertyPath: m_Name
-      value: BlockOutMaker
+      value: BlockOutMaker(Level 1)
       objectReference: {fileID: 0}
     - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
         type: 3}
@@ -101,6 +86,11 @@ PrefabInstance:
     - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
         type: 3}
       propertyPath: CustomFloorTileSize.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
+        type: 3}
+      propertyPath: CustomRowObjectLength
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2595009881234400637, guid: 7edd524446e306f4b9d239d40ed7870f,
