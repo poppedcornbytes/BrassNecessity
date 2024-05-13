@@ -58,6 +58,11 @@ namespace EnemyStateMachine
                 currentState.AnimationClipFinished(this.machineContext, animName);
             }
         }
+
+        public void AddSpawnManager(EnemySpawnManager spawnManager)
+        {
+            machineContext.SpawnManager = spawnManager;
+        }
     }
 }
 
