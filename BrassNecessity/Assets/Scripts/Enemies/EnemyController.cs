@@ -70,6 +70,12 @@ public class EnemyController : MonoBehaviour
         enemyState.InitialiseStateMachine(enemyContext);
     }
 
+    public void AddEnemySpawnerParent(EnemySpawnManager spawnManager)
+    {
+        this.spawnManager = spawnManager;
+        enemyState.AddSpawnManager(spawnManager);
+    }
+
 
     public void SetElement(ElementPair newElement)
     {

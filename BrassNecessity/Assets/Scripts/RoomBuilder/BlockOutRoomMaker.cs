@@ -245,7 +245,7 @@ public class BlockOutRoomMakerEditor: Editor
             }
         }
 
-        EditorGUILayout.PropertyField(rowObjectSize, new GUIContent("Floor Prefabs: "));
+        EditorGUILayout.PropertyField(floorPrefabs, new GUIContent("Floor Prefabs: "));
         EditorGUILayout.PropertyField(floorDimensions, new GUIContent("Override Floor Size: "));
 
         if (GUILayout.Button("Build Custom Floor"))

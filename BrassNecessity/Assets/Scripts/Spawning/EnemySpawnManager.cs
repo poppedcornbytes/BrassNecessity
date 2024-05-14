@@ -89,7 +89,7 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
 
         // Spawn enemy
         EnemyController newEnemy = Instantiate(chosenPrefab, spawnPoints[spawnPointNum].transform.position, spawnPoints[spawnPointNum].transform.rotation, spawnedEnemiesHolder).GetComponent<EnemyController>();
-        newEnemy.spawnManager = this;
+        newEnemy.AddEnemySpawnerParent(this);
         newEnemy.SetElement(ChooseElement());
         
         // Update counters

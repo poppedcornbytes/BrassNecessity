@@ -2,6 +2,6 @@
 	recurse = true
 [submodule "BrassNecessity/Assets/AssetPacks"]
 	path = BrassNecessity/Assets/AssetPacks
-	url = https://github.com/zkturman/BrassNecessity_Assets.git
+	url = https://github.com/poppedcornbytes/BrassNecessity_Assets.git
 	branch = main
 	update = merge
