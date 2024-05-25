@@ -9982,6 +9982,13 @@ MonoBehaviour:
   nonShootingCooldownFactor: 0.5
   elementComponent: {fileID: 8416264617037053479}
   elementBreakEffect: {fileID: 4585319490699721728}
+  healthHandler: {fileID: 6927468107037060106}
+  breakDamageAmount: 60
+  enemyBreakDamageFactor: 0.2
+  enemyBreakDamageRadius: 2
+  enemyLayersToInclude:
+    serializedVersion: 2
+    m_Bits: 16384
 --- !u!114 &8416264617037053479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12011,6 +12018,7 @@ MonoBehaviour:
     - {fileID: 1284542973885792260}
     - {fileID: 1284542973651135140}
     - {fileID: 1284542973075777698}
+    selectionAnimationTrigger: 
     defaultType: 0
   - name: Ulysses
     mesh: {fileID: 1284542972395492363}
@@ -12020,7 +12028,10 @@ MonoBehaviour:
     - {fileID: 1284542973514691874}
     - {fileID: 1284542972718005251}
     - {fileID: 1284542974238619324}
+    selectionAnimationTrigger: 
     defaultType: 4
+  playerElementData: {fileID: 0}
+  playerAnimator: {fileID: 0}
 --- !u!114 &6366320667428021991
 MonoBehaviour:
   m_ObjectHideFlags: 0

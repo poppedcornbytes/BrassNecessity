@@ -17,6 +17,18 @@ public class WeaponBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject elementBreakEffect;
     private FrameTimeoutHandler elementBreakTimeoutHandler;
+    [SerializeField]
+    private PlayerHealthHandler healthHandler;
+    [SerializeField]
+    private float breakDamageAmount = 60f;
+    [SerializeField]
+    private float enemyBreakDamageFactor = 0.2f;
+    [SerializeField]
+    private float enemyBreakDamageRadius = 2f;
+    [SerializeField]
+    private LayerMask enemyLayersToInclude;
+
+
     public bool IsElementBroken { get; private set; }
     private bool isFiring = false;
 
@@ -48,6 +60,13 @@ public class WeaponBehaviour : MonoBehaviour
         {
             IsElementBroken = true;
             elementBreakEffect.SetActive(true);
+            healthHandler.DamagePlayer(breakDamageAmount);
+            Collider[] colliders = Physics.OverlapSphere(transform.position, enemyBreakDamageRadius, enemyLayersToInclude);
+            float enemyDamage = breakDamageAmount * enemyBreakDamageFactor;
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                colliders[i].GetComponent<EnemyHealthHandler>()?.DamageEnemy(enemyDamage);
+            }
         }
     }
 
@@ -99,5 +118,10 @@ public class WeaponBehaviour : MonoBehaviour
             percentRemaining = elementBreakTimeoutHandler.TimeRemaining() / elementDurabiilityInSeconds;
         }
         return percentRemaining;
+    }
+
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawSphere(transform.position, enemyBreakDamageRadius);
     }
 }
