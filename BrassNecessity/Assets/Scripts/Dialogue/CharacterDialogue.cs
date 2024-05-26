@@ -14,7 +14,7 @@ public class CharacterDialogue : MonoBehaviour
         dialogueMap = characterDialogue.ToDictionary(key => key.Speaker, value => value);
     }
 
-    public string[] GetCharacterDialogue(CharacterKey speakingCharacter, byte progressLevel)
+    public string[] GetCharacterDialogue(CharacterKey speakingCharacter, int progressLevel)
     {
         string[] targetDialogue;
         if (dialogueMap.ContainsKey(speakingCharacter))

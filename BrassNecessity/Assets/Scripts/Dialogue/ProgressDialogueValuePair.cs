@@ -6,8 +6,8 @@ using UnityEngine;
 public class ProgressDialogueValuePair
 {
     [SerializeField]
-    private byte progressLevel;
-    public byte ProgressLevel { get => progressLevel; }
+    private int progressLevel;
+    public int ProgressLevel { get => progressLevel; }
 
     [SerializeField]
     private string[] dialogue;

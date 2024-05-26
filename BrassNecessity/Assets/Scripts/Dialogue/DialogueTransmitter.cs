@@ -8,6 +8,8 @@ public class DialogueTransmitter : MonoBehaviour
     private CharacterDialogue dialogueData;
     [SerializeField]
     private ProgressManager progressManager;
+    [SerializeField]
+    private DialogueUIHandler uiHandler;
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +26,11 @@ public class DialogueTransmitter : MonoBehaviour
     public void BroadcastDialogue(CharacterKey speakingCharacter)
     {
         string[] dialogue = dialogueData.GetCharacterDialogue(speakingCharacter, progressManager.CurrentProgress);
-        for (int i = 0; i < dialogue.Length; i++)
-        {
-            Debug.Log(dialogue[i]);
-        }
+        uiHandler.AddDialogue(speakingCharacter, dialogue);
     }
 
     public void ClearDialogue(CharacterKey speakingCharacter)
     {
-        Debug.Log("Cleared dialogue.");
+        uiHandler.ClearDialogue();
     }
 }

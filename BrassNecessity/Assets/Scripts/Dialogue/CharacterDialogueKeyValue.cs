@@ -14,14 +14,14 @@ public class CharacterDialogueKeyValue
     
     public List<ProgressDialogueValuePair> ScriptLines { get => scriptLines; }
 
-    public string[] GetDialogueAtProgressLevel(byte targetProgressValue)
+    public string[] GetDialogueAtProgressLevel(int targetProgressValue)
     {
         int i = 0;
         int bestProgressMatch = 0;
         int matchIndex = 0;
         while (i < scriptLines.Count)
         {
-            byte currentProgressValue = scriptLines[i].ProgressLevel;
+            int currentProgressValue = scriptLines[i].ProgressLevel;
             if (currentProgressValue > bestProgressMatch && currentProgressValue <= targetProgressValue)
             {
                 bestProgressMatch = currentProgressValue;

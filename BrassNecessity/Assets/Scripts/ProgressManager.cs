@@ -5,9 +5,9 @@ using UnityEngine;
 public class ProgressManager : MonoBehaviour
 {
     [SerializeField]
-    private byte currentProgress;
+    private int currentProgress;
 
-    public byte CurrentProgress { get => currentProgress; }
+    public int CurrentProgress { get => currentProgress; }
 
 
     // Start is called before the first frame update

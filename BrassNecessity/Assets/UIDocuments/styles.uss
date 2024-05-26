@@ -226,7 +226,7 @@ SliderInt.settingSliderSelected {
 
 .fade-out-animation {
     opacity: 0;
-    transition-duration: 1s;
+    transition-duration: 0.75s;
 }
 
 .heroImage {
@@ -259,6 +259,15 @@ SliderInt.settingSliderSelected {
 
 .hud-title {
     -unity-text-align: middle-center;
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgba(0, 0, 0, 0.79);
+    -unity-font-style: bold;
+}
+
+.hud-text {
+    -unity-text-align: middle-left;
     font-size: 36px;
     color: rgb(255, 255, 255);
     -unity-text-outline-width: 1px;
