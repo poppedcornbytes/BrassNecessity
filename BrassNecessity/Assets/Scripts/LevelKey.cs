@@ -6,7 +6,9 @@ public enum LevelKey
 {
     EntryA,
     EntryB,
-    Level1,
-    Level2,
-    Level3
+    Level1A,
+    Level1B,
+    Level1C,
+    Level1D,
+    Level1E
 }
