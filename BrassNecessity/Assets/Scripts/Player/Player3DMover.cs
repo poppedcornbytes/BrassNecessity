@@ -10,7 +10,7 @@ public class Player3DMover : PlayerMover
 
     public override void MovePlayer(PlayerControllerInputs input)
     {
-        ICartesianMoveHandler planarMoveHandler = determineMoveHandler(input.sprint);
+        ICartesianMoveHandler planarMoveHandler = walkHandler;
         Vector3 planarMovement = planarMoveHandler.GenerateMove(input.move);
         Vector3 verticalMovement = jumpFallHandler.GenerateMove(input.jump);
         Vector3 totalMovement = planarMovement + verticalMovement;

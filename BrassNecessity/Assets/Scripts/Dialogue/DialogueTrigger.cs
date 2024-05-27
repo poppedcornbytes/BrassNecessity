@@ -9,6 +9,11 @@ public class DialogueTrigger : MonoBehaviour
 
     [SerializeField]
     private DialogueTransmitter dialogueTransmitter;
+
+    private void Awake()
+    {
+        GetComponent<Animator>()?.SetBool(speakingCharacter.ToString(), true);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out PlayerHealthHandler playerHealth))

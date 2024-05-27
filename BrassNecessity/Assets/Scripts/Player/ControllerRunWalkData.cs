@@ -13,9 +13,6 @@ public class ControllerMoveData
     [Tooltip("Rotating move speed of feet when player is rotating about the y-axis in m/s.")]
     public float RotatingFootSpeed = 1.4f;
 
-    [Tooltip("Sprint speed of the character in m/s")]
-    public float SprintSpeed = 5.335f;
-
     [Tooltip("Reverse sprint speed of the character in m/s")]
     public float ReverseSprintSpeed = 4.5f;
 

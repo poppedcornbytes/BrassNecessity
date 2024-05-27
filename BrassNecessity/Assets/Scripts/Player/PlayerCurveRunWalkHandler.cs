@@ -14,10 +14,6 @@ public class PlayerCurveRunWalkHandler : PlayerRunWalkHandler
         {
             targetSpeed = controllerMoveData.ReverseMoveSpeed * -1;
         }
-        else if (isReverseSprinting())
-        {
-            targetSpeed = controllerMoveData.ReverseSprintSpeed * -1;
-        }
         else if (isRotationOnly())
         {
             targetSpeed = controllerMoveData.RotatingFootSpeed;
@@ -27,12 +23,7 @@ public class PlayerCurveRunWalkHandler : PlayerRunWalkHandler
 
     private bool isReverseWalking()
     {
-        return moveDirection.y < 0 && !Sprint;
-    }
-
-    private bool isReverseSprinting()
-    {
-        return moveDirection.y < 0 && Sprint;
+        return moveDirection.y < 0;
     }
 
     private bool isRotationOnly()
@@ -54,7 +45,7 @@ public class PlayerCurveRunWalkHandler : PlayerRunWalkHandler
         speed *= Mathf.Sign(targetSpeed);
         Vector3 targetDirection = determineTargetDirection();
         Vector3 movement = targetDirection.normalized * (speed * Time.deltaTime) +
-                         new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime;
+            new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime;
         return movement;
     }
 

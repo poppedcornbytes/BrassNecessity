@@ -13426,8 +13426,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveData:
-    MoveSpeed: 2
-    ReverseMoveSpeed: 1.6
+    MoveSpeed: 5.335
+    ReverseMoveSpeed: 4.5
     RotatingFootSpeed: 1.4
     SprintSpeed: 5.335
     ReverseSprintSpeed: 4.5
@@ -13482,8 +13482,8 @@ MonoBehaviour:
     FreeFallAnimationId: FreeFall
     MotionSpeedAnimationId: MotionSpeed
   moveData:
-    MoveSpeed: 1.6
-    ReverseMoveSpeed: 1.4
+    MoveSpeed: 4.5
+    ReverseMoveSpeed: 4
     RotatingFootSpeed: 1.6
     SprintSpeed: 4.5
     ReverseSprintSpeed: 4
@@ -13543,9 +13543,9 @@ MonoBehaviour:
   playerLaser: {fileID: 1284542972368637847}
   weaponBehaviour: {fileID: 1633739402821775920}
   moveData:
-    MoveSpeed: 1.6
-    ReverseMoveSpeed: 1.4
-    RotatingFootSpeed: 1.6
+    MoveSpeed: 4.5
+    ReverseMoveSpeed: 4
+    RotatingFootSpeed: 1.4
     SprintSpeed: 4.5
     ReverseSprintSpeed: 4
     RotationSmoothTime: 0.12
@@ -13594,8 +13594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 1284542972771108727}
   moveData:
-    MoveSpeed: 2
-    ReverseMoveSpeed: 1.6
+    MoveSpeed: 5.335
+    ReverseMoveSpeed: 4.5
     RotatingFootSpeed: 1.4
     SprintSpeed: 5.335
     ReverseSprintSpeed: 4.5

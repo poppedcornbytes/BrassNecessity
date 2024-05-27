@@ -42,7 +42,6 @@ public class PlayerControllerInputs : MonoBehaviour
 
 	public void OnSprint(InputValue value)
 	{
-		SprintInput(value.isPressed);
 	}
 
 	public void OnShoot(InputValue value)

@@ -19,7 +19,6 @@ public class PlayerRunWalkHandler : ICartesianMoveHandler
     public PlayerRunWalkHandler(ControllerMoveData controllerMoveData)
     {
         this.controllerMoveData = controllerMoveData;
-        Sprint = false;
         IsMovementAnalog = false;
     }
 
@@ -50,10 +49,6 @@ public class PlayerRunWalkHandler : ICartesianMoveHandler
         if (moveDirection == Vector2.zero)
         {
             targetSpeed = 0f;
-        }
-        else if (Sprint)
-        {
-            targetSpeed = controllerMoveData.SprintSpeed;
         }
         else
         {

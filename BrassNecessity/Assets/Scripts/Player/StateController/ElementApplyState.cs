@@ -57,19 +57,25 @@ public class ElementApplyState : MonoBehaviour, IControllerState
     public void StateEnter()
     {
         timeoutHandler.ResetTimeout();
+        NextState = this;
         if (HasElements())
         {
             ElementComponent newElement = availableElements.Dequeue();
             laserElement.SwitchType(newElement.ElementInfo.Primary);
             soundEffects.PlayOnce(SoundEffectKey.ElementEquip);
+            weaponBehaviour.ResetElement();
         }
         else if (shouldUpdateWhenNoElements())
         {
             soundEffects.PlayOnce(SoundEffectKey.ElementEquip);
             laserElement.SwitchType(characterInfo.GetDefaultType());
+            weaponBehaviour.ResetElement();
         }
-        weaponBehaviour.ResetElement();
-        NextState = this;
+        else
+        {
+            NextState = GetComponent<ActionState>();
+            input.applyElement = false;
+        }
     }
 
     public void StateUpdate()
@@ -94,7 +100,6 @@ public class ElementApplyState : MonoBehaviour, IControllerState
     public void AddElement(ElementComponent nextElement)
     {
         availableElements.Enqueue(nextElement);
-        Debug.Log("Added element " + nextElement.ElementInfo.Primary);
     }
 
     public bool HasElements()

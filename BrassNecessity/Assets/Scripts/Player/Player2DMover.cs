@@ -8,7 +8,7 @@ public class Player2DMover: PlayerMover
 
     public override void MovePlayer(PlayerControllerInputs input)
     {
-        ICartesianMoveHandler moveHandler = determineMoveHandler(input.sprint);
+        ICartesianMoveHandler moveHandler = walkHandler;
         Vector3 movement = moveHandler.GenerateMove(input.move);
         moveData.ControllerReference.Move(movement);
     }
@@ -17,6 +17,5 @@ public class Player2DMover: PlayerMover
     {
         this.animManager = animManager;
         walkHandler.EnableAnimations(animManager);
-        runHandler.EnableAnimations(animManager);
     }
 }
