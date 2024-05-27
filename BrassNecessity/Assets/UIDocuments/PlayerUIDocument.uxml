@@ -40,8 +40,8 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="DialogueParent">
-                <ui:VisualElement name="DialogueHolder">
+            <ui:VisualElement name="DialogueParent" style="width: auto;">
+                <ui:VisualElement name="DialogueHolder" style="background-color: rgba(32, 51, 34, 0.87); border-top-left-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 20px; border-top-right-radius: 20px; transition-duration: 1s;">
                     <ui:Label text="&lt;Speaker&gt;" display-tooltip-when-elided="true" name="SpeakerTitle" class="hud-title dialogue-text" style="-unity-text-align: middle-left;" />
                     <ui:Label text="&lt;Dialogue lines to add&gt;" display-tooltip-when-elided="true" name="DialogueText" class="hud-text dialogue-text" style="font-size: 32px;" />
                 </ui:VisualElement>

@@ -7,6 +7,7 @@ public class DialogueUIHandler : MonoBehaviour
 {
     private Label speakerNameLabel;
     private Label dialogueTextLabel;
+    private VisualElement dialogueHolder;
     [SerializeField]
     private float secondsPerLetterDisplayRate = 0.005f;
     [SerializeField]
@@ -18,6 +19,8 @@ public class DialogueUIHandler : MonoBehaviour
     private void OnEnable()
     {
         VisualElement rootElement = GetComponent<UIDocument>().rootVisualElement;
+        dialogueHolder = rootElement.Q<VisualElement>("DialogueHolder");
+        dialogueHolder.AddToClassList(FADE_OUT_ANIMATION_NAME);
         speakerNameLabel = rootElement.Q<Label>("SpeakerTitle");
         speakerNameLabel.text = string.Empty;
         speakerNameLabel.AddToClassList(FADE_OUT_ANIMATION_NAME);
@@ -30,6 +33,7 @@ public class DialogueUIHandler : MonoBehaviour
     {
         isClearTriggered = false;
         currentLines = dialogueText;
+        dialogueHolder.RemoveFromClassList(FADE_OUT_ANIMATION_NAME);
         speakerNameLabel.RemoveFromClassList(FADE_OUT_ANIMATION_NAME);
         speakerNameLabel.text = string.Format("{0}:", speakerName.ToString());
         dialogueTextLabel.text = string.Empty;
@@ -124,11 +128,13 @@ public class DialogueUIHandler : MonoBehaviour
             if (elapsedTimeInSeconds >= secondsBeforeAnimationTriger)
             {
                 dialogueTextLabel.AddToClassList(FADE_OUT_ANIMATION_NAME);
+                dialogueHolder.AddToClassList(FADE_OUT_ANIMATION_NAME);
             }
         }
         if (!isClearTriggered)
         {
             dialogueTextLabel.RemoveFromClassList(FADE_OUT_ANIMATION_NAME);
+            dialogueHolder.RemoveFromClassList(FADE_OUT_ANIMATION_NAME);
         }
     }
 }
