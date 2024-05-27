@@ -29,7 +29,7 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
             Debug.Log("EnemySpawnManager does not have any SpawnPoints specified.");
         }
 
-        // Initialise the enemy counters
+        // Initialise the enemy counters, if negative, spawning is infinite
         remainingEnemiesToBeSpawned = totalLevelEnemies;
         currentSpawnedEnemies = 0;
 
@@ -51,7 +51,7 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
     {
         // Checks if enemies need to be spawned
         
-        if (remainingEnemiesToBeSpawned > 0 && currentSpawnedEnemies < maxConcurrentEnemies)
+        if (remainingEnemiesToBeSpawned != 0 && currentSpawnedEnemies < maxConcurrentEnemies)
         {
             int spawnPointToUse = PickSpawnPoint();
             
@@ -59,7 +59,7 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
 
         }
 
-        if (remainingEnemiesToBeSpawned > 0)
+        if (remainingEnemiesToBeSpawned != 0)
         {
             StartCoroutine(SpawnCountDown(spawnCheckInterval));
         }
@@ -95,12 +95,6 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
         // Update counters
         remainingEnemiesToBeSpawned--;
         currentSpawnedEnemies++;
-
-        if (remainingEnemiesToBeSpawned == 0)
-        {
-            FinalEnemySpawned();
-        }
-        
     }
 
 
@@ -114,11 +108,6 @@ public class EnemySpawnManager : MonoBehaviour, ISpawnEndEventHandler
     {
         // This is called when an EnemyController goes through the Die state
         currentSpawnedEnemies--;
-    }
-
-    void FinalEnemySpawned()
-    {
-        // Code to run when the final enemy has been spawned
     }
 
 

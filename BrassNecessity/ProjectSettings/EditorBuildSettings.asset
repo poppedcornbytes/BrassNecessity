@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level0/Level0B.unity
     guid: e47a242126f42a847a728335542a5c4b
   - enabled: 1
+    path: Assets/Scenes/Levels/HubLevel.unity
+    guid: 46be3369aedc96e4faa13b571b75649c
+  - enabled: 1
     path: Assets/Scenes/Levels/Level1/Level1A.unity
     guid: 03c52bc83941c674997b0e26fc0d2b98
   - enabled: 1
@@ -35,6 +38,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level1/Level1C.unity
     guid: 8af01c7223ceb0541831c7d059ac2d79
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1/Level1D.unity
+    guid: 56d6ebdacf56280459e244c578e15717
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1/Level1E.unity
+    guid: 1e95e6dd7ec36a14eb08268e6ac0ea8e
   - enabled: 1
     path: Assets/Scenes/Menus/GameOverScreen.unity
     guid: a7416c602c9fdb048aef7480dffb553b

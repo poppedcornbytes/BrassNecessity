@@ -13,5 +13,6 @@ public enum SceneKey
     EndCredits,
     ControlOverview,
     GameLevel,
+    HubLevel,
     None
 }
