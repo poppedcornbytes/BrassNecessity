@@ -6,6 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField]
     private CharacterKey speakingCharacter;
+    public CharacterKey SpeakingCharacter { get => speakingCharacter; }
 
     [SerializeField]
     private DialogueTransmitter dialogueTransmitter;

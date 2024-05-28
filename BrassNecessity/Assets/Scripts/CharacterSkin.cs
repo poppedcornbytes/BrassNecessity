@@ -10,6 +10,10 @@ public class CharacterSkin
     private string name;
 
     [SerializeField]
+    private CharacterKey key;
+    public CharacterKey Key { get => key; }
+
+    [SerializeField]
     private GameObject mesh;
 
     [SerializeField]

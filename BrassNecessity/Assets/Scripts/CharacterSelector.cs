@@ -10,7 +10,7 @@ public class CharacterSelector : MonoBehaviour
     private SkinSelector skinSelector;
     private void Awake()
     {
-        int characterId = SettingsHandler.SelectedCharacterId;
+        CharacterKey characterId = SettingsHandler.SelectedCharacterId;
         if (skinSelector == null)
         {
             skinSelector = FindObjectOfType<SkinSelector>();
@@ -21,7 +21,7 @@ public class CharacterSelector : MonoBehaviour
 
     public CharacterSkin GetCurrentCharacter()
     {
-        int characterId = SettingsHandler.SelectedCharacterId;
+        CharacterKey characterId = SettingsHandler.SelectedCharacterId;
         return skinSelector.GetSkin(characterId);
     }
 }

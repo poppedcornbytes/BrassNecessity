@@ -25,7 +25,7 @@ public class HeroMenuUINavigator : ButtonMenuUIBehaviour
         {
             currentSelection = currentButton;
             Debug.Log(string.Format("Current character is now {0}", currentSelection));
-            characterSkins.SelectSkin(currentSelection);
+            characterSkins.SelectSkin((CharacterKey)currentSelection);
         }
     }
 }

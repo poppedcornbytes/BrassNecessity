@@ -12010,6 +12010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skins:
   - name: Norma
+    key: 0
     mesh: {fileID: 1284542972724526546}
     accessories:
     - {fileID: 1284542973145400955}
@@ -12021,6 +12022,7 @@ MonoBehaviour:
     selectionAnimationTrigger: 
     defaultType: 0
   - name: Ulysses
+    key: 1
     mesh: {fileID: 1284542972395492363}
     accessories:
     - {fileID: 9198438220492879088}
@@ -13429,7 +13431,6 @@ MonoBehaviour:
     MoveSpeed: 5.335
     ReverseMoveSpeed: 4.5
     RotatingFootSpeed: 1.4
-    SprintSpeed: 5.335
     ReverseSprintSpeed: 4.5
     RotationSmoothTime: 0.12
     RotationSpeed: 35
@@ -13485,7 +13486,6 @@ MonoBehaviour:
     MoveSpeed: 4.5
     ReverseMoveSpeed: 4
     RotatingFootSpeed: 1.6
-    SprintSpeed: 4.5
     ReverseSprintSpeed: 4
     RotationSmoothTime: 0.12
     RotationSpeed: 35
@@ -13546,7 +13546,6 @@ MonoBehaviour:
     MoveSpeed: 4.5
     ReverseMoveSpeed: 4
     RotatingFootSpeed: 1.4
-    SprintSpeed: 4.5
     ReverseSprintSpeed: 4
     RotationSmoothTime: 0.12
     RotationSpeed: 35
@@ -13597,7 +13596,6 @@ MonoBehaviour:
     MoveSpeed: 5.335
     ReverseMoveSpeed: 4.5
     RotatingFootSpeed: 1.4
-    SprintSpeed: 5.335
     ReverseSprintSpeed: 4.5
     RotationSmoothTime: 0.12
     RotationSpeed: 35

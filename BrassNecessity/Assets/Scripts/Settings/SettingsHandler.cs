@@ -9,7 +9,7 @@ public static class SettingsHandler
     public static int BrightnessSetting { get; set; }
     public static int MusicVolumeSetting { get; set; }
     public static int EffectsVolumeSetting { get; set; }
-    public static int SelectedCharacterId { get; private set; }
+    public static CharacterKey SelectedCharacterId { get; private set; }
     private static int numberOfCharacters = 2;
 
 
@@ -85,7 +85,7 @@ public static class SettingsHandler
         {
             characterId = 0;
         }
-        SelectedCharacterId = characterId;
+        SelectedCharacterId = (CharacterKey)characterId;
     }
 
     public static float GetSensitivityFraction()

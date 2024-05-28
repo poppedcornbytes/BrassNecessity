@@ -12,20 +12,20 @@ public class SkinSelector : MonoBehaviour
     private Animator playerAnimator;
     private int lastCharacterId = -1;
 
-    public void SelectSkin(int characterId)
+    public void SelectSkin(CharacterKey characterId)
     {
-        if (characterId != lastCharacterId)
+        if ((int)characterId != lastCharacterId)
         {
             updateAllSkins(characterId);
-            lastCharacterId = characterId;
+            lastCharacterId = (int)characterId;
         }
     }
 
-    private void updateAllSkins(int characterId)
+    private void updateAllSkins(CharacterKey characterId)
     {
         for (int i = 0; i < skins.Length; i++)
         {
-            if (i == characterId)
+            if (skins[i].Key == characterId)
             {
                 skins[i].ActivateSkin();
                 if (playerElementData != null) playerElementData.SwitchType(skins[i].GetDefaultType());
@@ -38,8 +38,20 @@ public class SkinSelector : MonoBehaviour
         }
     }
 
-    public CharacterSkin GetSkin(int index)
+    public CharacterSkin GetSkin(CharacterKey keyToFind)
     {
-        return skins[index];
+        int foundIndex = 0;
+        bool foundKey = false;
+        int i = 0;
+        while (!foundKey && i < skins.Length)
+        {
+            if (skins[i].Key == keyToFind)
+            {
+                foundKey = true;
+                foundIndex = i;
+            }
+            i++;
+        }
+        return skins[foundIndex];
     }
 }

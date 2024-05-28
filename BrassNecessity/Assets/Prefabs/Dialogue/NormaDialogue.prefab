@@ -2139,6 +2139,7 @@ GameObject:
   - component: {fileID: 7344707391649820248}
   - component: {fileID: 7344707390602986086}
   - component: {fileID: 7344707390602986085}
+  - component: {fileID: 5982858280873246539}
   m_Layer: 15
   m_Name: NormaDialogue
   m_TagString: Player
@@ -2210,6 +2211,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 2, z: 4}
   m_Center: {x: 0, y: 1, z: 1}
+--- !u!114 &5982858280873246539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7344707391649820244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b0969ed17038e545bc2ca13d402222d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7344707391654920267
 GameObject:
   m_ObjectHideFlags: 0
