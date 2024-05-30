@@ -65,6 +65,15 @@ MonoBehaviour:
     scriptLines:
     - progressLevel: 0
       dialogue:
+      - Um... Didn't you play the game the proper way? You should
+      - have gone through the cave in first.
+    - progressLevel: 1
+      dialogue:
+      - Ugh. Of all the places to have a cave in... How in the world are there
+      - undead on a foreign planet? And a castle? I guess we'll just have to
+      - fight our way out...
+    - progressLevel: 4
+      dialogue:
       - Ugh. Of all the places to have a cave in... How in the world are there
       - undead on a foreign planet? And a castle? I guess we'll just have to
       - fight our way out...
@@ -72,6 +81,15 @@ MonoBehaviour:
     scriptLines:
     - progressLevel: 0
       dialogue:
+      - What??? How did you manage to get here without beating
+      - 'the first level? '
+    - progressLevel: 1
+      dialogue:
       - Oh boy! What a glorious place to destroy things. A good old
       - 'beating should whip these monsters into shape. Looks like MY '
       - laser takes care of the green ones with ease!
+    - progressLevel: 4
+      dialogue:
+      - Wowzers! Looks like you've beaten the first level. There's only
+      - more destroying to come! I can't wait to blast some baddies
+      - off the face of this cursed planet.

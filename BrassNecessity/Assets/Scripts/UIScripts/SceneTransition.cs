@@ -11,7 +11,7 @@ public class SceneTransition : MonoBehaviour
     [SerializeField]
     private float secondsToDisplayLevelInfo = 5f;
     [SerializeField]
-    private LevelListing levelListing;
+    private LevelManager levelListing;
 
     private const string DEFAULT_COVER_STYLE = "default-cover";
     private const string TRANSPARENT_COVER_STYLE = "transparent-cover";

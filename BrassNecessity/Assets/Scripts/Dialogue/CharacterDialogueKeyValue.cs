@@ -14,21 +14,53 @@ public class CharacterDialogueKeyValue
     
     public List<ProgressDialogueValuePair> ScriptLines { get => scriptLines; }
 
-    public string[] GetDialogueAtProgressLevel(int targetProgressValue)
+    public string[] GetDialogueAtProgressLevel(ProgressLevel targetProgressValue)
     {
         int i = 0;
-        int bestProgressMatch = 0;
-        int matchIndex = 0;
-        while (i < scriptLines.Count)
+        int matchIndex = findExactProgressMatch(targetProgressValue);
+        if (matchIndex < 0)
         {
-            int currentProgressValue = scriptLines[i].ProgressLevel;
-            if (currentProgressValue > bestProgressMatch && currentProgressValue <= targetProgressValue)
+            matchIndex = findFirstProgressMatch(targetProgressValue);
+        }
+        return ScriptLines[matchIndex].Dialogue;
+    }
+
+    private int findExactProgressMatch(ProgressLevel progressToMatch)
+    {
+        int exactIndex = -1;
+        bool found = false;
+        int i = 0;
+        while (i < scriptLines.Count && !found)
+        {
+            if (progressToMatch == scriptLines[i].ProgressLevel)
             {
-                bestProgressMatch = currentProgressValue;
-                matchIndex = i;
+                found = true;
+                exactIndex = i;
             }
             i++;
         }
-        return ScriptLines[matchIndex].Dialogue;
+        return exactIndex;
+    }
+
+    private int findFirstProgressMatch(ProgressLevel progressToMatch)
+    {
+        int bestIndex = 0;
+        bool found = false;
+        int i = 0;
+        while (i < scriptLines.Count && !found)
+        {
+            ProgressLevel currentProgressValue = scriptLines[i].ProgressLevel;
+            if ((currentProgressValue & progressToMatch) == progressToMatch)
+            {
+                found = true;
+                bestIndex = i;
+            }
+            else if (currentProgressValue < progressToMatch)
+            {
+                bestIndex = i;
+            }
+            i++;
+        }
+        return bestIndex;
     }
 }

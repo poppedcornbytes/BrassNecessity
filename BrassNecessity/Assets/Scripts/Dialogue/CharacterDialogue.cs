@@ -14,7 +14,7 @@ public class CharacterDialogue : MonoBehaviour
         dialogueMap = characterDialogue.ToDictionary(key => key.Speaker, value => value);
     }
 
-    public string[] GetCharacterDialogue(CharacterKey speakingCharacter, int progressLevel)
+    public string[] GetCharacterDialogue(CharacterKey speakingCharacter, ProgressLevel progressLevel)
     {
         string[] targetDialogue;
         if (dialogueMap.ContainsKey(speakingCharacter))
@@ -28,4 +28,5 @@ public class CharacterDialogue : MonoBehaviour
         }
         return targetDialogue;
     }
+
 }

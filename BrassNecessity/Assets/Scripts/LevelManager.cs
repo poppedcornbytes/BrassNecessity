@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public class LevelListing : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     [SerializeField]
-    private LevelData[] gameLevels;
+    private LevelData levelData; 
+    [SerializeField]
+    private LevelData[] levelParts;
     [SerializeReference]
     private int currentLevel = -1;
     [SerializeField]
@@ -16,28 +18,12 @@ public class LevelListing : MonoBehaviour
 
     public string GetLevelId()
     {
-        int rawLevelNumber = currentLevel;
-        string levelId;
-        if (rawLevelNumber <= lastTutorialLevel)
-        {
-            levelId = convertTutorialIdToLetter(rawLevelNumber);
-        }
-        else
-        {
-            levelId = (rawLevelNumber - lastTutorialLevel).ToString();
-
-        }
-        return levelId;
-    }
-
-    private string convertTutorialIdToLetter(int rawLevelNumber)
-    {
-        return ((char)('A' + rawLevelNumber)).ToString();
+        return currentLevel.ToString();
     }
 
     public string GetLevelName()
     {
-        return gameLevels[currentLevel].Codename;
+        return levelParts[currentLevel].Codename;
     }
 
     public LevelData SetNextLevel()
@@ -52,9 +38,9 @@ public class LevelListing : MonoBehaviour
         {
             SettingsHandler.SetHasReadControls(true);
         }
-        if (currentLevel < gameLevels.Length)
+        if (currentLevel < levelParts.Length)
         {
-            nextLevel = gameLevels[currentLevel];
+            nextLevel = levelParts[currentLevel];
         }
         return nextLevel;
     }

@@ -5,20 +5,17 @@ using UnityEngine;
 public class ProgressManager : MonoBehaviour
 {
     [SerializeField]
-    private int currentProgress;
+    private ProgressLevel currentProgress;
 
-    public int CurrentProgress { get => currentProgress; }
+    public ProgressLevel CurrentProgress { get => currentProgress; }
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void UpdateCurrentProgress(CharacterKey characterToUpdate, ProgressLevel flagToAdd)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadProgress(CharacterKey characterToLoad)
     {
-        
+
     }
 }

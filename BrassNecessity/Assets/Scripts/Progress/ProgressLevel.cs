@@ -1,0 +1,28 @@
+[System.Flags] public enum ProgressLevel 
+{
+    None = 0,
+    FoundSanctuary = 1,
+    Level1Complete = 1 << 2,
+    Level1HubEvent = 1 << 3,
+    Level1FollowUp= 1 << 4,
+    Level2Complete = 1 << 5,
+    Level2HubEvent= 1 << 6,
+    Level2FollowUp= 1 << 7,
+    Level3Complete = 1 << 8,
+    Level3HubEvent= 1 << 9,
+    Level3FollowUp= 1 << 10,
+    HubMiniBossDefeated = 1 << 11,
+    Level4Complete = 1 << 12,
+    Level4HubEvent= 1 << 13,
+    Level4FollowUp= 1 << 14,
+    Level5Complete = 1 << 15,
+    Level5HubEvent= 1 << 16,
+    Level5FollowUp= 1 << 17,
+    FinalLockNormalOpened = 1 << 18,
+    FinalLockElectricOpened = 1 << 19,
+    FinalLockGravityOpened = 1 << 20,
+    FinalLockCarbonOpened = 1 << 21,
+    FinalLockNuclearOpened = 1 << 22,
+    FinalLockOpened = 1 << 23,
+    FinalBossDefeated = 1 << 24
+}

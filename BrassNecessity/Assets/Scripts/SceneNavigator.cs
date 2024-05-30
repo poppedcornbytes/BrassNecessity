@@ -11,7 +11,7 @@ public class SceneNavigator : MonoBehaviour
     static private Dictionary<SceneKey, SceneKeyValue> sceneAccessKeys;
     private static SceneNavigator singleton;
     [SerializeField]
-    private LevelListing allLevels;
+    private LevelManager allLevels;
 
     private void Awake()
     {

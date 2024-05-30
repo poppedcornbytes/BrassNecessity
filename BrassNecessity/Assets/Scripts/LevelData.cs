@@ -7,12 +7,6 @@ using System;
 public class LevelData
 {
     [SerializeField]
-    private LevelKey key;
-    public LevelKey Key
-    {
-        get => key;
-    }
-    [SerializeField]
     private string codename;
     public string Codename
     {
