@@ -14267,12 +14267,12 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyHealth
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4549928269546061022}
     - target: {fileID: 3882819825333684416, guid: aa39a8da7d7248a42826ce1a28a02464,
         type: 3}
       propertyPath: enemyElement
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4549928269546060993}
     - target: {fileID: 6196353059259074577, guid: aa39a8da7d7248a42826ce1a28a02464,
         type: 3}
       propertyPath: m_Name
