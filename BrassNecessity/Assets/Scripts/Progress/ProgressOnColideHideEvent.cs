@@ -9,7 +9,11 @@ public class ProgressOnColideHideEvent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        progressAction.UpdateProgress(FindObjectOfType<ProgressManager>());
+        progressAction.UpdateProgressOnAction(FindObjectOfType<ProgressManager>());
+        if (progressAction.UpdatesProgressOnComplete)
+        {
+            progressAction.UpdateProgressPostAction(FindObjectOfType <ProgressManager>());
+        }
         this.gameObject.SetActive(false);
     }
 }
