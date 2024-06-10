@@ -19,6 +19,7 @@ public class MenuButtonData : UIElementData
     public SceneKey SceneDestination
     {
         get => sceneDestination;
+        set => sceneDestination = value;
     }
 
     [SerializeField]
