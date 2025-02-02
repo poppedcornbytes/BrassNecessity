@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2713530595460513520}
   - component: {fileID: 3669128043078521834}
   - component: {fileID: 1634396954697172141}
-  - component: {fileID: 1738454400162747325}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -64,7 +63,13 @@ MonoBehaviour:
     value: EndCredits
   - key: 7
     value: ControlExplanation
-  allLevels: {fileID: 1738454400162747325}
+  - key: 9
+    value: HubLevel
+  - key: 10
+    value: Level0A
+  - key: 11
+    value: Level1A
+  currentLevelParts: {fileID: 0}
 --- !u!114 &3669128043078521834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,33 +100,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsToDisplayLevelInfo: 2
-  levelListing: {fileID: 1738454400162747325}
---- !u!114 &1738454400162747325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2713530595460513523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df22a3e3c87c51449350349529fc7ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameLevels:
-  - key: 0
-    codename: The Journey Begins
-    sceneName: Level0A
-  - key: 1
-    codename: Gaining the Advantage
-    sceneName: Level0B
-  - key: 2
-    codename: Going Nuclear
-    sceneName: Level1
-  - key: 3
-    codename: Rise to the Challenge
-    sceneName: Level2
-  - key: 4
-    codename: Piece by Piece
-    sceneName: Level3
-  currentLevel: -1
+  levelListing: {fileID: 0}

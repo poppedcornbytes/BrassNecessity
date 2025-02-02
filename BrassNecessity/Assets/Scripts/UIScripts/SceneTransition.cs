@@ -24,14 +24,24 @@ public class SceneTransition : MonoBehaviour
     private const string LEVEL_NAME_ELEMENT = "level-name-field";
     private const string LEVEL_NUMBER_ELEMENT = "level-number-field";
 
+
+    public void SetLevelManager(LevelManager levelDataToSet)
+    {
+        levelListing = levelDataToSet;
+    }
+
     private void OnEnable()
     {
         VisualElement visualElement = GetComponent<UIDocument>().rootVisualElement;
         sceneTransitioner = visualElement.Q<VisualElement>("TransitionElement");
         levelNumberLabel = sceneTransitioner.Q<Label>("LevelNumberTitle");
         levelNameLabel = sceneTransitioner.Q<Label>("LevelNameTitle");
-        setupTitles();
         sceneTransitioner.ClearClassList();
+    }
+
+    public void Initialise()
+    {
+        setupTitles();
         StartInitialOpenSceneTransition();
     }
 
@@ -39,7 +49,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (levelListing.CurrentSceneIsLevel())
         {
-            levelNumberLabel.text = string.Format("Level {0}", levelListing.GetLevelId());
+            levelNumberLabel.text = string.Format("{0}", levelListing.GetLevelId());
             levelNameLabel.text = levelListing.GetLevelName();
         }
         else

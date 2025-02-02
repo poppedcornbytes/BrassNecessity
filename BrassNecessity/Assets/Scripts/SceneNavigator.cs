@@ -11,7 +11,7 @@ public class SceneNavigator : MonoBehaviour
     static private Dictionary<SceneKey, SceneKeyValue> sceneAccessKeys;
     private static SceneNavigator singleton;
     [SerializeField]
-    private LevelManager allLevels;
+    private LevelManager currentLevelParts;
 
     private void Awake()
     {
@@ -24,44 +24,33 @@ public class SceneNavigator : MonoBehaviour
         }
         else if (singleton != this)
         {
-            GameObject.Destroy(this);
+            GameObject.Destroy(this.gameObject);
+        }
+        singleton.SetLevelListing();
+        if (singleton.currentLevelParts != null)
+        {
+            singleton.runSceneTransition();
         }
         SettingsHandler.LoadSettings();
-    }
+    }  
 
     static public void OpenScene(SceneKey key)
     {
         string sceneName;
-
         if (key == SceneKey.GameLevel)
         {
-            sceneName = getLevelName();
+            LevelData nextLevel = singleton.currentLevelParts.SetNextLevel();
+            sceneName = nextLevel.SceneName;
         }
         else
         {
             sceneName = sceneAccessKeys[key].Value;
         }
-
         if (key == SceneKey.StartMenu || key == SceneKey.GameOver)
         {
-            singleton.allLevels.ResetLevelCounter();
+            singleton.currentLevelParts.ResetLevelCounter();
         }
         singleton.StartCoroutine(openSceneRoutine(sceneName));
-    }
-
-    private static string getLevelName()
-    {
-        LevelData nextLevel = singleton.allLevels.SetNextLevel();
-        string nextLevelName;
-        if (nextLevel != null)
-        {
-            nextLevelName = nextLevel.SceneName;
-        }
-        else
-        {
-            nextLevelName = sceneAccessKeys[SceneKey.EndCredits].Value;
-        }
-        return nextLevelName;
     }
 
     private static IEnumerator openSceneRoutine(string sceneName)
@@ -76,7 +65,54 @@ public class SceneNavigator : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        runSceneTransition();
+    }
+
+    private void runSceneTransition()
+    {
         SceneTransition transitionEffect = singleton.GetComponent<SceneTransition>();
+        SetLevelListing();
+        transitionEffect.SetLevelManager(currentLevelParts);
+        transitionEffect.Initialise();
         transitionEffect.StartSceneTransition();
+    }
+
+
+    private void SetLevelListing()
+    {
+        LevelManager possibleNewLevelsParts = GetFirstNewLevelListing();
+        if (possibleNewLevelsParts != null)
+        {
+            if (currentLevelParts == null)
+            {
+                currentLevelParts = this.gameObject.AddComponent<LevelManager>();
+                possibleNewLevelsParts.CreateCopy(currentLevelParts);
+            }
+            else
+            {
+                string currentLevel = currentLevelParts.GetLevelId();
+                string possibleLevel = possibleNewLevelsParts?.GetLevelId() ?? string.Empty;
+                if (currentLevel != possibleLevel)
+                {
+                    LevelManager clonedNewManager = this.gameObject.AddComponent<LevelManager>();
+                    possibleNewLevelsParts.CreateCopy(clonedNewManager);
+                    currentLevelParts = clonedNewManager;
+                }
+            }
+        }
+    }
+
+    private LevelManager GetFirstNewLevelListing()
+    {
+        LevelManager newLevels = null;
+        LevelManager[] levelManagers = FindObjectsOfType<LevelManager>();
+        for (int i = 0; i < levelManagers.Length; i++)
+        {
+            if (levelManagers[i] != currentLevelParts && newLevels == null)
+            {
+                newLevels = levelManagers[i];
+            }
+        }
+        return newLevels;
     }
 }

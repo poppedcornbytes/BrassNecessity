@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeReference]
     private int currentLevel = -1;
     [SerializeField]
-    private int lastTutorialLevel = 1;
+    private int currentPart = 0;
 
     public bool CurrentSceneIsLevel()
     {
@@ -18,29 +18,21 @@ public class LevelManager : MonoBehaviour
 
     public string GetLevelId()
     {
-        return currentLevel.ToString();
+        return levelData.Codename;
     }
 
     public string GetLevelName()
     {
-        return levelParts[currentLevel].Codename;
+        return levelParts[currentPart].Codename;
     }
 
     public LevelData SetNextLevel()
     {
         LevelData nextLevel = null;
-        if (currentLevel < 0 && SettingsHandler.GetHasReadControls())
+        currentPart++;
+        if (currentPart < levelParts.Length)
         {
-            currentLevel = lastTutorialLevel;
-        }
-        currentLevel++;
-        if (currentLevel > lastTutorialLevel)
-        {
-            SettingsHandler.SetHasReadControls(true);
-        }
-        if (currentLevel < levelParts.Length)
-        {
-            nextLevel = levelParts[currentLevel];
+            nextLevel = levelParts[currentPart];
         }
         return nextLevel;
     }
@@ -48,5 +40,13 @@ public class LevelManager : MonoBehaviour
     public void ResetLevelCounter()
     {
         currentLevel = -1;
+    }
+
+    public void CreateCopy(LevelManager managerToPopulate)
+    {
+        managerToPopulate.levelData = this.levelData;
+        managerToPopulate.levelParts = this.levelParts;
+        managerToPopulate.currentLevel = this.currentLevel;
+        managerToPopulate.currentPart = this.currentPart;
     }
 }
