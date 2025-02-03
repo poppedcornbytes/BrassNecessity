@@ -59,9 +59,8 @@ public class PortalBehaviour : MonoBehaviour, IPortal, IExitEventHandler
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Player Entered");
         GameObject teleportingObject = other.gameObject;
-        bool canTryTeleporting = other.gameObject.layer != LayerMask.NameToLayer("Ground");
+        bool canTryTeleporting = other.gameObject.tag == "Player";
         if (canTryTeleporting)
         {
             canTryTeleporting = !isHidden && !isDisabled;
