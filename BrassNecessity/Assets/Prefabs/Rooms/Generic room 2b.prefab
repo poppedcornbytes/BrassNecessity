@@ -11921,6 +11921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9034258081783997086}
+  - component: {fileID: 1769283280729869826}
   m_Layer: 0
   m_Name: Front railings
   m_TagString: Untagged
@@ -11948,6 +11949,19 @@ Transform:
   m_Father: {fileID: 8089655244657680077}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &1769283280729869826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2684527567758205714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.83, y: 2.96, z: 1}
+  m_Center: {x: -1.5, y: 6, z: 5.5}
 --- !u!1 &2736333168045309520
 GameObject:
   m_ObjectHideFlags: 0
@@ -12032,6 +12046,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9119875588406205277}
+  - component: {fileID: 8597425562400988344}
   m_Layer: 0
   m_Name: Back railings
   m_TagString: Untagged
@@ -12059,6 +12074,19 @@ Transform:
   m_Father: {fileID: 8089655244657680077}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &8597425562400988344
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3678194050375348674}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.83, y: 2.96, z: 1}
+  m_Center: {x: -1.5, y: 6, z: 4.5}
 --- !u!1 &3730611384556322280
 GameObject:
   m_ObjectHideFlags: 0
