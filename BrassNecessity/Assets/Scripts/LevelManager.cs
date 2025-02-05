@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class LevelManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class LevelManager : MonoBehaviour
     private int currentLevel = -1;
     [SerializeField]
     private int currentPart = 0;
+    [SerializeField]
+    private VisualTreeAsset _overrideSceneDocument;
+    public VisualTreeAsset OverrideSceneDocument { get => _overrideSceneDocument; }
 
     public bool CurrentSceneIsLevel()
     {
@@ -48,5 +52,6 @@ public class LevelManager : MonoBehaviour
         managerToPopulate.levelParts = this.levelParts;
         managerToPopulate.currentLevel = this.currentLevel;
         managerToPopulate.currentPart = this.currentPart;
+        managerToPopulate._overrideSceneDocument = this.OverrideSceneDocument;
     }
 }

@@ -28,9 +28,19 @@ public class SceneTransition : MonoBehaviour
     public void SetLevelManager(LevelManager levelDataToSet)
     {
         levelListing = levelDataToSet;
+        VisualTreeAsset overrideAsset = levelListing.OverrideSceneDocument;
+        if (overrideAsset != null)
+        {
+            SetVisualTreeAssetOverride(overrideAsset);
+        }
     }
 
     private void OnEnable()
+    {
+        SetElements();
+    }
+
+    private void SetElements()
     {
         VisualElement visualElement = GetComponent<UIDocument>().rootVisualElement;
         sceneTransitioner = visualElement.Q<VisualElement>("TransitionElement");
@@ -39,10 +49,17 @@ public class SceneTransition : MonoBehaviour
         sceneTransitioner.ClearClassList();
     }
 
+    public void SetVisualTreeAssetOverride(VisualTreeAsset overrideAsset)
+    {
+        gameObject.SetActive(false);
+        GetComponent<UIDocument>().visualTreeAsset = overrideAsset;
+        gameObject.SetActive(true);
+        SetElements();
+    }
+
     public void Initialise()
     {
         setupTitles();
-        StartInitialOpenSceneTransition();
     }
 
     private void setupTitles()
@@ -65,11 +82,6 @@ public class SceneTransition : MonoBehaviour
         sceneTransitioner.RegisterCallback<GeometryChangedEvent>(openSceneTransitionEvent);
     }
 
-    public void StartSceneTransition()
-    {
-        StartCoroutine(openSceneTransitionRoutine());
-    }
-
     private void openSceneTransitionEvent(GeometryChangedEvent evt)
     {
         sceneTransitioner.UnregisterCallback<GeometryChangedEvent>(openSceneTransitionEvent);
@@ -80,7 +92,7 @@ public class SceneTransition : MonoBehaviour
     {
         string transitionAnimation = getRandomSwipeAnimation();
         yield return new WaitForSeconds(secondsToDisplayLevelInfo);
-        sceneTransitioner.ToggleInClassList(transitionAnimation);
+        sceneTransitioner.AddToClassList(transitionAnimation);
         yield return new WaitForSeconds(0.5f);
         levelNumberLabel.text = string.Empty;
         levelNameLabel.text = string.Empty;

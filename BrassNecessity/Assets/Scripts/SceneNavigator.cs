@@ -74,7 +74,7 @@ public class SceneNavigator : MonoBehaviour
         SetLevelListing();
         transitionEffect.SetLevelManager(currentLevelParts);
         transitionEffect.Initialise();
-        transitionEffect.StartSceneTransition();
+        transitionEffect.StartInitialOpenSceneTransition();
     }
 
 
