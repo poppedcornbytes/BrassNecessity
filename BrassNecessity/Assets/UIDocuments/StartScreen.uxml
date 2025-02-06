@@ -10,7 +10,7 @@
             <ui:Button text="Quit" display-tooltip-when-elided="true" name="QuitButton" class="menuButton" />
         </ui:VisualElement>
         <ui:VisualElement>
-            <ui:Label text="Press J to select." display-tooltip-when-elided="true" name="InstructionLabel" style="color: rgb(255, 255, 255); font-size: 18px;" />
+            <ui:Label text="Press Space to select." display-tooltip-when-elided="true" name="InstructionLabel" class="instruction-text" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -21,17 +21,14 @@ public class SceneNavigator : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             sceneAccessKeys = new Dictionary<SceneKey, SceneKeyValue>();
             sceneKeyNames.ForEach(x => sceneAccessKeys.Add(x.Key, x));
+            singleton.SetLevelListing();
+            singleton.runSceneTransition();
+            SettingsHandler.LoadSettings();
         }
         else if (singleton != this)
         {
             GameObject.Destroy(this.gameObject);
         }
-        singleton.SetLevelListing();
-        if (singleton.currentLevelParts != null)
-        {
-            singleton.runSceneTransition();
-        }
-        SettingsHandler.LoadSettings();
     }  
 
     static public void OpenScene(SceneKey key)
@@ -48,7 +45,10 @@ public class SceneNavigator : MonoBehaviour
         }
         if (key == SceneKey.StartMenu || key == SceneKey.GameOver)
         {
-            singleton.currentLevelParts.ResetLevelCounter();
+            if (singleton.currentLevelParts != null)
+            {
+                singleton.currentLevelParts.ResetLevelCounter();
+            }
         }
         singleton.StartCoroutine(openSceneRoutine(sceneName));
     }
@@ -65,14 +65,15 @@ public class SceneNavigator : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        SceneManager.sceneLoaded -= singleton.OnSceneLoaded;
         runSceneTransition();
     }
 
     private void runSceneTransition()
     {
         SceneTransition transitionEffect = singleton.GetComponent<SceneTransition>();
-        SetLevelListing();
-        transitionEffect.SetLevelManager(currentLevelParts);
+        singleton.SetLevelListing();
+        transitionEffect.SetLevelManager(singleton.currentLevelParts);
         transitionEffect.Initialise();
         transitionEffect.StartInitialOpenSceneTransition();
     }

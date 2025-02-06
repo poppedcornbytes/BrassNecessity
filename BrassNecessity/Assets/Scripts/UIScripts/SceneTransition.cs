@@ -23,15 +23,18 @@ public class SceneTransition : MonoBehaviour
     private const string FADE_OUT_TRANSITION = "fade-out-transition";
     private const string LEVEL_NAME_ELEMENT = "level-name-field";
     private const string LEVEL_NUMBER_ELEMENT = "level-number-field";
-
+    bool isGeometryFinished = false;
 
     public void SetLevelManager(LevelManager levelDataToSet)
     {
         levelListing = levelDataToSet;
-        VisualTreeAsset overrideAsset = levelListing.OverrideSceneDocument;
-        if (overrideAsset != null)
+        if (levelDataToSet != null)
         {
-            SetVisualTreeAssetOverride(overrideAsset);
+            VisualTreeAsset overrideAsset = levelListing.OverrideSceneDocument;
+            if (overrideAsset != null)
+            {
+                SetVisualTreeAssetOverride(overrideAsset);
+            }
         }
     }
 
@@ -53,6 +56,7 @@ public class SceneTransition : MonoBehaviour
     {
         gameObject.SetActive(false);
         GetComponent<UIDocument>().visualTreeAsset = overrideAsset;
+        isGeometryFinished = false;
         gameObject.SetActive(true);
         SetElements();
     }
@@ -64,22 +68,30 @@ public class SceneTransition : MonoBehaviour
 
     private void setupTitles()
     {
-        if (levelListing.CurrentSceneIsLevel())
+        levelNumberLabel.text = string.Empty;
+        levelNameLabel.text = string.Empty;
+        if (levelListing != null && levelListing.CurrentSceneIsLevel())
         {
             levelNumberLabel.text = string.Format("{0}", levelListing.GetLevelId());
             levelNameLabel.text = levelListing.GetLevelName();
-        }
-        else
-        {
-            levelNumberLabel.text = string.Empty;
-            levelNameLabel.text = string.Empty;
         }
     }
 
     public void StartInitialOpenSceneTransition()
     {
+        //sceneTransitioner.SetEnabled(false);
+        //sceneTransitioner.SetEnabled(true);
+        sceneTransitioner.ClearClassList();
         sceneTransitioner.AddToClassList(DEFAULT_COVER_STYLE);
-        sceneTransitioner.RegisterCallback<GeometryChangedEvent>(openSceneTransitionEvent);
+        if (!isGeometryFinished)
+        {
+            isGeometryFinished = true;
+            sceneTransitioner.RegisterCallback<GeometryChangedEvent>(openSceneTransitionEvent);
+        }
+        else
+        {
+            StartCoroutine(openSceneTransitionRoutine());
+        }
     }
 
     private void openSceneTransitionEvent(GeometryChangedEvent evt)
@@ -110,7 +122,14 @@ public class SceneTransition : MonoBehaviour
     private void initialiseCloseSceneElement()
     {
         sceneTransitioner.ToggleInClassList(TRANSPARENT_COVER_STYLE);
-        sceneTransitioner.RegisterCallback<GeometryChangedEvent>(closeSceneTransitionEvent);
+        if (!isGeometryFinished)
+        {
+            sceneTransitioner.RegisterCallback<GeometryChangedEvent>(closeSceneTransitionEvent);
+        }
+        else
+        {
+            sceneTransitioner.ToggleInClassList(FADE_IN_TRANSITION);
+        }
     }
 
     private void closeSceneTransitionEvent(GeometryChangedEvent evt)
