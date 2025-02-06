@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/UIDocuments/styles.uss?fileID=7433441132597879392&amp;guid=c30f6580d0acd8e429a717e8d1833395&amp;type=3#styles" />
     <ui:VisualElement style="justify-content: space-around; align-items: center; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.78);">
         <ui:VisualElement style="width: 40%; height: 15%;">
-            <ui:Label text="Pick a hero" display-tooltip-when-elided="true" name="SelectTitle" style="-unity-text-align: upper-center; font-size: 75px; -unity-font-style: bold; -unity-text-outline-width: 3px; -unity-text-outline-color: rgba(82, 255, 0, 0.66); color: rgba(55, 164, 0, 0.38);" />
+            <ui:Label text="Pick a hero" display-tooltip-when-elided="true" name="SelectTitle" class="menu-title" style="-unity-text-align: upper-center; font-size: 75px;" />
         </ui:VisualElement>
         <ui:VisualElement style="max-width: 100%; flex-direction: row; flex-shrink: 0; width: 80%;">
             <ui:VisualElement style="width: auto; height: 250px; align-items: center; flex-direction: row; justify-content: space-between; max-width: 50%; flex-shrink: 0;">
@@ -18,7 +18,7 @@
             <ui:VisualElement style="width: 50%; flex-shrink: 0;" />
         </ui:VisualElement>
         <ui:VisualElement>
-            <ui:Label text="Press J to select." display-tooltip-when-elided="true" name="InstructionLabel" style="color: rgb(255, 255, 255); font-size: 18px;" />
+            <ui:Label text="Press Space to select." display-tooltip-when-elided="true" name="InstructionLabel" class="instruction-text" style="color: rgb(255, 255, 255);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

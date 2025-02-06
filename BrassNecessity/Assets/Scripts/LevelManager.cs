@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,6 +15,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private VisualTreeAsset _overrideSceneDocument;
     public VisualTreeAsset OverrideSceneDocument { get => _overrideSceneDocument; }
+    [SerializeField]
+    private float _overrideDisplayTimeInSeconds = 2f;
+    public float OverrideDisplayTimeInSeconds { get => _overrideDisplayTimeInSeconds; }
 
     public bool CurrentSceneIsLevel()
     {

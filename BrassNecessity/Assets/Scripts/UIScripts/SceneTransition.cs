@@ -31,6 +31,10 @@ public class SceneTransition : MonoBehaviour
         if (levelDataToSet != null)
         {
             VisualTreeAsset overrideAsset = levelListing.OverrideSceneDocument;
+            if (levelListing.OverrideDisplayTimeInSeconds != secondsToDisplayLevelInfo)
+            {
+                secondsToDisplayLevelInfo = levelListing.OverrideDisplayTimeInSeconds;
+            }
             if (overrideAsset != null)
             {
                 SetVisualTreeAssetOverride(overrideAsset);
@@ -79,8 +83,6 @@ public class SceneTransition : MonoBehaviour
 
     public void StartInitialOpenSceneTransition()
     {
-        //sceneTransitioner.SetEnabled(false);
-        //sceneTransitioner.SetEnabled(true);
         sceneTransitioner.ClearClassList();
         sceneTransitioner.AddToClassList(DEFAULT_COVER_STYLE);
         if (!isGeometryFinished)

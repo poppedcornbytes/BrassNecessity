@@ -38,7 +38,7 @@
     transition-duration: 0.1s;
     -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20SDF.asset?fileID=11400000&guid=e0cd77dead6331345bf7be268a559cd2&type=2#Angies New House SDF');
     letter-spacing: 5px;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 255);
+    text-shadow: 2px 2px 0 rgb(0, 0, 0);
 }
 
 .menuButtonSelect {
@@ -285,7 +285,19 @@ SliderInt.settingSliderSelected {
     -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20SDF.asset?fileID=11400000&guid=e0cd77dead6331345bf7be268a559cd2&type=2#Angies New House SDF');
     -unity-font: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20Italic.ttf?fileID=12800000&guid=60ba7cb7e7819804ebe25521e2d3f2bc&type=3#Angies New House Italic');
     font-size: 40px;
-    color: rgba(255, 255, 255, 255);
+    color: rgb(255, 255, 255);
     letter-spacing: 5px;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 255);
+    text-shadow: 2px 2px 0 rgb(0, 0, 0);
+}
+
+.menu-title {
+    -unity-text-align: middle-center;
+    font-size: 150px;
+    -unity-font-style: normal;
+    color: rgb(67, 164, 18);
+    -unity-font: url('project://database/Assets/AssetPacks/Fonts/robotica_courtney/Robotica.ttf?fileID=12800000&guid=e8e0f944f27e32b41aa1414645f565da&type=3#Robotica');
+    -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/robotica_courtney/Robotica%20SDF.asset?fileID=11400000&guid=0dcb1aa507b418b4983febf7170c4bd7&type=2#Robotica SDF');
+    word-spacing: 5px;
+    letter-spacing: 10px;
+    text-shadow: 3px 3px 0 rgb(96, 160, 214);
 }

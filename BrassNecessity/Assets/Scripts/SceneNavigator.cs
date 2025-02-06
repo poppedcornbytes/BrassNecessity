@@ -34,7 +34,7 @@ public class SceneNavigator : MonoBehaviour
     static public void OpenScene(SceneKey key)
     {
         string sceneName;
-        if (key == SceneKey.GameLevel || key == SceneKey.HubLevel)
+        if (key == SceneKey.GameLevel)
         {
             LevelData nextLevel = singleton.currentLevelParts.SetNextLevel();
             sceneName = nextLevel.SceneName;
