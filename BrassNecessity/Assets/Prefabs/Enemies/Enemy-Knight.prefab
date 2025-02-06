@@ -5734,7 +5734,7 @@ MonoBehaviour:
   closeAttackDistance: 1
   farAttackDistance: 2
   midAttackDistance: 0
-  hitDamage: 8
+  hitDamage: 45
   enemyTurnSpeed: 90
   facingPlayerDegreesMargin: 5
   hitDetectDistance: 1.5

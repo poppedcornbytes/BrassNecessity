@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8141550137942837403
+--- !u!1 &426508432484847792
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,57 +8,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8141550137942837405}
-  - component: {fileID: 8141550137942837404}
+  - component: {fileID: 426508432484847794}
+  - component: {fileID: 426508432484847793}
   m_Layer: 0
-  m_Name: LevelListing
+  m_Name: Level0Listing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8141550137942837405
+--- !u!4 &426508432484847794
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8141550137942837403}
+  m_GameObject: {fileID: 426508432484847792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.844225, y: 3.4930964, z: 11.508661}
+  m_LocalPosition: {x: 11.875357, y: -7.146738, z: -6.8265047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8141550137942837404
+--- !u!114 &426508432484847793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8141550137942837403}
+  m_GameObject: {fileID: 426508432484847792}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3df22a3e3c87c51449350349529fc7ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelData:
-    codename: The Abandoned Castle
+    codename: Mining Outpost
     sceneName: 
   levelParts:
-  - codename: Sneaking into the Stores
-    sceneName: Level1A
-  - codename: Cellar problems
-    sceneName: Level1B
-  - codename: The courtyard
-    sceneName: Level1C
-  - codename: There be knights!
-    sceneName: Level1D
-  - codename: An empty throne
-    sceneName: Level1E
-  currentLevel: 1
+  - codename: The Cave In
+    sceneName: Level0A
+  - codename: To Safety...
+    sceneName: Level0B
+  currentLevel: 0
   currentPart: 0
-  _overrideSceneDocument: {fileID: 9197481963319205126, guid: 81557af4fe8788f4bbcb399c2ff8dbd9,
+  _overrideSceneDocument: {fileID: 9197481963319205126, guid: 924f11b44b1b47f439c2ec1e5f986fe5,
     type: 3}
