@@ -8,11 +8,11 @@
             <ui:Label text="WASD [Arrow Keys]&#10;Space&#10;Shift&#10;P [Esc]" display-tooltip-when-elided="true" class="controls-text" style="margin-right: 75px;" />
             <ui:Label text="- Move&#10;- Shoot laser and select&#10;- Load crystal&#10;- Pause" display-tooltip-when-elided="true" class="controls-text" />
         </ui:VisualElement>
-        <ui:VisualElement style="width: 40%; height: auto; align-items: center; flex-direction: column; justify-content: center;">
-            <ui:Label text="You can move with your left or right hand. We recommend moving with your left hand using the WASD keys. To move using your right hand, see the controls in [brackets]." display-tooltip-when-elided="true" name="GameTitle" class="controls-text" style="white-space: normal;" />
+        <ui:VisualElement style="width: 60%; height: auto; align-items: center; flex-direction: column; justify-content: center;">
+            <ui:Label text="You can move with your left or right hand. We recommend moving with your left hand using the WASD keys. To move using your right hand, see the controls in [brackets]." display-tooltip-when-elided="true" name="GameTitle" class="controls-text" style="white-space: normal; letter-spacing: 8px; word-spacing: 8px; font-size: 40px; -unity-font-style: normal;" />
         </ui:VisualElement>
         <ui:VisualElement>
-            <ui:Label text="Press K to continue." display-tooltip-when-elided="true" name="InstructionLabel" style="color: rgb(255, 255, 255); font-size: 18px;" />
+            <ui:Label text="Press Space to continue." display-tooltip-when-elided="true" name="InstructionLabel" class="instruction-text" style="color: rgb(255, 255, 255);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

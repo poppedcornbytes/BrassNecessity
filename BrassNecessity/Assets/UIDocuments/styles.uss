@@ -255,12 +255,14 @@ SliderInt.settingSliderSelected {
 
 .controls-text {
     -unity-text-align: upper-left;
-    -unity-text-outline-color: rgb(255, 255, 255);
     color: rgb(255, 255, 255);
-    font-size: 25px;
-    -unity-font-style: bold;
-    height: 35px;
+    font-size: 40px;
+    -unity-font-style: normal;
     justify-content: flex-start;
+    -unity-font: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House.ttf?fileID=12800000&guid=33d97a89232e4b0489db35ab5f339611&type=3#Angies New House');
+    -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20SDF.asset?fileID=11400000&guid=e0cd77dead6331345bf7be268a559cd2&type=2#Angies New House SDF');
+    letter-spacing: 5px;
+    word-spacing: 5px;
 }
 
 .hud-title {
@@ -283,7 +285,7 @@ SliderInt.settingSliderSelected {
 
 .instruction-text {
     -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20SDF.asset?fileID=11400000&guid=e0cd77dead6331345bf7be268a559cd2&type=2#Angies New House SDF');
-    -unity-font: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20Italic.ttf?fileID=12800000&guid=60ba7cb7e7819804ebe25521e2d3f2bc&type=3#Angies New House Italic');
+    -unity-font: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House.ttf?fileID=12800000&guid=33d97a89232e4b0489db35ab5f339611&type=3#Angies New House');
     font-size: 40px;
     color: rgb(255, 255, 255);
     letter-spacing: 5px;
