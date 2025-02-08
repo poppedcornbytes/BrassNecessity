@@ -59,7 +59,7 @@
 
 SliderInt.settingSlider {
     width: 100%;
-    font-size: 20px;
+    font-size: 40px;
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0);
     margin-left: 10px;
@@ -71,7 +71,10 @@ SliderInt.settingSlider {
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    -unity-font-style: bold;
+    -unity-font-style: normal;
+    -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20SDF.asset?fileID=11400000&guid=e0cd77dead6331345bf7be268a559cd2&type=2#Angies New House SDF');
+    -unity-font: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House.ttf?fileID=12800000&guid=33d97a89232e4b0489db35ab5f339611&type=3#Angies New House');
+    letter-spacing: 5px;
 }
 
 #unity-tracker {
@@ -110,12 +113,8 @@ SliderInt.settingSliderSelected {
 }
 
 .uiTitleText {
-    -unity-font-style: bold;
     font-size: 75px;
-    color: rgb(35, 103, 0);
     -unity-text-align: upper-center;
-    -unity-text-outline-width: 3px;
-    -unity-text-outline-color: rgb(56, 173, 0);
 }
 
 .unity-base-slider__label {
