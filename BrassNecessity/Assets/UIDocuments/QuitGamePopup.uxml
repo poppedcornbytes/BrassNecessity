@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/UIDocuments/styles.uss?fileID=7433441132597879392&amp;guid=c30f6580d0acd8e429a717e8d1833395&amp;type=3#styles" />
     <ui:VisualElement style="position: absolute; width: 85%; height: 35%; left: 7.5%; top: 32.5%; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); border-left-width: 4px; border-right-width: 4px; border-top-width: 4px; border-bottom-width: 4px; border-top-left-radius: 4px; border-bottom-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; align-items: center; justify-content: center;">
         <ui:VisualElement>
-            <ui:Label text="Are you sure?" display-tooltip-when-elided="true" name="ConfirmLabel" style="color: rgb(255, 255, 255); font-size: 18px;" />
+            <ui:Label text="Are you sure?" display-tooltip-when-elided="true" name="ConfirmLabel" class="instruction-text" style="color: rgb(255, 255, 255); font-size: 50px;" />
         </ui:VisualElement>
         <ui:VisualElement style="width: 25%; height: 120px; align-items: center; flex-direction: row; justify-content: center;">
             <ui:Button text="Yes" display-tooltip-when-elided="true" name="YesButton" class="menuButton" />
