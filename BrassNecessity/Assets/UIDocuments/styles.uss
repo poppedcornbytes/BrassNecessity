@@ -134,11 +134,14 @@ SliderInt.settingSliderSelected {
 
 .credit-title {
     -unity-text-align: middle-center;
-    font-size: 75px;
-    -unity-font-style: bold;
-    -unity-text-outline-width: 3px;
-    -unity-text-outline-color: rgb(73, 226, 0);
-    color: rgb(39, 115, 0);
+    font-size: 120px;
+    -unity-font-style: normal;
+    color: rgb(67, 164, 18);
+    -unity-font: url('project://database/Assets/AssetPacks/Fonts/robotica_courtney/Robotica.ttf?fileID=12800000&guid=e8e0f944f27e32b41aa1414645f565da&type=3#Robotica');
+    -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/robotica_courtney/Robotica%20SDF.asset?fileID=11400000&guid=0dcb1aa507b418b4983febf7170c4bd7&type=2#Robotica SDF');
+    word-spacing: 5px;
+    letter-spacing: 10px;
+    text-shadow: 3px 3px 0 rgb(96, 160, 214);
     height: 75px;
     justify-content: flex-start;
     translate: 0 1500px;
@@ -149,36 +152,47 @@ SliderInt.settingSliderSelected {
     -unity-text-align: middle-center;
     -unity-text-outline-color: rgb(255, 255, 255);
     color: rgb(255, 255, 255);
-    font-size: 25px;
-    -unity-font-style: bold;
+    font-size: 50px;
+    -unity-font-style: normal;
     height: 35px;
     justify-content: flex-start;
     translate: 0 1500px;
     position: absolute;
+    -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20SDF.asset?fileID=11400000&guid=e0cd77dead6331345bf7be268a559cd2&type=2#Angies New House SDF');
+    -unity-font: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House.ttf?fileID=12800000&guid=33d97a89232e4b0489db35ab5f339611&type=3#Angies New House');
+    letter-spacing: 10px;
+    text-shadow: 1px 1px 0 rgb(0, 0, 0);
+    word-spacing: 5px;
 }
 
 .credit-subheader {
-    font-size: 18px;
+    font-size: 30px;
     color: rgb(255, 255, 255);
-    -unity-font-style: bold;
+    -unity-font-style: normal;
     -unity-text-align: middle-center;
     -unity-text-outline-color: rgb(255, 255, 255);
     height: 30px;
     justify-content: flex-start;
     translate: 0 1500px;
     position: absolute;
+    -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20SDF.asset?fileID=11400000&guid=e0cd77dead6331345bf7be268a559cd2&type=2#Angies New House SDF');
+    -unity-font: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House.ttf?fileID=12800000&guid=33d97a89232e4b0489db35ab5f339611&type=3#Angies New House');
+    letter-spacing: 5px;
 }
 
 .credit-name-and-role {
     -unity-text-align: middle-center;
     color: rgb(255, 255, 255);
     -unity-text-outline-color: rgb(255, 255, 255);
-    font-size: 14px;
-    -unity-font-style: bold;
+    font-size: 20px;
+    -unity-font-style: normal;
     height: 25px;
     justify-content: flex-start;
     position: absolute;
     translate: 0 1500px;
+    -unity-font-definition: none;
+    -unity-font: url('project://database/Assets/AssetPacks/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&guid=e3265ab4bf004d28a9537516768c1c75&type=3#LiberationSans');
+    letter-spacing: 5px;
 }
 
 .scroll-up-animation {
@@ -203,21 +217,28 @@ SliderInt.settingSliderSelected {
 
 .thank-you-title {
     -unity-text-align: middle-center;
-    font-size: 75px;
-    -unity-font-style: bold;
-    -unity-text-outline-width: 3px;
-    -unity-text-outline-color: rgb(73, 226, 0);
-    color: rgb(39, 115, 0);
+    font-size: 120px;
+    -unity-font-style: normal;
+    color: rgb(67, 164, 18);
+    -unity-font: url('project://database/Assets/AssetPacks/Fonts/robotica_courtney/Robotica.ttf?fileID=12800000&guid=e8e0f944f27e32b41aa1414645f565da&type=3#Robotica');
+    -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/robotica_courtney/Robotica%20SDF.asset?fileID=11400000&guid=0dcb1aa507b418b4983febf7170c4bd7&type=2#Robotica SDF');
+    word-spacing: 5px;
+    letter-spacing: 10px;
+    text-shadow: 3px 3px 0 rgb(96, 160, 214);
 }
 
 .continue-title {
     -unity-text-align: upper-center;
     -unity-text-outline-color: rgb(255, 255, 255);
     color: rgb(255, 255, 255);
-    font-size: 25px;
-    -unity-font-style: bold;
+    font-size: 40px;
+    -unity-font-style: normal;
     height: 35px;
     justify-content: flex-start;
+    -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20SDF.asset?fileID=11400000&guid=e0cd77dead6331345bf7be268a559cd2&type=2#Angies New House SDF');
+    -unity-font: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House.ttf?fileID=12800000&guid=33d97a89232e4b0489db35ab5f339611&type=3#Angies New House');
+    letter-spacing: 10px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 255);
 }
 
 .transparent-element {
