@@ -1,10 +1,11 @@
 .healthText {
     font-size: 36px;
-    -unity-font: url('project://database/Library/unity%20default%20resources?fileID=10102&guid=0000000000000000e000000000000000&type=0#Arial');
+    -unity-font: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House.ttf?fileID=12800000&guid=33d97a89232e4b0489db35ab5f339611&type=3#Angies New House');
     -unity-font-style: bold;
     color: rgb(255, 255, 255);
     -unity-text-outline-width: 1px;
     -unity-text-outline-color: rgba(0, 0, 0, 0.79);
+    -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20SDF.asset?fileID=11400000&guid=e0cd77dead6331345bf7be268a559cd2&type=2#Angies New House SDF');
 }
 
 .menuButton {
@@ -238,7 +239,7 @@ SliderInt.settingSliderSelected {
     -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20SDF.asset?fileID=11400000&guid=e0cd77dead6331345bf7be268a559cd2&type=2#Angies New House SDF');
     -unity-font: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House.ttf?fileID=12800000&guid=33d97a89232e4b0489db35ab5f339611&type=3#Angies New House');
     letter-spacing: 10px;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 255);
+    text-shadow: 2px 2px 0 rgb(0, 0, 0);
 }
 
 .transparent-element {
@@ -292,6 +293,8 @@ SliderInt.settingSliderSelected {
     -unity-text-outline-width: 1px;
     -unity-text-outline-color: rgba(0, 0, 0, 0.79);
     -unity-font-style: bold;
+    -unity-font-definition: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House%20SDF.asset?fileID=11400000&guid=e0cd77dead6331345bf7be268a559cd2&type=2#Angies New House SDF');
+    -unity-font: url('project://database/Assets/AssetPacks/Fonts/angie_s_new_house/Angies%20New%20House.ttf?fileID=12800000&guid=33d97a89232e4b0489db35ab5f339611&type=3#Angies New House');
 }
 
 .hud-text {
