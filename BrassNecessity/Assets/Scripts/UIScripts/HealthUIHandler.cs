@@ -16,7 +16,6 @@ public class HealthUIHandler : MonoBehaviour
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         healthBarParentContainer = root.Q<VisualElement>("HealthBar");
         healthBarFill = healthBarParentContainer.Q<VisualElement>("FillContainer");
-        //healthLabel = root.Q<Label>("HealthValue");
         if (playerHealth == null)
         {
             playerHealth = FindObjectOfType<PlayerHealthHandler>();
@@ -25,7 +24,6 @@ public class HealthUIHandler : MonoBehaviour
 
     private void Update()
     {
-        //healthLabel.text = playerHealth.Health.ToString("F2");w
         float healthPercentage = playerHealth.GetHealthPercentage();
         if (healthPercentage > 1)
         {
