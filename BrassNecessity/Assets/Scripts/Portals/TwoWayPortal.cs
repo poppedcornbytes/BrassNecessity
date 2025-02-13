@@ -69,4 +69,10 @@ public class TwoWayPortal : PortalBehaviour, IArrivalEventHandler
             OnArrivalEvent();
         }
     }
+
+    public override void Disable()
+    {
+        arrivedObjects.Clear();
+        base.Disable();
+    }
 }

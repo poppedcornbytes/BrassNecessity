@@ -165,7 +165,7 @@ public class PortalBehaviour : MonoBehaviour, IPortal, IExitEventHandler
 
     }
 
-    public void Disable()
+    public virtual void Disable()
     {
         isDisabled = true;
         soundEffects.PlayOnce(SoundEffectKey.PortalDisable);
