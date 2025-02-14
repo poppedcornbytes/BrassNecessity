@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MusicTrackHandler : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class MusicTrackHandler : MonoBehaviour
     private float trackFadeTimeInSeconds = 0.5f;
     private int fadeSteps = 10;
     private int lastVolumeSetting;
+    private Queue<MusicKey> _trackRequests = new Queue<MusicKey>();
+    private MusicKeyValue _inProgressRequest = null;
+    private MusicKeyValue _currentTrack;
 
     private void Awake()
     {
@@ -33,6 +37,26 @@ public class MusicTrackHandler : MonoBehaviour
             UpdateVolume();
             lastVolumeSetting = SettingsHandler.MusicVolumeSetting;
         }
+        if (ShouldLoadTrack())
+        {
+            LoadTrack();
+        }
+    }
+    
+    private bool ShouldLoadTrack()
+    {
+        return _trackRequests.Count > 0 && _inProgressRequest == null;
+    }
+
+    private void LoadTrack()
+    {
+        currentTrack = _trackRequests.Dequeue();
+        _inProgressRequest = trackMap[currentTrack];
+        MusicTrackData[] clipsToPlay = _inProgressRequest.Value;
+        for (int i = 0; i < clipsToPlay.Length; i++)
+        {
+            StartCoroutine(fadeInTrackRoutine(clipsToPlay[i]));
+        }
     }
 
     public void UpdateVolume()
@@ -50,16 +74,15 @@ public class MusicTrackHandler : MonoBehaviour
 
     public void PlayTrack(MusicKey key)
     {
-        currentTrack = key;
-        MusicTrackData[] clipsToPlay = trackMap[key].Value;
-        for (int i = 0; i < clipsToPlay.Length; i++)
-        {
-            StartCoroutine(fadeInTrackRoutine(clipsToPlay[i]));
-        }
+        _trackRequests.Enqueue(key);
     }
 
     private IEnumerator fadeInTrackRoutine(MusicTrackData trackData)
     {
+        if (_currentTrack != null)
+        {
+            yield return StopTrack();
+        }
         AudioSource newSource = gameObject.AddComponent<AudioSource>();
         newSource.clip = trackData.Clip;
         newSource.volume = 0f;
@@ -76,9 +99,17 @@ public class MusicTrackHandler : MonoBehaviour
             newSource.volume += volumeStepIncrease;
             yield return new WaitForSeconds(fadeWaitTime);
         }
+        _currentTrack = _inProgressRequest;
+        _inProgressRequest = null;
     }
 
-    public IEnumerator StopTrack()
+    public void StopAll()
+    {
+        StartCoroutine(StopTrack());
+        _trackRequests.Clear();
+    }
+
+    private IEnumerator StopTrack()
     {
         AudioSource[] sources = GetComponents<AudioSource>();
         for (int i = 0; i < sources.Length; i++)
@@ -89,6 +120,7 @@ public class MusicTrackHandler : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(trackFadeTimeInSeconds);
+        _currentTrack = null;
     }
 
     private IEnumerator fadeOutAudioSource(AudioSource sourceToFade)

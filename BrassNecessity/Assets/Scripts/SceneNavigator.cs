@@ -58,7 +58,7 @@ public class SceneNavigator : MonoBehaviour
         SceneTransition transitionEffect = singleton.GetComponent<SceneTransition>();
         yield return transitionEffect.EndSceneTransitionRoutine();
         MusicTrackHandler trackHandler = FindObjectOfType<MusicTrackHandler>();
-        yield return trackHandler?.StopTrack();
+        trackHandler?.StopAll();
         SceneManager.LoadScene(sceneName);
         SceneManager.sceneLoaded += singleton.OnSceneLoaded;
     }

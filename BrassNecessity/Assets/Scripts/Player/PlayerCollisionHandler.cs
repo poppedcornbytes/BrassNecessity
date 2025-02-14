@@ -93,7 +93,7 @@ public class PlayerCollisionHandler : MonoBehaviour
             if (!enemyWarningOn)
             {
                 enemyWarningOn = true;
-                StartCoroutine(switchMusicRoutine(MusicKey.Adventure));
+                switchMusicRoutine(MusicKey.Adventure);
             }
         }
         else
@@ -102,14 +102,14 @@ public class PlayerCollisionHandler : MonoBehaviour
             {
 
                 enemyWarningOn = false;
-                StartCoroutine(switchMusicRoutine(MusicKey.Peaceful));
+                switchMusicRoutine(MusicKey.Peaceful);
             }
         }
     }
 
-    private IEnumerator switchMusicRoutine(MusicKey keyToPlay)
+    private void switchMusicRoutine(MusicKey keyToPlay)
     {
-        yield return musicTracks.StopTrack();
+        musicTracks.StopAll();
         musicTracks.PlayTrack(keyToPlay);
     }
 
