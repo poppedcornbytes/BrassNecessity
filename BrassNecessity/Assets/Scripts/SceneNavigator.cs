@@ -95,6 +95,7 @@ public class SceneNavigator : MonoBehaviour
                 string possibleLevel = possibleNewLevelsParts?.GetLevelId() ?? string.Empty;
                 if (currentLevel != possibleLevel)
                 {
+                    Destroy(currentLevelParts);
                     LevelManager clonedNewManager = this.gameObject.AddComponent<LevelManager>();
                     possibleNewLevelsParts.CreateCopy(clonedNewManager);
                     currentLevelParts = clonedNewManager;

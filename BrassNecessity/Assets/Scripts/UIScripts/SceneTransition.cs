@@ -12,6 +12,7 @@ public class SceneTransition : MonoBehaviour
     private float secondsToDisplayLevelInfo = 5f;
     [SerializeField]
     private LevelManager levelListing;
+    private VisualTreeAsset _baseUiAsset;
 
     private const string DEFAULT_COVER_STYLE = "default-cover";
     private const string TRANSPARENT_COVER_STYLE = "transparent-cover";
@@ -21,8 +22,6 @@ public class SceneTransition : MonoBehaviour
     private const string SWIPE_RIGHT_TRANSITION = "swipe-right-transition";
     private const string FADE_IN_TRANSITION = "fade-in-transition";
     private const string FADE_OUT_TRANSITION = "fade-out-transition";
-    private const string LEVEL_NAME_ELEMENT = "level-name-field";
-    private const string LEVEL_NUMBER_ELEMENT = "level-number-field";
     bool isGeometryFinished = false;
 
     public void SetLevelManager(LevelManager levelDataToSet)
@@ -30,16 +29,25 @@ public class SceneTransition : MonoBehaviour
         levelListing = levelDataToSet;
         if (levelDataToSet != null)
         {
-            VisualTreeAsset overrideAsset = levelListing.OverrideSceneDocument;
+            VisualTreeAsset _overrideAsset = levelListing.OverrideSceneDocument;
             if (levelListing.OverrideDisplayTimeInSeconds != secondsToDisplayLevelInfo)
             {
                 secondsToDisplayLevelInfo = levelListing.OverrideDisplayTimeInSeconds;
             }
-            if (overrideAsset != null)
+            if (_overrideAsset != null)
             {
-                SetVisualTreeAssetOverride(overrideAsset);
+                SetVisualTreeAssetOverride(_overrideAsset);
+            }
+            else
+            {
+                SetVisualTreeAssetOverride(_baseUiAsset);
             }
         }
+    }
+
+    private void Awake()
+    {
+        _baseUiAsset = GetComponent<UIDocument>().visualTreeAsset;
     }
 
     private void OnEnable()
@@ -49,6 +57,7 @@ public class SceneTransition : MonoBehaviour
 
     private void SetElements()
     {
+
         VisualElement visualElement = GetComponent<UIDocument>().rootVisualElement;
         sceneTransitioner = visualElement.Q<VisualElement>("TransitionElement");
         levelNumberLabel = sceneTransitioner.Q<Label>("LevelNumberTitle");

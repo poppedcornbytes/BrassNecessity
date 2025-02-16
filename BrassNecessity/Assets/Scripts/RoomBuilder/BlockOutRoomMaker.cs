@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class BlockOutRoomMaker : MonoBehaviour
 {
@@ -198,6 +200,8 @@ public class BlockOutRoomMaker : MonoBehaviour
     }
 }
 
+#if UNITY_EDITOR
+
 [CustomEditor(typeof(BlockOutRoomMaker))]
 public class BlockOutRoomMakerEditor: Editor
 {
@@ -282,3 +286,4 @@ public class BlockOutRoomMakerEditor: Editor
         serializedObject.ApplyModifiedProperties();
     }
 }
+#endif

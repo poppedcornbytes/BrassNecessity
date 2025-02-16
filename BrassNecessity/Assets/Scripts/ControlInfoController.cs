@@ -25,7 +25,7 @@ public class ControlInfoController : MonoBehaviour
     {
         if (!overviewExited)
         {
-            if (input.applyElement)
+            if (input.shoot)
             {
                 overviewExited = true;
                 soundEffects.PlayOnce(SoundEffectKey.ButtonSelect);
