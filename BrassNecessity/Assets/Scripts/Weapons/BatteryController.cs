@@ -16,8 +16,6 @@ public class BatteryController : MonoBehaviour
     [SerializeField]
     private BatteryPiece[] batteryTanks;
 
-    [SerializeField]
-    private Light[] batteryLights;
 
     private void Awake()
     {
@@ -36,7 +34,6 @@ public class BatteryController : MonoBehaviour
             findElementData();
             elementInfo.UpdateElement();
             batteryTanks = GetComponentsInChildren<BatteryPiece>();
-            batteryLights = GetComponentsInChildren<Light>();
         }
     }
     // Start is called before the first frame update
@@ -71,10 +68,6 @@ public class BatteryController : MonoBehaviour
         for (int i = 0; i < batteryTanks.Length; i++)
         {
             batteryTanks[i].SetMaterial(batteryMaterial);
-        }
-        for (int i = 0; i < batteryLights.Length; i++)
-        {
-            batteryLights[i].color = lightColor;
         }
         lastType = element.Primary;
     }
