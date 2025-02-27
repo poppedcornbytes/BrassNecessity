@@ -290,10 +290,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1286662931}
     m_Modifications:
+    - target: {fileID: 643687500437685837, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Name
       value: WallTorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2718689754699182592, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -350,11 +360,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3667617316102792219, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4260594309111040705, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1a44da6244b37ba418e09488ef2efcc5, type: 2}
+    - target: {fileID: 5321363708078360807, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5321363708078360809, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -369,6 +389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321363708643009068, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5321363708643009071, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -399,6 +424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729509191244108588, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8512701084373480262, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -531,10 +561,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1997132915}
     m_Modifications:
+    - target: {fileID: 643687500437685837, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Name
       value: WallTorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2718689754699182592, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -591,11 +631,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3667617316102792219, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4260594309111040705, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1a44da6244b37ba418e09488ef2efcc5, type: 2}
+    - target: {fileID: 5321363708078360807, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5321363708078360809, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -610,6 +660,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321363708643009068, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5321363708643009071, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -640,6 +695,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729509191244108588, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8512701084373480262, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -2379,6 +2439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_Pillar_Large_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 161912, guid: 33604d1ec5375e3488891483b470a427, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 417952, guid: 33604d1ec5375e3488891483b470a427, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2983,6 +3047,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1360481642}
     m_Modifications:
+    - target: {fileID: 161912, guid: 33604d1ec5375e3488891483b470a427, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 417952, guid: 33604d1ec5375e3488891483b470a427, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3575,6 +3643,10 @@ PrefabInstance:
     - target: {fileID: 161912, guid: 33604d1ec5375e3488891483b470a427, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_Pillar_Large_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 161912, guid: 33604d1ec5375e3488891483b470a427, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 417952, guid: 33604d1ec5375e3488891483b470a427, type: 3}
       propertyPath: m_RootOrder
@@ -11789,6 +11861,84 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349079758}
   m_Mesh: {fileID: 4300000, guid: 1edc04d18e562674fbd6d001fc0a636a, type: 3}
+--- !u!21 &351480383
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SingleLine-LightSaber(Clone)
+  m_Shader: {fileID: 4800000, guid: 2d9a4ca4b2730b64e8aade7030f8caeb, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Glossiness: 0.5
+    - _LightSaberFactor: 0.8
+    - _LineScale: 0.007583339
+    - _LineWidth: 60
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _UvBasedLightSaberFactor: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0.06272143, g: 1, b: 0.06132078, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &354984378
 GameObject:
   m_ObjectHideFlags: 0
@@ -14133,6 +14283,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468742062}
     m_Modifications:
+    - target: {fileID: 143484, guid: 8926256a12a856b4d8ef227f9d6fdc38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 476952, guid: 8926256a12a856b4d8ef227f9d6fdc38, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -15110,7 +15264,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &468742062
 Transform:
@@ -17626,6 +17780,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_Pillar_Large_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 161912, guid: 33604d1ec5375e3488891483b470a427, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 417952, guid: 33604d1ec5375e3488891483b470a427, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -19994,10 +20152,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 290210718}
     m_Modifications:
+    - target: {fileID: 643687500437685837, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Name
       value: WallTorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2718689754699182592, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -20054,11 +20222,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3667617316102792219, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4260594309111040705, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1a44da6244b37ba418e09488ef2efcc5, type: 2}
+    - target: {fileID: 5321363708078360807, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5321363708078360809, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -20073,6 +20251,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321363708643009068, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5321363708643009071, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -20103,6 +20286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729509191244108588, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8512701084373480262, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -22016,10 +22204,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2113598978}
     m_Modifications:
+    - target: {fileID: 643687500437685837, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Name
       value: WallTorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2718689754699182592, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -22076,11 +22274,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3667617316102792219, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4260594309111040705, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1a44da6244b37ba418e09488ef2efcc5, type: 2}
+    - target: {fileID: 5321363708078360807, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5321363708078360809, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -22095,6 +22303,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321363708643009068, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5321363708643009071, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -22125,6 +22338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729509191244108588, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8512701084373480262, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -25971,10 +26189,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 445894595}
     m_Modifications:
+    - target: {fileID: 643687500437685837, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Name
       value: WallTorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2718689754699182592, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -26031,11 +26259,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3667617316102792219, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4260594309111040705, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1a44da6244b37ba418e09488ef2efcc5, type: 2}
+    - target: {fileID: 5321363708078360807, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5321363708078360809, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -26050,6 +26288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321363708643009068, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5321363708643009071, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -26080,6 +26323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729509191244108588, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8512701084373480262, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -26891,84 +27139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeToUse: 0
---- !u!21 &826490614
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SingleLine-LightSaber(Clone)
-  m_Shader: {fileID: 4800000, guid: 2d9a4ca4b2730b64e8aade7030f8caeb, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _Glossiness: 0.5
-    - _LightSaberFactor: 0.8
-    - _LineScale: 0.007583339
-    - _LineWidth: 60
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _UvBasedLightSaberFactor: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 0.06272143, g: 1, b: 0.06132078, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &826530879
 GameObject:
   m_ObjectHideFlags: 0
@@ -32459,6 +32629,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_Pillar_Large_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 161912, guid: 33604d1ec5375e3488891483b470a427, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 417952, guid: 33604d1ec5375e3488891483b470a427, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -33599,6 +33773,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1114446599}
     m_Modifications:
+    - target: {fileID: 104138, guid: 785e40498aac69e4aae4bc7b5cbbc7c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 469428, guid: 785e40498aac69e4aae4bc7b5cbbc7c4, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -40812,6 +40990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_Pillar_Large_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 161912, guid: 33604d1ec5375e3488891483b470a427, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 417952, guid: 33604d1ec5375e3488891483b470a427, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -43369,7 +43551,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1360481642
 Transform:
@@ -44574,6 +44756,10 @@ PrefabInstance:
     - target: {fileID: 127254, guid: b1a171888b1be0e4db1a5638cad8f997, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Rug_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 127254, guid: b1a171888b1be0e4db1a5638cad8f997, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 430460, guid: b1a171888b1be0e4db1a5638cad8f997, type: 3}
       propertyPath: m_RootOrder
@@ -50213,10 +50399,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1063542589}
     m_Modifications:
+    - target: {fileID: 643687500437685837, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Name
       value: WallTorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2718689754699182592, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -50273,11 +50469,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3667617316102792219, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4260594309111040705, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1a44da6244b37ba418e09488ef2efcc5, type: 2}
+    - target: {fileID: 5321363708078360807, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5321363708078360809, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -50292,6 +50498,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321363708643009068, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5321363708643009071, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -50322,6 +50533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729509191244108588, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8512701084373480262, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -59839,10 +60055,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1881642206}
     m_Modifications:
+    - target: {fileID: 643687500437685837, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Name
       value: WallTorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2718689754699182592, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -59899,11 +60125,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3667617316102792219, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4260594309111040705, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1a44da6244b37ba418e09488ef2efcc5, type: 2}
+    - target: {fileID: 5321363708078360807, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5321363708078360809, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -59918,6 +60154,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321363708643009068, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5321363708643009071, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -59948,6 +60189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729509191244108588, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8512701084373480262, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -60218,10 +60464,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1262474680}
     m_Modifications:
+    - target: {fileID: 643687500437685837, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Name
       value: WallTorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718689754698923196, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2718689754699182592, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -60278,11 +60534,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3667617316102792219, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4260594309111040705, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1a44da6244b37ba418e09488ef2efcc5, type: 2}
+    - target: {fileID: 5321363708078360807, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5321363708078360809, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -60297,6 +60563,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.19215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321363708643009068, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5321363708643009071, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -60327,6 +60598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729509191244108588, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8512701084373480262, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
         type: 3}
@@ -65576,6 +65852,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468742062}
     m_Modifications:
+    - target: {fileID: 161912, guid: 33604d1ec5375e3488891483b470a427, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 417952, guid: 33604d1ec5375e3488891483b470a427, type: 3}
       propertyPath: m_RootOrder
       value: 1
