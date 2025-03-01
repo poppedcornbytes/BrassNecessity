@@ -43,7 +43,7 @@ public class SceneNavigator : MonoBehaviour
         {
             sceneName = sceneAccessKeys[key].Value;
         }
-        if (key == SceneKey.StartMenu || key == SceneKey.GameOver)
+        if (key == SceneKey.StartMenu || key == SceneKey.GameOver || key == SceneKey.EndCredits)
         {
             if (singleton.currentLevelParts != null)
             {
