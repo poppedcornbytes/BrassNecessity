@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Search;
 using UnityEngine;
 
 public class ElementSpawner : MonoBehaviour
@@ -10,8 +11,8 @@ public class ElementSpawner : MonoBehaviour
     private Element.Type typeToSpawn;
 
     [SerializeField]
-    private ElementPickup elementToSpawn;
-    private ElementPickup currentSpawnedElement;
+    protected ElementPickup elementToSpawn;
+    protected ElementPickup currentSpawnedElement;
 
     private void Awake()
     {
@@ -26,19 +27,25 @@ public class ElementSpawner : MonoBehaviour
     {
         currentSpawnedElement?.RemoveDestroyEvent(SpawnElement);
         yield return new WaitForSeconds(secondsToWaitBeforeRespawn);
-        GameObject newElement = Instantiate(elementToSpawn.gameObject, transform.position, Quaternion.identity);
-        currentSpawnedElement = newElement.GetComponent<ElementPickup>();
-        currentSpawnedElement.Element.SwitchType(typeToSpawn);
-        currentSpawnedElement.CanDespawn = false;
-        currentSpawnedElement.AddDestroyEvent(SpawnElement);
+        instantiateElement();
     }
 
     private void createNewElement()
     {
+        instantiateElement();
+    }
+
+    private void instantiateElement()
+    {
         GameObject newElement = Instantiate(elementToSpawn.gameObject, transform.position, Quaternion.identity);
         currentSpawnedElement = newElement.GetComponent<ElementPickup>();
-        currentSpawnedElement.Element.SwitchType(typeToSpawn);
+        currentSpawnedElement.Element.SwitchType(determineSpawnType());
         currentSpawnedElement.CanDespawn = false;
         currentSpawnedElement.AddDestroyEvent(SpawnElement);
+    }
+
+    protected virtual Element.Type determineSpawnType()
+    {
+        return typeToSpawn;
     }
 }
