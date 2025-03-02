@@ -44,7 +44,7 @@ public class ProgressManager : MonoBehaviour
 
     private void syncPriorProgressEvents()
     {
-        IPriorProgressSyncEvent[] progressSyncEvents = FindObjectsOfType<OnLoadProgressSyncEvent>();
+        IPriorProgressSyncEvent[] progressSyncEvents = FindObjectsOfType<OnLoadProgressSyncEvent>(true);
         for (int i = 0; i < progressSyncEvents.Length; i++)
         {
             if (progressSyncEvents[i].MeetsProgressCriteria(CurrentProgress))

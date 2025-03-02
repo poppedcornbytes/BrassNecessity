@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnLoadProgressShowObject : MonoBehaviour
+public class OnLoadProgressShowObject : OnLoadProgressSyncEvent
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool MeetsProgressCriteria(ProgressLevel progressToMatch)
     {
-        
+        return (progressToMatch & requiredProgress) == requiredProgress;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void SyncProgress()
     {
-        
+        this.gameObject.SetActive(true);
     }
 }
