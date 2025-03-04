@@ -13148,6 +13148,84 @@ Transform:
   m_Father: {fileID: 82659258}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &416769687
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SingleLine-LightSaber(Clone)
+  m_Shader: {fileID: 4800000, guid: 2d9a4ca4b2730b64e8aade7030f8caeb, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Glossiness: 0.5
+    - _LightSaberFactor: 0.8
+    - _LineScale: 0.007583339
+    - _LineWidth: 60
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _UvBasedLightSaberFactor: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0.06272143, g: 1, b: 0.06132078, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &420718581
 GameObject:
   m_ObjectHideFlags: 0
@@ -22572,62 +22650,62 @@ PrefabInstance:
     - target: {fileID: 1596380268650320701, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.6839622
+      value: 0.57254905
       objectReference: {fileID: 0}
     - target: {fileID: 1596380268650320701, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.8123387
+      value: 0.57254905
       objectReference: {fileID: 0}
     - target: {fileID: 1596380268650320701, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
+      value: 0.5764706
       objectReference: {fileID: 0}
     - target: {fileID: 1596380268650320701, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.minColor.b
-      value: 0.28773582
+      value: 0.44313726
       objectReference: {fileID: 0}
     - target: {fileID: 1596380268650320701, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.minColor.g
-      value: 0.8639269
+      value: 0.44313726
       objectReference: {fileID: 0}
     - target: {fileID: 1596380268650320701, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.minColor.r
-      value: 1
+      value: 0.44313726
       objectReference: {fileID: 0}
     - target: {fileID: 1596380268672770767, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key0.b
-      value: 0.6839622
+      value: 0.57254905
       objectReference: {fileID: 0}
     - target: {fileID: 1596380268672770767, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key0.g
-      value: 0.8123387
+      value: 0.57254905
       objectReference: {fileID: 0}
     - target: {fileID: 1596380268672770767, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key0.r
-      value: 1
+      value: 0.5764706
       objectReference: {fileID: 0}
     - target: {fileID: 1596380268672770767, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key1.b
-      value: 0.6839622
+      value: 0.57254905
       objectReference: {fileID: 0}
     - target: {fileID: 1596380268672770767, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key1.g
-      value: 0.8123387
+      value: 0.57254905
       objectReference: {fileID: 0}
     - target: {fileID: 1596380268672770767, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key1.r
-      value: 1
+      value: 0.5764706
       objectReference: {fileID: 0}
     - target: {fileID: 2478182787645355167, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
@@ -22704,6 +22782,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScenePortal
       objectReference: {fileID: 0}
+    - target: {fileID: 2478182788670398902, guid: 36f2ce09b728ebd4a9e0f79147546460,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2478182788670398903, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: m_RootOrder
@@ -22717,7 +22800,7 @@ PrefabInstance:
     - target: {fileID: 2478182788670398903, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.23
+      value: 10.34
       objectReference: {fileID: 0}
     - target: {fileID: 2478182788670398903, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
@@ -22768,6 +22851,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isHidden
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621224284808068188, guid: 36f2ce09b728ebd4a9e0f79147546460,
+        type: 3}
+      propertyPath: isDisabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8621224284808068188, guid: 36f2ce09b728ebd4a9e0f79147546460,
         type: 3}
@@ -37122,84 +37210,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117207102}
   m_Mesh: {fileID: 4300000, guid: 4cc906de70ac5624b9b10b53b2b6fb9b, type: 3}
---- !u!21 &1118089915
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SingleLine-LightSaber(Clone)
-  m_Shader: {fileID: 4800000, guid: 2d9a4ca4b2730b64e8aade7030f8caeb, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _Glossiness: 0.5
-    - _LightSaberFactor: 0.8
-    - _LineScale: 0.007583339
-    - _LineWidth: 60
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _UvBasedLightSaberFactor: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 0.06272143, g: 1, b: 0.06132078, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-  m_BuildTextureStacks: []
 --- !u!4 &1119156967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2718689754699182592, guid: e8d609b0dd9be5a4da64f832bcacd8fc,
