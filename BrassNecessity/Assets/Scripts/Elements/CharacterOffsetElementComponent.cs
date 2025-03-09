@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 public class CharacterOffsetElementComponent : ElementComponent
@@ -11,22 +12,27 @@ public class CharacterOffsetElementComponent : ElementComponent
     private int _offsetInterval;
     protected override void Awake()
     {
-        CharacterSkin skin = _characterSelector.GetCurrentCharacter();
-        
-        int offsetType = (int)skin.GetDefaultType() + _offsetInterval;
+        primaryType = DetermineOffsetType();
+        base.Awake();
+    }
 
-        if (!Enum.IsDefined(typeof(Element.Type), offsetType))
+    public Element.Type DetermineOffsetType()
+    {
+        CharacterSkin skin = _characterSelector.GetCurrentCharacter();
+
+        int offsetType = (int)skin.GetDefaultType() + _offsetInterval;
+        int maxAllowed = (int)Enum.GetValues(typeof(Element.Type)).Cast<Element.Type>().Max();
+        if (offsetType < 0 || offsetType >= maxAllowed)
         {
-            if (!Enum.IsDefined(typeof(Element.Type), _offsetInterval))
+            if (!Enum.IsDefined(typeof(Element.Type), _offsetInterval - 1))
             {
                 offsetType = 0;
             }
             else
             {
-                offsetType = _offsetInterval;
+                offsetType = _offsetInterval - 1;
             }
         }
-        primaryType = (Element.Type)offsetType;
-        base.Awake();
+        return (Element.Type)offsetType;
     }
 }
