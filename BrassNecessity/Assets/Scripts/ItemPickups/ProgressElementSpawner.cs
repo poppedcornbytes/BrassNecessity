@@ -9,6 +9,6 @@ public class ProgressElementSpawner : ElementSpawner
 
     protected override Element.Type determineSpawnType()
     {
-        return _elementComponent.ElementInfo.Primary;
+        return _elementComponent.DetermineOffsetType();
     }
 }
