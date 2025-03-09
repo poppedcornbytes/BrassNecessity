@@ -7,8 +7,8 @@ public class LaserGateBehaviour : MonoBehaviour
     [SerializeField]
     private float timeToUnlockInSeconds = 4f;
     private float currentUnlockProgressInSeconds = 0f;
-    private bool isResetting = false;
-    private bool isBarrierActive = true;
+    protected bool isResetting = false;
+    protected bool isBarrierActive = true;
     [SerializeField]
     private GameObject[] objectsToDisableOnComplete;
     [SerializeField]
@@ -17,7 +17,7 @@ public class LaserGateBehaviour : MonoBehaviour
     private SoundEffectTrackHandler soundEffects;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         soundEffects = FindObjectOfType<SoundEffectTrackHandler>();
         lockBehaviour = GetComponentInChildren<GateUnlockPhyiscs>();
@@ -65,18 +65,23 @@ public class LaserGateBehaviour : MonoBehaviour
         }
     }
 
-    private void removeBarrier()
+    protected virtual void removeBarrier()
     {
-        isBarrierActive = false;
         GameObject unlockEffect = Instantiate(unlockEffectPrefab);
         unlockEffect.transform.position = lockBehaviour.transform.position;
         soundEffects.PlayOnce(SoundEffectKey.LaserGateUnlock);
+        disableBarrierObjects();
+        GetComponentInChildren<GateUnlockPhyiscs>().UnlockGate();
+        isBarrierActive = false;
+    }
+
+    protected virtual void disableBarrierObjects()
+    {
         GetComponent<BoxCollider>().enabled = false;
         for (int i = 0; i < objectsToDisableOnComplete.Length; i++)
         {
             objectsToDisableOnComplete[i].SetActive(false);
         }
-        GetComponentInChildren<GateUnlockPhyiscs>().UnlockGate();
     }
 
     public void StartRevertingUnlockProgress()
