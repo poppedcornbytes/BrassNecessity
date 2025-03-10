@@ -4,7 +4,7 @@ using EnemyStateMachine;
 
 [SelectionBase]    // (If you click any child objects in the inspector, it will automatically select the parent object which contains this script
 [RequireComponent(typeof(Animator))]
-[RequireComponent (typeof(ElementComponent))]
+[RequireComponent(typeof(ElementComponent))]
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyController : MonoBehaviour
 {
@@ -17,14 +17,14 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField]
     private float closeAttackDistance = 2f;
-    [SerializeField] 
+    [SerializeField]
     private float farAttackDistance = 4f;
     [HideInInspector] public float midAttackDistance;
     [SerializeField]
     private float hitDamage = 10f;
     [SerializeField]
     private float enemyTurnSpeed = 5f;
-    [SerializeField] 
+    [SerializeField]
     private float facingPlayerDegreesMargin = 10f;   // The plus/minus margin of error (in degrees) that the enemy can be facing to the left or right of the player but still be close enough to be considered 'facing the player'
 
     [SerializeField]
@@ -44,8 +44,15 @@ public class EnemyController : MonoBehaviour
     {
         // NavMeshAgent
         navAgent = GetComponent<NavMeshAgent>();
-        playerTransform = FindObjectOfType<PlayerHealthHandler>(true).transform;
-        playerHealthHandler = playerTransform.GetComponent<PlayerHealthHandler>();
+        PlayerHealthHandler playerHealth = FindObjectOfType<PlayerHealthHandler>(true);
+        if (playerHealth != null)
+        {
+            playerTransform = playerHealth.transform;
+        }
+        if (playerTransform != null)
+        {
+            playerHealthHandler = playerTransform.GetComponent<PlayerHealthHandler>();
+        }
         navAgent.isStopped = false;
 
         animator = GetComponent<Animator>();
@@ -99,7 +106,16 @@ public class EnemyController : MonoBehaviour
 
     public float DistanceToPlayer()
     {
-        float distance = (playerTransform.position - this.transform.position).magnitude;
+
+        float distance;
+        if (playerTransform != null)
+        {
+            distance = (playerTransform.position - this.transform.position).magnitude;
+        }
+        else
+        {
+            distance = 0f;
+        }
         //Debug.Log("Distance to player: " + distance.ToString());
         return distance;
     }
@@ -108,7 +124,15 @@ public class EnemyController : MonoBehaviour
     public Vector3 FlatDirectionToPlayer()
     {
         // Returns the direction of the player on a flat plane i.e. with no up/down element
-        Vector3 directionToPlayer = playerTransform.position - transform.position;
+        Vector3 directionToPlayer;
+        if (playerTransform != null) 
+        { 
+            directionToPlayer = playerTransform.position - transform.position; 
+        }
+        else
+        {
+            directionToPlayer = Vector3.zero;
+        }
         Vector3 flatDirectionToPlayer = new Vector3(directionToPlayer.x, 0f, directionToPlayer.z);
         return flatDirectionToPlayer;
 
@@ -138,12 +162,20 @@ public class EnemyController : MonoBehaviour
 
     public Vector3 PositionToMoveTo(float distanceFromPlayer)
     {
-        Vector3 playerToEnemyDirection = (transform.position - playerTransform.position).normalized;
-        Vector3 targetPosition = playerTransform.position + (playerToEnemyDirection * distanceFromPlayer);
+        Vector3 targetPosition;
+        if (playerTransform != null)
+        {
+            Vector3 playerToEnemyDirection = (transform.position - playerTransform.position).normalized;
+            targetPosition = playerTransform.position + (playerToEnemyDirection * distanceFromPlayer);
+        }
+        else
+        {
+            targetPosition = Vector3.zero;
+        }
         return targetPosition;
     }
 
-    
+
     public void TestIfEnemyHitPlayer()
     {
         // This is called by an animation event in the two attack animations
@@ -155,7 +187,10 @@ public class EnemyController : MonoBehaviour
             if (hit.collider.transform == playerTransform)
             {
                 // The object is in the defined space
-                playerHealthHandler.DamagePlayer(hitDamage);
+                if (playerHealthHandler != null)
+                {
+                    playerHealthHandler.DamagePlayer(hitDamage);
+                }
             }
         }
 
