@@ -7,24 +7,24 @@ namespace NewPortals
     public class PortalThemes : MonoBehaviour
     {
         [SerializeField]
-        private PortalColorScheme[] colorSchemes;
+        private Color[] availableColors;
 
         [SerializeField]
-        private PortalColorScheme disabledScheme;
+        private Color disabledColor;
         public int Count
         {
-            get => colorSchemes.Length;
+            get => availableColors.Length;
         }
 
 
-        public PortalColorScheme GetColorSchemeAtIndex(int index)
+        public Color GetColorAtIndex(int index)
         {
-            return colorSchemes[index];
+            return availableColors[index];
         }
 
-        public PortalColorScheme GetDisabledScheme()
+        public Color GetDisabledColor()
         {
-            return disabledScheme;
+            return disabledColor;
         }
     }
 }
