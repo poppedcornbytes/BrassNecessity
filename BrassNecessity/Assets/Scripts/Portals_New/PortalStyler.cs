@@ -9,6 +9,7 @@ namespace NewPortals
     [ExecuteAlways]
     public class PortalStyler : MonoBehaviour
     {
+        [Range(1, 10)]
         [SerializeField]
         private int portalThemeIndex;
         public int PortalThemeIndex { get => portalThemeIndex; }
