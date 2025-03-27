@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class PortalController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private NewPortals.PortalComponents components;
+
+    [ContextMenu("Reveal")]
+    public void Reveal()
     {
-        
+        Activate();
+        components.Animator.PlayReveal();
     }
 
-    // Update is called once per frame
-    void Update()
+    [ContextMenu("Hide")]
+    public void Hide()
     {
-        
+        Deactivate();
+        components.Animator.PlayHide();
     }
+
+    [ContextMenu("Activate")]
+    public void Activate()
+    {
+        components.BasePortal.Play();
+    }
+
+    [ContextMenu("Deactivate")]
+    public void Deactivate()
+    {
+        components.BasePortal.Stop();
+    }
+
 }

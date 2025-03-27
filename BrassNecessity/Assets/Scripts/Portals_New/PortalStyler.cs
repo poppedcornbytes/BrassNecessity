@@ -7,6 +7,9 @@ using UnityEngine;
 namespace NewPortals
 {
     [ExecuteAlways]
+#if UNITY_EDITOR
+    [SelectionBase]
+#endif
     public class PortalStyler : MonoBehaviour
     {
         [Range(1, 10)]
@@ -59,32 +62,6 @@ namespace NewPortals
             Color scheme = themeList.GetColorAtIndex(portalThemeIndex);
             SetSpecificTheme(scheme);
             lastThemeIndex = portalThemeIndex;
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            if (components.BasePortal != null)
-            {
-                components.BasePortal.Play();
-            }
-        }
-
-        private void OnDrawGizmos()
-        {
-            if (!Selection.gameObjects.Any(x => x.transform.IsChildOf(this.transform)))
-            {
-                if (components.BasePortal != null)
-                {
-                    components.BasePortal.Stop();
-                }
-            }
-            else
-            {
-                if (components.BasePortal != null)
-                {
-                    components.BasePortal.Play();
-                }
-            }
         }
     }
 }

@@ -9,5 +9,6 @@ namespace NewPortals
         public PortalBaseEffect BasePortal;
         public TeleportLeaveEffect LeaveEffect;
         public TeleportArriveEffect ArriveEffect;
+        public PortalAnimatorController Animator;
     }
 }
