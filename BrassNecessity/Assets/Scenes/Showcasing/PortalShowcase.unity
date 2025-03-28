@@ -1914,7 +1914,6 @@ GameObject:
   - component: {fileID: 757057386}
   - component: {fileID: 757057388}
   - component: {fileID: 757057387}
-  - component: {fileID: 757057392}
   - component: {fileID: 757057391}
   - component: {fileID: 757057390}
   - component: {fileID: 757057389}
@@ -2121,19 +2120,6 @@ MonoBehaviour:
   portalThemeIndex: 1
   themeList: {fileID: 89039877}
   components: {fileID: 757057390}
---- !u!114 &757057392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757057384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 040917758dea48c49ab17c8beebb241d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  components: {fileID: 0}
 --- !u!1 &760694884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,8 +2939,8 @@ VisualEffect:
   m_GameObject: {fileID: 1131929194}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 5284dd9cfdb7c53408203b6bddc5cb33, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_ResourceVersion: 1
@@ -3250,7 +3236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 040917758dea48c49ab17c8beebb241d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  components: {fileID: 0}
+  components: {fileID: 1436050490}
 --- !u!114 &1436050493
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,15 @@ public class PortalController : MonoBehaviour
     [SerializeField]
     private NewPortals.PortalComponents components;
 
+    private bool isIrisStable = true;
+    private Vector3 lastIrisPosition = Vector3.zero;
+
+    public bool IsIrisStable 
+    { 
+        get => isIrisStable; 
+        set => isIrisStable = value; 
+    }
+
     [ContextMenu("Reveal")]
     public void Reveal()
     {
@@ -32,5 +41,44 @@ public class PortalController : MonoBehaviour
     {
         components.BasePortal.Stop();
     }
+
+    public void SetIrisPosition(Vector3 newIrisPosition)
+    {
+        if (newIrisPosition != lastIrisPosition)
+        {
+            components.BasePortal.IrisPosition = newIrisPosition;
+        }
+    }
+
+    public void StartTeleport()
+    {
+        components.LeaveEffect.Play();
+    }
+
+    public void StartArrive()
+    {
+        components.ArriveEffect.Play();
+    }
+
+    public void StartArrive(Vector3 arrivalPosition)
+    {
+        components.ArriveEffect.transform.position = arrivalPosition;
+        components.ArriveEffect.Play();
+    }
+
+    private void Update()
+    {
+        if (isIrisStable)
+        {
+            SetIrisPosition(transform.position);
+        }
+    }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        components.BasePortal.IrisPosition = transform.position;
+    }
+#endif
 
 }
