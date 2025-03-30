@@ -52,17 +52,25 @@ public class PortalController : MonoBehaviour
 
     public void StartTeleport()
     {
+        components.LeaveEffect.BurstLocation = transform.position;
+        components.LeaveEffect.Play();
+    }
+
+    public void StartTeleport(Vector3 teleportLocation)
+    {
+        components.LeaveEffect.BurstLocation = teleportLocation;
         components.LeaveEffect.Play();
     }
 
     public void StartArrive()
     {
+        components.ArriveEffect.BurstLocation = transform.position;
         components.ArriveEffect.Play();
     }
 
     public void StartArrive(Vector3 arrivalPosition)
     {
-        components.ArriveEffect.transform.position = arrivalPosition;
+        components.ArriveEffect.BurstLocation = arrivalPosition;
         components.ArriveEffect.Play();
     }
 

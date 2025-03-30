@@ -8,12 +8,12 @@ namespace NewPortals
     {
         [SerializeField]
         protected float preTeleportTimeout = 2f;
-        [SerializeField]
-        protected GameObject preTeleportEffectPrefab;
+        //[SerializeField]
+        //protected GameObject preTeleportEffectPrefab;
         [SerializeField]
         protected float preEffectDuration = 1f;
-        [SerializeField]
-        protected GameObject postTeleportEffectPrefab;
+        //[SerializeField]
+        //protected GameObject postTeleportEffectPrefab;
         [SerializeField]
         protected AudioSource effectSource;
         [SerializeField]
@@ -23,6 +23,8 @@ namespace NewPortals
         protected bool isHidden = false;
         [SerializeField]
         protected bool isDisabled = false;
+        [SerializeField]
+        protected PortalController _portalController;
         public bool IsHidden { get => isHidden; }
         public bool IsDisabled { get => isDisabled; }
         private event GameEvents.ExitEvent OnExitEvent;
@@ -33,8 +35,15 @@ namespace NewPortals
             {
                 soundEffects = FindObjectOfType<SoundEffectTrackHandler>();
             }
+            if (_portalController == null) 
+            {
+                _portalController = GetComponentInChildren<PortalController>();
+            }
+            if (effectSource == null)
+            {
+                effectSource = GetComponent<AudioSource>();
+            }
             teleportMap = new Dictionary<GameObject, FrameTimeoutHandler>();
-
         }
 
         // Start is called before the first frame update
@@ -120,17 +129,16 @@ namespace NewPortals
         protected IEnumerator objectTeleportRoutine(GameObject objectToTeleport, Vector3 targetLocation)
         {
             Vector3 objectPosition = objectToTeleport.transform.position;
-            GameObject teleportEffect = Instantiate(preTeleportEffectPrefab);
-            Vector3 preEffectPosition = new Vector3(objectPosition.x, objectPosition.y + preTeleportEffectPrefab.transform.position.y, objectPosition.z);
-            teleportEffect.transform.position = preEffectPosition;
+            Vector3 preEffectPosition = new Vector3(objectPosition.x, objectPosition.y, objectPosition.z);
+            _portalController.StartTeleport(preEffectPosition);
             objectToTeleport.SetActive(false);
             yield return new WaitForSeconds(preEffectDuration);
             objectToTeleport.transform.position = new Vector3(targetLocation.x, targetLocation.y, targetLocation.z);
             objectPosition = objectToTeleport.transform.position;
+            Vector3 postEffectPosition = new Vector3(objectPosition.x, objectPosition.y, objectPosition.z);
+            _portalController.StartArrive(postEffectPosition);
+            yield return new WaitForSeconds(0.25f);
             objectToTeleport.SetActive(true);
-            GameObject postTeleportEffect = Instantiate(postTeleportEffectPrefab);
-            Vector3 postEffectPosition = new Vector3(objectPosition.x, objectPosition.y + postTeleportEffectPrefab.transform.position.y, objectPosition.z);
-            postTeleportEffect.transform.position = postEffectPosition;
         }
 
         private IEnumerator fadeOutTeleportSound()
@@ -151,27 +159,20 @@ namespace NewPortals
         public void Reveal()
         {
             isHidden = false;
-            StartCoroutine(revealRoutine());
-        }
-
-        protected IEnumerator revealRoutine()
-        {
-            soundEffects.PlayOnce(SoundEffectKey.PortalReveal);
-
-            yield return GetComponent<PortalFader>().FadeIn();
-            this.enabled = true;
+            _portalController.Reveal();
         }
 
         public void Hide()
         {
-
+            isHidden = true; 
+            _portalController.Hide();
         }
 
         public virtual void Disable()
         {
             isDisabled = true;
+            _portalController.Deactivate();
             soundEffects.PlayOnce(SoundEffectKey.PortalDisable);
-            GetComponent<PortalFader>().FadeToGray();
             this.enabled = false;
             GetComponent<Collider>().enabled = false;
         }
@@ -179,13 +180,8 @@ namespace NewPortals
         public void Enable()
         {
             isDisabled = false;
+            _portalController.Activate();
             soundEffects.PlayOnce(SoundEffectKey.PortalEnable);
-            StartCoroutine(enableRoutine());
-        }
-
-        private IEnumerator enableRoutine()
-        {
-            yield return GetComponent<PortalFader>().FadeToScheme();
             GetComponent<Collider>().enabled = true;
             this.enabled = true;
         }

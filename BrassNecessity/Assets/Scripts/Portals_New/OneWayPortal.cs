@@ -7,12 +7,11 @@ namespace NewPortals
     public class OneWayPortal : PortalBehaviour, IArrivalEventHandler
     {
         [SerializeField]
-        private Vector3 targetLocation;
+        private Vector3 targetWorldLocation;
         private GameEvents.ArrivalEvent OnArriveEvent;
         public override void TeleportObject(GameObject objectToTeleport)
         {
-            Vector3 worldPosition = transform.TransformPoint(targetLocation);
-            StartCoroutine(objectTeleportRoutine(objectToTeleport, worldPosition));
+            StartCoroutine(objectTeleportRoutine(objectToTeleport, targetWorldLocation));
             CallArrivalEvent();
             base.TeleportObject(objectToTeleport);
         }
@@ -39,8 +38,7 @@ namespace NewPortals
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            Vector3 worldPosition = transform.TransformPoint(targetLocation);
-            Gizmos.DrawSphere(worldPosition, 1f);
+            Gizmos.DrawSphere(targetWorldLocation, 1f);
         }
     }
 }
