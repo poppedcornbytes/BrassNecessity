@@ -9,6 +9,7 @@ public class PortalController : MonoBehaviour
 
     private bool isIrisStable = true;
     private Vector3 lastIrisPosition = Vector3.zero;
+    private GameObject irisFollowObject = null;
 
     public bool IsIrisStable 
     { 
@@ -50,6 +51,11 @@ public class PortalController : MonoBehaviour
         }
     }
 
+    public void SetIrisFollowObject(GameObject objectToFollow)
+    {
+        irisFollowObject = objectToFollow;
+    }
+
     public void StartTeleport()
     {
         components.LeaveEffect.BurstLocation = transform.position;
@@ -79,6 +85,13 @@ public class PortalController : MonoBehaviour
         if (isIrisStable)
         {
             SetIrisPosition(transform.position);
+        }
+        else
+        {
+            if (irisFollowObject != null)
+            {
+                SetIrisPosition(irisFollowObject.transform.position);
+            }
         }
     }
 

@@ -8,12 +8,8 @@ namespace NewPortals
     {
         [SerializeField]
         protected float preTeleportTimeout = 2f;
-        //[SerializeField]
-        //protected GameObject preTeleportEffectPrefab;
         [SerializeField]
         protected float preEffectDuration = 1f;
-        //[SerializeField]
-        //protected GameObject postTeleportEffectPrefab;
         [SerializeField]
         protected AudioSource effectSource;
         [SerializeField]
@@ -74,6 +70,8 @@ namespace NewPortals
             bool canTryTeleporting = other.gameObject.tag == "Player";
             if (canTryTeleporting)
             {
+                _portalController.IsIrisStable = false;
+                _portalController.SetIrisFollowObject(teleportingObject);
                 canTryTeleporting = !isHidden && !isDisabled;
             }
             if (canTryTeleporting)
@@ -92,6 +90,10 @@ namespace NewPortals
         protected virtual void OnTriggerExit(Collider other)
         {
             GameObject exitingObject = other.gameObject;
+            if (other.gameObject.tag == "Player")
+            {
+                _portalController.IsIrisStable = true;
+            }
             if (teleportMap.ContainsKey(exitingObject))
             {
                 teleportMap.Remove(exitingObject);
@@ -123,6 +125,8 @@ namespace NewPortals
 
         public virtual void TeleportObject(GameObject objectToTeleport)
         {
+            _portalController.SetIrisFollowObject(null);
+            _portalController.IsIrisStable = true;
             teleportMap.Remove(objectToTeleport);
         }
 
