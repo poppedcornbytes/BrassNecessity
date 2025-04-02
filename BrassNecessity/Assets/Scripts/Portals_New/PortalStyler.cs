@@ -12,7 +12,7 @@ namespace NewPortals
 #endif
     public class PortalStyler : MonoBehaviour
     {
-        [Range(1, 10)]
+        [Range(0, 10)]
         [SerializeField]
         private int portalThemeIndex;
         public int PortalThemeIndex { get => portalThemeIndex; }
@@ -48,9 +48,22 @@ namespace NewPortals
 
         public void SetSpecificTheme(Color colorToApply)
         {
-            components.BasePortal.EffectColor = colorToApply;
-            components.LeaveEffect.EffectColor = colorToApply;
-            components.ArriveEffect.EffectColor = colorToApply;
+            if (components.BasePortal != null)
+            {
+                components.BasePortal.EffectColor = colorToApply;
+            }
+            if (components.LeaveEffect != null)
+            {
+                components.LeaveEffect.EffectColor = colorToApply;
+            }
+            if (components.ArriveEffect != null)
+            {
+                components.ArriveEffect.EffectColor = colorToApply;
+            }
+            if (components.TetherEffect != null)
+            {
+                components.TetherEffect.EffectColor = colorToApply;
+            }
         }
 
         private void setColors()

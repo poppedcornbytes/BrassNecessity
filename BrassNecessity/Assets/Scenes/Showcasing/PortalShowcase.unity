@@ -459,6 +459,7 @@ GameObject:
   - component: {fileID: 172175206}
   - component: {fileID: 172175208}
   - component: {fileID: 172175207}
+  - component: {fileID: 172175209}
   m_Layer: 0
   m_Name: PortalTether
   m_TagString: Untagged
@@ -537,13 +538,19 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 9.19
+        m_Name: TetherArcSize
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0.10323429, y: 1, z: 0, w: 1}
+        m_Name: ParticleColour
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -558,6 +565,23 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &172175209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172175205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385579ace1e8c834a99ec6612580ef28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseEffect: {fileID: 172175208}
+  arcSizeParameter:
+    m_Name: TetherArcSize
+  colorParameter:
+    m_Name: ParticleColour
 --- !u!1001 &183379343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1161,6 +1185,9 @@ VisualEffect:
       - m_Value: {x: 0.10323429, y: 1, z: 0, w: 1}
         m_Name: ParticleColor
         m_Overridden: 1
+      - m_Value: {x: 0.10323429, y: 1, z: 0, w: 1}
+        m_Name: ParticleColour
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -1207,7 +1234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseEffect: {fileID: 283893960}
   colorParameter:
-    m_Name: ParticleColor
+    m_Name: ParticleColour
   aliveParameter:
     m_Name: Alive
   irisPositionParameter:
@@ -3793,6 +3820,7 @@ MonoBehaviour:
   LeaveEffect: {fileID: 2119679309}
   ArriveEffect: {fileID: 941991797}
   Animator: {fileID: 1436050493}
+  TetherEffect: {fileID: 172175209}
 --- !u!114 &1436050491
 MonoBehaviour:
   m_ObjectHideFlags: 0

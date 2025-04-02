@@ -15,6 +15,9 @@ namespace NewPortals
         {
             base.Awake();
             arrivedObjects = new HashSet<GameObject>();
+            float rotationAngle = Vector3.Angle(siblingPortal.transform.position, transform.position);
+            _portalController.SetPortalRotation(rotationAngle);
+
         }
 
         protected override void OnTriggerEnter(Collider other)

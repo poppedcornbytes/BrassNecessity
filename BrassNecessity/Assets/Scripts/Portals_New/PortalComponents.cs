@@ -10,5 +10,6 @@ namespace NewPortals
         public TeleportLeaveEffect LeaveEffect;
         public TeleportArriveEffect ArriveEffect;
         public PortalAnimatorController Animator;
+        public PortalTetherEffect TetherEffect;
     }
 }

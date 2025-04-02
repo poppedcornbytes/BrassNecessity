@@ -56,6 +56,16 @@ public class PortalController : MonoBehaviour
         irisFollowObject = objectToFollow;
     }
 
+    public void SetPortalRotation(float yAxisRotation)
+    {
+        transform.Rotate(transform.up, yAxisRotation);
+    }
+
+    public void SetPortalTetherArcSize(float arcSize)
+    {
+
+    }
+
     public void StartTeleport()
     {
         components.LeaveEffect.BurstLocation = transform.position;
