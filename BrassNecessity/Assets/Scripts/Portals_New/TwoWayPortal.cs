@@ -15,9 +15,21 @@ namespace NewPortals
         {
             base.Awake();
             arrivedObjects = new HashSet<GameObject>();
-            float rotationAngle = Vector3.Angle(siblingPortal.transform.position, transform.position);
-            _portalController.SetPortalRotation(rotationAngle);
+            RotatePortalTowardsSibling();
+            SetTetherArcSize();
+        }
 
+        private void RotatePortalTowardsSibling()
+        {
+            Vector3 direction = siblingPortal.transform.position - transform.position;
+            float rotationAngle = Vector3.SignedAngle(transform.forward, direction, transform.up);
+            _portalController.SetPortalRotation(rotationAngle - 90);
+        }
+
+        private void SetTetherArcSize()
+        {
+            float distanceBetweenPortals = Vector3.Distance(transform.position, siblingPortal.transform.position);
+            _portalController.SetPortalTetherArcSize(distanceBetweenPortals / 2);
         }
 
         protected override void OnTriggerEnter(Collider other)

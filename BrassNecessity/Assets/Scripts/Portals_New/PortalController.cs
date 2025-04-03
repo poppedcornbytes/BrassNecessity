@@ -63,7 +63,10 @@ public class PortalController : MonoBehaviour
 
     public void SetPortalTetherArcSize(float arcSize)
     {
-
+        if (components.TetherEffect != null)
+        {
+            components.TetherEffect.ArcSize = arcSize;
+        }
     }
 
     public void StartTeleport()
