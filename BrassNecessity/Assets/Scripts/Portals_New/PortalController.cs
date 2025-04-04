@@ -58,6 +58,7 @@ public class PortalController : MonoBehaviour
 
     public void SetPortalRotation(float yAxisRotation)
     {
+        transform.rotation = Quaternion.identity;
         transform.Rotate(transform.up, yAxisRotation);
     }
 

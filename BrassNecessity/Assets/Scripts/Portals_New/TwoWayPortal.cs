@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace NewPortals
 {
@@ -15,12 +16,19 @@ namespace NewPortals
         {
             base.Awake();
             arrivedObjects = new HashSet<GameObject>();
+            SetTetherArc();
+        }
+
+        [ContextMenu("Update Tether")]
+        private void SetTetherArc()
+        {
             RotatePortalTowardsSibling();
             SetTetherArcSize();
         }
 
         private void RotatePortalTowardsSibling()
         {
+            _portalController.SetPortalRotation(0);
             Vector3 direction = siblingPortal.transform.position - transform.position;
             float rotationAngle = Vector3.SignedAngle(transform.forward, direction, transform.up);
             _portalController.SetPortalRotation(rotationAngle - 90);
@@ -29,6 +37,8 @@ namespace NewPortals
         private void SetTetherArcSize()
         {
             float distanceBetweenPortals = Vector3.Distance(transform.position, siblingPortal.transform.position);
+            float chordRadiusAngle = 90 - Vector3.Angle(transform.up, transform.position); 
+            float radius = distanceBetweenPortals / (2 * Mathf.Cos(chordRadiusAngle));
             _portalController.SetPortalTetherArcSize(distanceBetweenPortals / 2);
         }
 

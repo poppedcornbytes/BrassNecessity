@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8da0da591baaf14395249e0dedde667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Portal: {fileID: 682767018}
+  Portal: {fileID: 0}
   BasePortal: {fileID: 1944404000}
   LeaveEffect: {fileID: 2052273604}
   ArriveEffect: {fileID: 48800884}
@@ -1490,7 +1490,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249315158}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &254021614
+--- !u!21 &257431940
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -2971,7 +2971,6 @@ GameObject:
   - component: {fileID: 682767014}
   - component: {fileID: 682767017}
   - component: {fileID: 682767016}
-  - component: {fileID: 682767018}
   - component: {fileID: 682767015}
   m_Layer: 0
   m_Name: PortalB
@@ -3127,26 +3126,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &682767018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682767013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dd40e9058109974a92e24765779f40b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  preTeleportTimeout: 2
-  preEffectDuration: 3
-  effectSource: {fileID: 0}
-  soundEffects: {fileID: 0}
-  isHidden: 0
-  isDisabled: 0
-  _portalController: {fileID: 0}
-  targetWorldLocation: {x: 0, y: 0, z: -4.87}
 --- !u!1001 &688576760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4606,8 +4585,6 @@ GameObject:
   - component: {fileID: 1127410329}
   - component: {fileID: 1127410333}
   - component: {fileID: 1127410332}
-  - component: {fileID: 1127410330}
-  - component: {fileID: 1127410331}
   - component: {fileID: 1127410334}
   m_Layer: 0
   m_Name: PortalA
@@ -4633,42 +4610,6 @@ Transform:
   m_Father: {fileID: 373397388}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1127410330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127410328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dd40e9058109974a92e24765779f40b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  preTeleportTimeout: 2
-  preEffectDuration: 3
-  effectSource: {fileID: 0}
-  soundEffects: {fileID: 0}
-  isHidden: 0
-  isDisabled: 0
-  _portalController: {fileID: 0}
-  targetWorldLocation: {x: 0, y: 0, z: -4.87}
---- !u!114 &1127410331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127410328}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9f0d849487e864399ddc7a55a4d07d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  components: {fileID: 1149694787}
-  styler: {fileID: 1149694788}
-  themes: {fileID: 89039877}
-  fadeDurationInSeconds: 3
 --- !u!82 &1127410332
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4968,7 +4909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8da0da591baaf14395249e0dedde667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Portal: {fileID: 1127410330}
+  Portal: {fileID: 0}
   BasePortal: {fileID: 1386517689}
   LeaveEffect: {fileID: 543488749}
   ArriveEffect: {fileID: 981716993}
