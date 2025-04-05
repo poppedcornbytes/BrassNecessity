@@ -30,7 +30,6 @@ namespace NewPortals
 
         private void RotatePortalTowardsSibling()
         {
-            _portalController.SetPortalRotation(0);
             Vector3 direction = siblingPortal.transform.position - transform.position;
             float rotationAngle = Vector3.SignedAngle(transform.forward, direction, transform.up);
             _portalController.SetPortalRotation(rotationAngle - 90);
