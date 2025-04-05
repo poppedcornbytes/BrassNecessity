@@ -70,6 +70,15 @@ public class PortalController : MonoBehaviour
         }
     }
 
+    public void SetPortalTetherCenter(Vector2 centerPosition)
+    {
+        if (components.TetherEffect != null)
+        {
+            Vector2 rotationAdjustedCenter = transform.rotation * centerPosition;
+            components.TetherEffect.ArcCenter = rotationAdjustedCenter;
+        }
+    }
+
     public void StartTeleport()
     {
         components.LeaveEffect.BurstLocation = transform.position;

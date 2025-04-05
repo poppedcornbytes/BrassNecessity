@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -24,6 +25,7 @@ namespace NewPortals
         {
             RotatePortalTowardsSibling();
             SetTetherArcSize();
+            SetTetherArcCenter();
         }
 
         private void RotatePortalTowardsSibling()
@@ -37,9 +39,16 @@ namespace NewPortals
         private void SetTetherArcSize()
         {
             float distanceBetweenPortals = Vector3.Distance(transform.position, siblingPortal.transform.position);
-            float chordRadiusAngle = 90 - Vector3.Angle(transform.up, transform.position); 
-            float radius = distanceBetweenPortals / (2 * Mathf.Cos(chordRadiusAngle));
             _portalController.SetPortalTetherArcSize(distanceBetweenPortals / 2);
+        }
+
+        private void SetTetherArcCenter()
+        {
+            float distanceBetweenPortals = Vector3.Distance(transform.position, siblingPortal.transform.position);
+            float centerX = (siblingPortal.transform.position.x - transform.position.x) / 2;
+            float centerY = (siblingPortal.transform.position.y - transform.position.y) / 2;
+            Vector2 arcCenter = new Vector2(centerX, centerY);
+            _portalController.SetPortalTetherCenter(arcCenter);
         }
 
         protected override void OnTriggerEnter(Collider other)
