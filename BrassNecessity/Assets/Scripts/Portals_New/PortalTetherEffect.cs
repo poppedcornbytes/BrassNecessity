@@ -4,17 +4,17 @@ using UnityEngine.VFX.Utility;
 public class PortalTetherEffect : PortalEffect
 {
     [SerializeField]
-    private ExposedProperty arcSizeParameter = "TetherArcSize";
+    private ExposedProperty arcRadiusParameter = "TetherArcSize";
     [SerializeField]
     private ExposedProperty arcCenterParameter = "TetherArcCenter";
     [SerializeField]
     private ExposedProperty colorParameter = "ParticleColour";
 
-    public float ArcSize
+    public float ArcRadius
     {
         set
         {
-            baseEffect.SetFloat(arcSizeParameter, value);
+            baseEffect.SetFloat(arcRadiusParameter, value);
         }
     }
 
@@ -36,8 +36,15 @@ public class PortalTetherEffect : PortalEffect
 
     private void OnDrawGizmosSelected()
     {
-        Vector3 arcCenter = transform.TransformPoint(baseEffect.GetVector2(arcCenterParameter));
-        Gizmos.DrawRay(arcCenter, transform.up);
-        Gizmos.DrawRay(arcCenter, transform.right);
+        Vector2 arcCenterValue = baseEffect.GetVector2(arcCenterParameter);
+        Vector3 arcCenter = transform.TransformPoint(arcCenterValue);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawRay(transform.position, transform.right * 10);
+        Gizmos.color = Color.red;
+        float arcRadius = baseEffect.GetFloat(arcRadiusParameter);
+        Vector3 direcitonUnit = (arcCenter - transform.position).normalized;
+        Vector3 arcDiameterEnd = transform.position + (direcitonUnit * arcRadius * 2); 
+        Gizmos.DrawLine(transform.position, arcDiameterEnd);
+        Gizmos.DrawSphere(arcCenter, 0.5f);
     }
 }

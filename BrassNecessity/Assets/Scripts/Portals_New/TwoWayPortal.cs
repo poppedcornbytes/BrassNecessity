@@ -31,6 +31,7 @@ namespace NewPortals
         private void RotatePortalTowardsSibling()
         {
             Vector3 direction = siblingPortal.transform.position - transform.position;
+            direction.y = 0;
             float rotationAngle = Vector3.SignedAngle(transform.forward, direction, transform.up);
             _portalController.SetPortalRotation(rotationAngle - 90);
         }
@@ -44,7 +45,9 @@ namespace NewPortals
         private void SetTetherArcCenter()
         {
             float distanceBetweenPortals = Vector3.Distance(transform.position, siblingPortal.transform.position);
-            float centerX = (siblingPortal.transform.position.x - transform.position.x) / 2;
+            Vector2 direction = new Vector2(siblingPortal.transform.position.x - transform.position.x, siblingPortal.transform.position.z - transform.position.z);
+
+            float centerX = direction.magnitude / 2;
             float centerY = (siblingPortal.transform.position.y - transform.position.y) / 2;
             Vector2 arcCenter = new Vector2(centerX, centerY);
             _portalController.SetPortalTetherCenter(arcCenter);

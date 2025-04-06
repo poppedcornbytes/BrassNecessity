@@ -66,7 +66,7 @@ public class PortalController : MonoBehaviour
     {
         if (components.TetherEffect != null)
         {
-            components.TetherEffect.ArcSize = arcSize;
+            components.TetherEffect.ArcRadius = arcSize;
         }
     }
 
@@ -74,8 +74,8 @@ public class PortalController : MonoBehaviour
     {
         if (components.TetherEffect != null)
         {
-            Vector2 rotationAdjustedCenter = transform.rotation * centerPosition;
-            components.TetherEffect.ArcCenter = rotationAdjustedCenter;
+            Vector2 scaleAdjustedPosition = new Vector2(centerPosition.x / transform.lossyScale.x, centerPosition.y / transform.lossyScale.y);
+            components.TetherEffect.ArcCenter = scaleAdjustedPosition;
         }
     }
 
