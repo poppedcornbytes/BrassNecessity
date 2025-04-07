@@ -4681,7 +4681,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":15.999998092651368,"g":15.999998092651368,"b":15.999998092651368,"a":1.0},"time":0.0},{"color":{"r":3.999999523162842,"g":3.999999523162842,"b":3.999999523162842,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":0.3450980484485626,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":15.999998092651368,"g":15.999998092651368,"b":15.999998092651368,"a":1.0},"time":0.0},{"color":{"r":3.999999523162842,"g":3.999999523162842,"b":3.999999523162842,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.3921568691730499,"time":0.10000763088464737},{"alpha":0.0784313753247261,"time":0.8147097229957581},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -4744,7 +4744,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":31.999996185302736,"g":31.999996185302736,"b":31.999996185302736,"a":1.0},"time":0.0},{"color":{"r":31.999996185302736,"g":31.999996185302736,"b":31.999996185302736,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.11764705926179886,"time":0.5088273286819458},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":31.999996185302736,"g":31.999996185302736,"b":31.999996185302736,"a":1.0},"time":0.0},{"color":{"r":7.999999046325684,"g":7.999999046325684,"b":7.999999046325684,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.03921568766236305,"time":0.5088273286819458},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
