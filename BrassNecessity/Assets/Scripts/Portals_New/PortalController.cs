@@ -6,7 +6,9 @@ public class PortalController : MonoBehaviour
 {
     [SerializeField]
     private NewPortals.PortalComponents components;
-
+    [SerializeField]
+    private bool useShorterArcRadius = false;
+    private float extraShortFactor = 0.8f;
     private bool isIrisStable = true;
     private Vector3 lastIrisPosition = Vector3.zero;
     private GameObject irisFollowObject = null;
@@ -62,11 +64,26 @@ public class PortalController : MonoBehaviour
         transform.Rotate(transform.up, yAxisRotation);
     }
 
+    public Vector3 GetTetherAnchor()
+    {
+        Vector3 tetherPosition = Vector3.zero;
+        if (components.TetherEffect != null)
+        {
+            tetherPosition = components.TetherEffect.transform.position;
+        }
+        return tetherPosition;
+    }
+
     public void SetPortalTetherArcSize(float arcSize)
     {
         if (components.TetherEffect != null)
         {
-            components.TetherEffect.ArcRadius = arcSize;
+            float adjustedArcSize = arcSize / transform.lossyScale.x;
+            if (useShorterArcRadius)
+            {
+                adjustedArcSize *= extraShortFactor;
+            }
+            components.TetherEffect.ArcRadius =  adjustedArcSize;
         }
     }
 
