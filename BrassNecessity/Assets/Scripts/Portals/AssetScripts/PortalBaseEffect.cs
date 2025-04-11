@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XR.Haptics;
-using UnityEngine.VFX;
 using UnityEngine.VFX.Utility;
 
 public class PortalBaseEffect : PortalEffect

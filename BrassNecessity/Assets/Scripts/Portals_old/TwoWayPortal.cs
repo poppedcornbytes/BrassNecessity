@@ -2,77 +2,80 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwoWayPortal : PortalBehaviour, IArrivalEventHandler
+namespace OldPortals
 {
-    [SerializeField]
-    private TwoWayPortal siblingPortal;
-    private HashSet<GameObject> arrivedObjects;
-    private GameEvents.ArrivalEvent OnArrivalEvent;
-
-    protected override void Awake()
+    public class TwoWayPortal : PortalBehaviour, IArrivalEventHandler
     {
-        base.Awake();
-        arrivedObjects = new HashSet<GameObject>();
-    }
+        [SerializeField]
+        private TwoWayPortal siblingPortal;
+        private HashSet<GameObject> arrivedObjects;
+        private GameEvents.ArrivalEvent OnArrivalEvent;
 
-    protected override void OnTriggerEnter(Collider other)
-    {
-        if (!arrivedObjects.Contains(other.gameObject))
+        protected override void Awake()
         {
-            base.OnTriggerEnter(other);
+            base.Awake();
+            arrivedObjects = new HashSet<GameObject>();
         }
-    }
 
-    protected override void OnTriggerExit(Collider other)
-    {
-        if (arrivedObjects.Contains(other.gameObject))
+        protected override void OnTriggerEnter(Collider other)
         {
-            arrivedObjects.Remove(other.gameObject);
-            CallExitEvent();
+            if (!arrivedObjects.Contains(other.gameObject))
+            {
+                base.OnTriggerEnter(other);
+            }
         }
-        else
+
+        protected override void OnTriggerExit(Collider other)
         {
-            base.OnTriggerExit(other);
+            if (arrivedObjects.Contains(other.gameObject))
+            {
+                arrivedObjects.Remove(other.gameObject);
+                CallExitEvent();
+            }
+            else
+            {
+                base.OnTriggerExit(other);
+            }
         }
-    }
 
-    public override void TeleportObject(GameObject objectToTeleport)
-    {
-        siblingPortal.LogArrivingObject(objectToTeleport);
-        StartCoroutine(objectTeleportRoutine(objectToTeleport, siblingPortal.transform.position));
-        base.TeleportObject(objectToTeleport);
-    }
-
-    public void LogArrivingObject(GameObject arrivingObject)
-    {
-        if (!arrivedObjects.Contains(arrivingObject))
+        public override void TeleportObject(GameObject objectToTeleport)
         {
-            arrivedObjects.Add(arrivingObject);
-            CallArrivalEvent();
+            siblingPortal.LogArrivingObject(objectToTeleport);
+            StartCoroutine(objectTeleportRoutine(objectToTeleport, siblingPortal.transform.position));
+            base.TeleportObject(objectToTeleport);
         }
-    }
 
-    public void AddArrivalEvent(GameEvents.ArrivalEvent eventToAdd)
-    {
-        OnArrivalEvent += eventToAdd;
-    }
-
-    public void RemoveArrivalEvent(GameEvents.ArrivalEvent eventToRemove)
-    {
-        OnArrivalEvent -= eventToRemove;
-    }
-
-    public void CallArrivalEvent()
-    {
-        if (OnArrivalEvent != null)
+        public void LogArrivingObject(GameObject arrivingObject)
         {
-            OnArrivalEvent();
+            if (!arrivedObjects.Contains(arrivingObject))
+            {
+                arrivedObjects.Add(arrivingObject);
+                CallArrivalEvent();
+            }
         }
-    }
 
-    public override void Disable()
-    {
-        arrivedObjects.Clear();
-        base.Disable();
+        public void AddArrivalEvent(GameEvents.ArrivalEvent eventToAdd)
+        {
+            OnArrivalEvent += eventToAdd;
+        }
+
+        public void RemoveArrivalEvent(GameEvents.ArrivalEvent eventToRemove)
+        {
+            OnArrivalEvent -= eventToRemove;
+        }
+
+        public void CallArrivalEvent()
+        {
+            if (OnArrivalEvent != null)
+            {
+                OnArrivalEvent();
+            }
+        }
+
+        public override void Disable()
+        {
+            arrivedObjects.Clear();
+            base.Disable();
+        }
     }
 }

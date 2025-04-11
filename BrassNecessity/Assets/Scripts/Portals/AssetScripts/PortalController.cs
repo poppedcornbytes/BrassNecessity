@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PortalController : MonoBehaviour
 {
     [SerializeField]
-    private NewPortals.PortalComponents components;
+    private PortalComponents components;
     [SerializeField]
     private bool useShorterArcRadius = false;
     private float extraShortFactor = 0.8f;

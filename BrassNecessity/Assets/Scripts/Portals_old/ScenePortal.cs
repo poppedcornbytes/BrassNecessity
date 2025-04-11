@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NewPortals
+namespace OldPortals
 {
     public class ScenePortal : PortalBehaviour, IArrivalEventHandler
     {
@@ -32,22 +32,13 @@ namespace NewPortals
         {
             base.TeleportObject(objectToTeleport);
             CallArrivalEvent();
-            StartCoroutine(objectTeleportRoutine(objectToTeleport));
-        }
-
-        protected IEnumerator objectTeleportRoutine(GameObject objectToTeleport)
-        {
-            Vector3 objectPosition = objectToTeleport.transform.position;
-            Vector3 preEffectPosition = new Vector3(objectPosition.x, objectPosition.y, objectPosition.z);
-            _portalController.StartTeleport(preEffectPosition);
-            objectToTeleport.SetActive(false);
-            yield return new WaitForSeconds(preEffectDuration);
-            yield return levelChangeRoutine();
+            StartCoroutine(levelChangeRoutine());
         }
 
         private IEnumerator levelChangeRoutine()
         {
             yield return new WaitForSeconds(.5f);
+            soundEffects.PlayOnce(SoundEffectKey.LevelChange);
             SceneNavigator.OpenScene(ArrivalScene);
         }
     }

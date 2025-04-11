@@ -1,0 +1,11 @@
+using UnityEngine;
+
+public class PortalComponents : MonoBehaviour
+{
+    public PortalBehaviour Portal;
+    public PortalBaseEffect BasePortal;
+    public TeleportLeaveEffect LeaveEffect;
+    public TeleportArriveEffect ArriveEffect;
+    public PortalAnimatorController Animator;
+    public PortalTetherEffect TetherEffect;
+}
